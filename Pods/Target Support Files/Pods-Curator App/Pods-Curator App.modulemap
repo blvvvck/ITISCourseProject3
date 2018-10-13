@@ -1,0 +1,6 @@
+framework module Pods_Curator_App {
+  umbrella header "Pods-Curator App-umbrella.h"
+
+  export *
+  module * { export * }
+}
