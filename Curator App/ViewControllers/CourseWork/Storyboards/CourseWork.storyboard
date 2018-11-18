@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Курсовые-->
+        <scene sceneID="AjX-GU-8pd">
+            <objects>
+                <viewController storyboardIdentifier="CourseWorksVC" id="Exj-JY-VrD" customClass="CourseWorkTableViewController" customModule="Curator_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dfW-7L-9Ph">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rbz-Mu-M5J">
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
+                                <segments>
+                                    <segment title="Все"/>
+                                    <segment title="Мои"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i0z-Ro-flB">
+                                <rect key="frame" x="0.0" y="92" width="375" height="575"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="courseWorkCellIdentifier" rowHeight="70" id="nAA-5d-q4z">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nAA-5d-q4z" id="iA2-Mn-JFj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="i0z-Ro-flB" firstAttribute="top" secondItem="Rbz-Mu-M5J" secondAttribute="bottom" id="6gl-YK-K7k"/>
+                            <constraint firstItem="4Rs-7w-JWs" firstAttribute="bottom" secondItem="i0z-Ro-flB" secondAttribute="bottom" id="d0f-Dp-7In"/>
+                            <constraint firstItem="i0z-Ro-flB" firstAttribute="leading" secondItem="4Rs-7w-JWs" secondAttribute="leading" id="hQn-sm-8h4"/>
+                            <constraint firstItem="Rbz-Mu-M5J" firstAttribute="leading" secondItem="4Rs-7w-JWs" secondAttribute="leading" id="k5W-t6-sne"/>
+                            <constraint firstItem="Rbz-Mu-M5J" firstAttribute="trailing" secondItem="4Rs-7w-JWs" secondAttribute="trailing" id="n14-0l-vWd"/>
+                            <constraint firstItem="4Rs-7w-JWs" firstAttribute="trailing" secondItem="i0z-Ro-flB" secondAttribute="trailing" id="n8R-lo-tPf"/>
+                            <constraint firstItem="Rbz-Mu-M5J" firstAttribute="top" secondItem="4Rs-7w-JWs" secondAttribute="top" id="smf-aG-pRg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Rs-7w-JWs"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Курсовые" id="dwN-LS-m9r"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Rbz-Mu-M5J" id="lOg-zH-uw3"/>
+                        <outlet property="tableView" destination="i0z-Ro-flB" id="FVZ-wg-S15"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eyp-CV-sq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="-204.64767616191907"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="27X-IM-xwZ">
+            <objects>
+                <navigationController storyboardIdentifier="CourseWorkNavigation" automaticallyAdjustsScrollViewInsets="NO" id="bUd-mr-drI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N8r-LS-v9e">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Exj-JY-VrD" kind="relationship" relationship="rootViewController" id="tRu-V9-KQM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHR-Qi-p74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400.80000000000001" y="-204.64767616191907"/>
+        </scene>
+    </scenes>
+</document>

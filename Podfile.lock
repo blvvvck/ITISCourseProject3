@@ -1,7 +1,10 @@
 PODS:
   - Alamofire (4.7.3)
+  - Crashlytics (3.10.9):
+    - Fabric (~> 1.7.13)
+  - Fabric (1.7.13)
   - Gloss (2.0.1)
-  - Nuke (6.1.1)
+  - Nuke (7.4.2)
   - PromiseKit (6.5.2):
     - PromiseKit/CorePromise (= 6.5.2)
     - PromiseKit/Foundation (= 6.5.2)
@@ -14,23 +17,29 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.6)
+  - Crashlytics
+  - Fabric
   - Gloss (~> 2.0)
-  - Nuke (~> 6.0)
+  - Nuke
   - PromiseKit (~> 6.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Crashlytics
+    - Fabric
     - Gloss
     - Nuke
     - PromiseKit
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
+  Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
   Gloss: 1e8743f8de1fbe14a97f220ff901cba91ae5f8f8
-  Nuke: bf5d58b2d95ff15cb170c231fe6002d706be77e1
+  Nuke: aee5c42001369902798f7b844611b8ae930ce333
   PromiseKit: 27c1601bfb73405871b805bcb8cf7e55c4dad3db
 
-PODFILE CHECKSUM: aea01374c9e769351cfb3cc844f01b9395da05a3
+PODFILE CHECKSUM: 5d28ef63b1eed5572e06b956df3bdc608abb59c9
 
 COCOAPODS: 1.5.3

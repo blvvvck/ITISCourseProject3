@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+            Fabric.with([Crashlytics.self])
         // Override point for customization after application launch.
+        //UINavigationBar.appearance().tintColor = UIColor.init(red: 244.0/255, green: 67.0/255, blue: 54.0/255, alpha: 1)
+        //UINavigationBar.appearance().tintColor = UIColor.red
+        UINavigationBar.appearance().barTintColor = .red
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        
+        UITabBar.appearance().tintColor = .white
+        UITabBar.appearance().barTintColor = .red
+        
         return true
     }
 
