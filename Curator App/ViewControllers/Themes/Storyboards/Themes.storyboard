@@ -437,7 +437,7 @@
                                                     <outlet property="delegate" destination="mAc-YL-HkD" id="gKt-cf-Vvz"/>
                                                 </connections>
                                             </tableView>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iqq-Qz-33k">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqq-Qz-33k">
                                                 <rect key="frame" x="8" y="344" width="304" height="2"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
@@ -456,7 +456,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YXY-YH-ecC">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXY-YH-ecC">
                                                 <rect key="frame" x="8" y="405" width="304" height="2"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
@@ -491,6 +491,7 @@
                                             <constraint firstAttribute="trailing" secondItem="FOU-co-vCQ" secondAttribute="trailing" constant="8" id="Aji-jC-HlY"/>
                                             <constraint firstItem="z0d-U9-dRn" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="Ave-sN-2Z8"/>
                                             <constraint firstAttribute="trailing" secondItem="zc7-YV-GxE" secondAttribute="trailing" constant="8" id="CSK-MI-vfN"/>
+                                            <constraint firstItem="iqq-Qz-33k" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="CrT-oO-CBr"/>
                                             <constraint firstItem="zc7-YV-GxE" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="CxR-Ap-7pc"/>
                                             <constraint firstItem="Zv9-x3-uia" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="Dm8-A9-raY"/>
                                             <constraint firstAttribute="trailing" secondItem="Dcq-KQ-tr4" secondAttribute="trailing" constant="8" id="Dty-mx-ktw"/>
@@ -503,6 +504,7 @@
                                             <constraint firstItem="4uu-SP-PqG" firstAttribute="top" secondItem="X40-yz-nKq" secondAttribute="bottom" constant="8" id="NLC-YI-hRO"/>
                                             <constraint firstItem="Fog-FN-uOd" firstAttribute="top" secondItem="Wbq-cV-tyv" secondAttribute="bottom" constant="4" id="NkG-RN-rF2"/>
                                             <constraint firstItem="YXY-YH-ecC" firstAttribute="top" secondItem="Odw-ud-bg2" secondAttribute="bottom" constant="8" id="O1K-6H-EZb"/>
+                                            <constraint firstAttribute="trailing" secondItem="YXY-YH-ecC" secondAttribute="trailing" constant="8" id="PUn-nA-VF2"/>
                                             <constraint firstItem="17m-ON-Xil" firstAttribute="top" secondItem="YXY-YH-ecC" secondAttribute="bottom" constant="16" id="PX6-0X-ig7"/>
                                             <constraint firstAttribute="trailing" secondItem="PYV-gb-TR9" secondAttribute="trailing" constant="8" id="Rc5-yn-Sw4"/>
                                             <constraint firstItem="Wbq-cV-tyv" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="Rxz-s4-Bd1"/>
@@ -514,6 +516,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Zv9-x3-uia" secondAttribute="trailing" constant="8" id="cc8-6D-YL8"/>
                                             <constraint firstAttribute="trailing" secondItem="z0d-U9-dRn" secondAttribute="trailing" constant="8" id="ccA-qo-qay"/>
                                             <constraint firstItem="cJl-B3-FNS" firstAttribute="leading" secondItem="Wbq-cV-tyv" secondAttribute="leading" id="cxH-HI-cgI"/>
+                                            <constraint firstItem="YXY-YH-ecC" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="gCT-fF-kVW"/>
                                             <constraint firstItem="iqq-Qz-33k" firstAttribute="top" secondItem="EI7-4V-Vsa" secondAttribute="bottom" constant="8" id="gPj-Lx-K9O"/>
                                             <constraint firstItem="PYV-gb-TR9" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="gpz-pR-K2d"/>
                                             <constraint firstItem="PYV-gb-TR9" firstAttribute="top" secondItem="8rc-6L-3Le" secondAttribute="bottom" constant="8" id="h3Q-wc-GUc"/>
@@ -528,6 +531,7 @@
                                             <constraint firstItem="H41-Dh-uId" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="ox4-N7-U66"/>
                                             <constraint firstItem="z0d-U9-dRn" firstAttribute="top" secondItem="ElB-Jf-qZj" secondAttribute="bottom" constant="8" id="q5N-nW-dAY"/>
                                             <constraint firstItem="Wbq-cV-tyv" firstAttribute="top" secondItem="z0d-U9-dRn" secondAttribute="bottom" constant="8" id="r8L-LC-Hwc"/>
+                                            <constraint firstAttribute="trailing" secondItem="iqq-Qz-33k" secondAttribute="trailing" constant="8" id="rmL-8G-Av8"/>
                                             <constraint firstItem="17m-ON-Xil" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="rvn-iG-oHU"/>
                                             <constraint firstItem="Fog-FN-uOd" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="s1V-J3-IIB"/>
                                             <constraint firstAttribute="trailing" secondItem="cG3-F5-8z4" secondAttribute="trailing" constant="8" id="tgj-tQ-Ehz"/>

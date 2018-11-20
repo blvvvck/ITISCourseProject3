@@ -22,6 +22,7 @@ class StudentsTableViewController: UIViewController {
     enum StudentsControllerType {
         case usual
         case addTheme
+        case addToExistingTheme
     }
     
     // MARK: - Instance Properties
@@ -91,7 +92,11 @@ extension StudentsTableViewController: UITableViewDelegate {
                 self.onStudentSelected?("Surname")
                 self.navigationController?.popViewController(animated: true)
             }
+        
+        case .addToExistingTheme:
+            studentProfileVC.type = .addToExistingTheme
         }
+        
         
         self.navigationController?.pushViewController(studentProfileVC, animated: true)
     }

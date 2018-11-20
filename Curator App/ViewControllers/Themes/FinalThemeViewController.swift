@@ -55,8 +55,10 @@ class FinalThemeViewController: UIViewController {
             let alert = UIAlertController(title: "Хотите предложить тему?", message: "После редактирования ОК вам нужно будет выбрать студента, которому вы хотите предложить эту тему", preferredStyle: UIAlertController.Style.alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
-                let editThemeVC = self.storyboard?.instantiateViewController(withIdentifier: "SuggestionThemeForStudentVC") as! SuggestionThemeForStudentViewController
-                self.navigationController?.pushViewController(editThemeVC, animated: true)
+                let studentStoryboard = UIStoryboard(name: "Students", bundle: nil)
+                let studentsVC = studentStoryboard.instantiateViewController(withIdentifier: "StudentsVC") as! StudentsTableViewController
+                studentsVC.type = .addToExistingTheme
+                self.navigationController?.pushViewController(studentsVC, animated: true)
             }))
             
             alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))

@@ -15,6 +15,7 @@ class StudentProfileViewController: UIViewController {
     enum StudentsProfileType {
         case usual
         case addTheme
+        case addToExistingTheme
     }
     
     // MARK: - Instance Properties
@@ -31,6 +32,10 @@ class StudentProfileViewController: UIViewController {
             let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddButtonTouchUpInside))
             self.navigationItem.rightBarButtonItem = addButton
             
+        case .addToExistingTheme?:
+            let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddButtonTouchUpInside))
+            self.navigationItem.rightBarButtonItem = addButton
+            
         default:
             return
         }
@@ -40,8 +45,18 @@ class StudentProfileViewController: UIViewController {
     private func onAddButtonTouchUpInside() {
         //let suggestionThemeForStudentVC = self.storyboard?.instantiateViewController(withIdentifier: "SuggestionThemeForStudentVC")
         //self.navigationController?.pushViewController(suggestionThemeForStudentVC!, animated: true)
-        self.onStudentSelected?()
-        self.navigationController?.popViewController(animated: true)
+        switch self.type {
+        case .addTheme?:
+            self.onStudentSelected?()
+            self.navigationController?.popViewController(animated: true)
+            
+        case .addToExistingTheme?:
+            self.navigationController?.popToRootViewController(animated: true)
+
+        default:
+            return
+        }
+        
         //self.navigationController?.popViewController(animated: true)
     }
     

@@ -68,6 +68,10 @@
 		9A815ECE2173DE810042E293 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A815ECD2173DE810042E293 /* MainTabBarController.swift */; };
 		9AEED50421A1F28E00A9FC03 /* FinalThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50321A1F28E00A9FC03 /* FinalThemeViewController.swift */; };
 		9AEED50621A1FDC400A9FC03 /* EditThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50521A1FDC400A9FC03 /* EditThemeViewController.swift */; };
+		9AEED50D21A49EA000A9FC03 /* CourseWorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50C21A49EA000A9FC03 /* CourseWorkTableViewCell.swift */; };
+		9AEED50F21A4A5B900A9FC03 /* DetailCourseWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50E21A4A5B900A9FC03 /* DetailCourseWorkViewController.swift */; };
+		9AEED51121A4A6D300A9FC03 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED51021A4A6D300A9FC03 /* ProgressViewController.swift */; };
+		9AEED51321A4A81800A9FC03 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED51221A4A81800A9FC03 /* ProgressTableViewCell.swift */; };
 		9AFC39EF218509E20021E57D /* Students.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFC39EE218509E20021E57D /* Students.storyboard */; };
 		9AFC39F1218509E80021E57D /* Themes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFC39F0218509E80021E57D /* Themes.storyboard */; };
 		9AFC39F7218629AD0021E57D /* StudentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFC39F6218629AD0021E57D /* StudentsTableViewController.swift */; };
@@ -147,6 +151,10 @@
 		9A815ECD2173DE810042E293 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9AEED50321A1F28E00A9FC03 /* FinalThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalThemeViewController.swift; sourceTree = "<group>"; };
 		9AEED50521A1FDC400A9FC03 /* EditThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditThemeViewController.swift; sourceTree = "<group>"; };
+		9AEED50C21A49EA000A9FC03 /* CourseWorkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseWorkTableViewCell.swift; sourceTree = "<group>"; };
+		9AEED50E21A4A5B900A9FC03 /* DetailCourseWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCourseWorkViewController.swift; sourceTree = "<group>"; };
+		9AEED51021A4A6D300A9FC03 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		9AEED51221A4A81800A9FC03 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		9AFC39EE218509E20021E57D /* Students.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Students.storyboard; sourceTree = "<group>"; };
 		9AFC39F0218509E80021E57D /* Themes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Themes.storyboard; sourceTree = "<group>"; };
 		9AFC39F6218629AD0021E57D /* StudentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsTableViewController.swift; sourceTree = "<group>"; };
@@ -217,8 +225,11 @@
 		9A6E9A03217FBABF003D2565 /* CourseWork */ = {
 			isa = PBXGroup;
 			children = (
+				9AEED50B21A49E8700A9FC03 /* Cell */,
 				9A6E9A04217FBACD003D2565 /* Storyboards */,
 				9A6E9A07217FBF2A003D2565 /* CourseWorkTableViewController.swift */,
+				9AEED50E21A4A5B900A9FC03 /* DetailCourseWorkViewController.swift */,
+				9AEED51021A4A6D300A9FC03 /* ProgressViewController.swift */,
 			);
 			path = CourseWork;
 			sourceTree = "<group>";
@@ -461,6 +472,15 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		9AEED50B21A49E8700A9FC03 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9AEED50C21A49EA000A9FC03 /* CourseWorkTableViewCell.swift */,
+				9AEED51221A4A81800A9FC03 /* ProgressTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		9AFC39EA218509C50021E57D /* Students */ = {
 			isa = PBXGroup;
 			children = (
@@ -689,9 +709,11 @@
 				9A815A892173C6A00042E293 /* WebService.swift in Sources */,
 				9AFC3A0521890F600021E57D /* ThemesTableViewController.swift in Sources */,
 				9AFC39FE2188FD030021E57D /* SuggestionThemeForStudentViewController.swift in Sources */,
+				9AEED51121A4A6D300A9FC03 /* ProgressViewController.swift in Sources */,
 				9A815A7D2173C6A00042E293 /* WebStatusCode.swift in Sources */,
 				9AFC3A0C21899BC20021E57D /* EditCompetitionTableViewController.swift in Sources */,
 				9A815C792173C82C0042E293 /* APIWebService.swift in Sources */,
+				9AEED51321A4A81800A9FC03 /* ProgressTableViewCell.swift in Sources */,
 				9A815A842173C6A00042E293 /* WebMultiPart.swift in Sources */,
 				9AFC39F92188E62D0021E57D /* StudentProfileViewController.swift in Sources */,
 				9A6E9A13217FC7E2003D2565 /* DefaultProfileExtractor.swift in Sources */,
@@ -708,6 +730,7 @@
 				9AFC39FC2188E6770021E57D /* StudentTableViewCell.swift in Sources */,
 				9A815EC82173CC440042E293 /* Token.swift in Sources */,
 				9A815EBB2173CBB80042E293 /* DefaultAccountUserBufferCoder.swift in Sources */,
+				9AEED50F21A4A5B900A9FC03 /* DetailCourseWorkViewController.swift in Sources */,
 				9AFC3A0321890A400021E57D /* CompetitonTableViewCell.swift in Sources */,
 				9AFC3A0A21899B880021E57D /* EditCompetitionTableViewCell.swift in Sources */,
 				9A815C7D2173C86B0042E293 /* DefaultAuthorizationService.swift in Sources */,
@@ -716,6 +739,7 @@
 				9A815EBE2173CBDE0042E293 /* DefaultAuthorizationExtractor.swift in Sources */,
 				9A815ECE2173DE810042E293 /* MainTabBarController.swift in Sources */,
 				9A815A802173C6A00042E293 /* AlamofireWebRequestAdapter.swift in Sources */,
+				9AEED50D21A49EA000A9FC03 /* CourseWorkTableViewCell.swift in Sources */,
 				9A63FE9E2175D86100D74116 /* ProfileViewController.swift in Sources */,
 				9AEED50421A1F28E00A9FC03 /* FinalThemeViewController.swift in Sources */,
 				9A815A7E2173C6A00042E293 /* WebMultiPartDataItem.swift in Sources */,
