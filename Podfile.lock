@@ -1,25 +1,34 @@
 PODS:
-  - Alamofire (4.7.3)
-  - Crashlytics (3.10.9):
-    - Fabric (~> 1.7.13)
-  - Fabric (1.7.13)
+  - Alamofire (4.8.0)
+  - Crashlytics (3.11.1):
+    - Fabric (~> 1.8.1)
+  - Fabric (1.8.2)
   - Gloss (2.0.1)
-  - Nuke (7.4.2)
-  - PromiseKit (6.5.2):
-    - PromiseKit/CorePromise (= 6.5.2)
-    - PromiseKit/Foundation (= 6.5.2)
-    - PromiseKit/UIKit (= 6.5.2)
-  - PromiseKit/CorePromise (6.5.2)
-  - PromiseKit/Foundation (6.5.2):
+  - IQKeyboardManagerSwift (6.2.0)
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - Nuke (7.5.1)
+  - PromiseKit (6.5.3):
+    - PromiseKit/CorePromise (= 6.5.3)
+    - PromiseKit/Foundation (= 6.5.3)
+    - PromiseKit/UIKit (= 6.5.3)
+  - PromiseKit/CorePromise (6.5.3)
+  - PromiseKit/Foundation (6.5.3):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.5.2):
+  - PromiseKit/UIKit (6.5.3):
     - PromiseKit/CorePromise
+  - Result (4.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.6)
+  - Alamofire
   - Crashlytics
   - Fabric
   - Gloss (~> 2.0)
+  - IQKeyboardManagerSwift
+  - Moya
   - Nuke
   - PromiseKit (~> 6.0)
 
@@ -29,17 +38,23 @@ SPEC REPOS:
     - Crashlytics
     - Fabric
     - Gloss
+    - IQKeyboardManagerSwift
+    - Moya
     - Nuke
     - PromiseKit
+    - Result
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
-  Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Crashlytics: ca7ab4bc304aa216bdc2e4c1a96389ee77252203
+  Fabric: d2b22f443ba195d8a7cc204da230977c72733b40
   Gloss: 1e8743f8de1fbe14a97f220ff901cba91ae5f8f8
-  Nuke: aee5c42001369902798f7b844611b8ae930ce333
-  PromiseKit: 27c1601bfb73405871b805bcb8cf7e55c4dad3db
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Nuke: 3814db501e55f17951451839c726ffd91641e9a5
+  PromiseKit: c609029bdd801f792551a504c695c7d3098b42cd
+  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
 
-PODFILE CHECKSUM: 5d28ef63b1eed5572e06b956df3bdc608abb59c9
+PODFILE CHECKSUM: d7d7ad67231989361184c71b04807ec7485a69d1
 
 COCOAPODS: 1.5.3

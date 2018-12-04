@@ -31,12 +31,18 @@ class ThemesTableViewController: UIViewController {
         switch self.segmentedControl.selectedSegmentIndex {
         case 0:
             self.navigationItem.rightBarButtonItem = nil
+            self.tableView.reloadData()
+
         case 1:
             self.configureNavigationBar()
+            self.tableView.reloadData()
+
        
         default:
             return
         }
+        
+        //self.tableView.reloadData()
     }
     
     private func configureNavigationBar() {
@@ -65,9 +71,21 @@ class ThemesTableViewController: UIViewController {
     }
     
     fileprivate func configure(cell: ThemeTableViewCell, for indexPath: IndexPath) {
-        cell.themeNameLabel.text = "Приложение для генерации отзывов"
-        cell.themeKnowledgeLabel.text = "iOS"
-        cell.themeCuratorLabel.text = "Куратор"
+        switch self.segmentedControl.selectedSegmentIndex {
+        case 0:
+            cell.themeNameLabel.text = "Приложение для генерации отзывов"
+            cell.themeStudentLabel.text = "Студент"
+            cell.themeStatusLabel.text = "Статус"
+            
+        case 0:
+            cell.themeNameLabel.text = "Приложение для генерации отзывов"
+            cell.themeStudentLabel.text = "Студент"
+            cell.themeStatusLabel.text = "Статус"
+            cell.themeStatusLabel.isHidden = true
+            cell.themeStudentLabel.isHidden = true
+        default:
+            return
+        }
     }
        
     // MARK: - UIViewController
@@ -94,7 +112,7 @@ extension ThemesTableViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.themeCellIdentifier, for: indexPath)
         
         self.configure(cell: cell as! ThemeTableViewCell, for: indexPath)
-        
+
         return cell
     }
 }
@@ -106,7 +124,18 @@ extension ThemesTableViewController: UITableViewDelegate {
     // MARK: - Instance Methods
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        
+        switch self.segmentedControl.selectedSegmentIndex {
+        case 0:
+            return 170
+            
+        case 1:
+            return 60
+        default:
+            return 0
+        }
+        
+        //return 170
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

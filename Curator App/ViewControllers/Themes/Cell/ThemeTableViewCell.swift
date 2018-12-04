@@ -11,8 +11,8 @@ import UIKit
 class ThemeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var themeNameLabel: UILabel!
-    @IBOutlet weak var themeKnowledgeLabel: UILabel!
-    @IBOutlet weak var themeCuratorLabel: UILabel!
+    @IBOutlet weak var themeStudentLabel: UILabel!
+    @IBOutlet weak var themeStatusLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

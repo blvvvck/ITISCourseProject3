@@ -7,10 +7,13 @@ target 'Curator App' do
 
   # Pods for Curator App
   pod 'Gloss', '~> 2.0'
-  pod 'Alamofire', '~> 4.6'
+  pod 'Alamofire'
   pod 'PromiseKit', '~> 6.0'
   pod 'Nuke'
   pod 'Fabric' 
   pod 'Crashlytics'
+  pod 'Moya'
+ pod 'IQKeyboardManagerSwift'
+
 
 end

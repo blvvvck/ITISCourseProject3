@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		86524F15A3EFDE36A6D583CC /* Pods_Curator_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9034EDC0FEDB8C92EBBB52 /* Pods_Curator_App.framework */; };
+		9A20253A21ABEA7800BC8F87 /* MoyaTestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A20253921ABEA7800BC8F87 /* MoyaTestService.swift */; };
+		9A23E64D21ADE8390015B779 /* CreateCourseWorkStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E64C21ADE8390015B779 /* CreateCourseWorkStepViewController.swift */; };
+		9A23E64F21ADF1700015B779 /* DetailWorkStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E64E21ADF1700015B779 /* DetailWorkStepViewController.swift */; };
 		9A455D87219237B6009F160A /* ThemeSuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A455D86219237B6009F160A /* ThemeSuggestionViewController.swift */; };
 		9A455D8921923B67009F160A /* SuggestionThemeCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A455D8821923B67009F160A /* SuggestionThemeCommentTableViewCell.swift */; };
 		9A63FE9E2175D86100D74116 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63FE9D2175D86100D74116 /* ProfileViewController.swift */; };
@@ -89,6 +92,9 @@
 /* Begin PBXFileReference section */
 		3C9034EDC0FEDB8C92EBBB52 /* Pods_Curator_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Curator_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F153273B2FFE105DFF06EDC /* Pods-Curator App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curator App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Curator App/Pods-Curator App.release.xcconfig"; sourceTree = "<group>"; };
+		9A20253921ABEA7800BC8F87 /* MoyaTestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaTestService.swift; sourceTree = "<group>"; };
+		9A23E64C21ADE8390015B779 /* CreateCourseWorkStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseWorkStepViewController.swift; sourceTree = "<group>"; };
+		9A23E64E21ADF1700015B779 /* DetailWorkStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkStepViewController.swift; sourceTree = "<group>"; };
 		9A455D86219237B6009F160A /* ThemeSuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSuggestionViewController.swift; sourceTree = "<group>"; };
 		9A455D8821923B67009F160A /* SuggestionThemeCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionThemeCommentTableViewCell.swift; sourceTree = "<group>"; };
 		9A63FE9D2175D86100D74116 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +205,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9A20253821ABEA6C00BC8F87 /* MOYA */ = {
+			isa = PBXGroup;
+			children = (
+				9A20253921ABEA7800BC8F87 /* MoyaTestService.swift */,
+			);
+			path = MOYA;
+			sourceTree = "<group>";
+		};
 		9A63FE9C2175D85200D74116 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +244,8 @@
 				9A6E9A07217FBF2A003D2565 /* CourseWorkTableViewController.swift */,
 				9AEED50E21A4A5B900A9FC03 /* DetailCourseWorkViewController.swift */,
 				9AEED51021A4A6D300A9FC03 /* ProgressViewController.swift */,
+				9A23E64C21ADE8390015B779 /* CreateCourseWorkStepViewController.swift */,
+				9A23E64E21ADF1700015B779 /* DetailWorkStepViewController.swift */,
 			);
 			path = CourseWork;
 			sourceTree = "<group>";
@@ -363,6 +379,7 @@
 		9A815A8E2173C6AD0042E293 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9A20253821ABEA6C00BC8F87 /* MOYA */,
 				9A6E9A09217FC3EC003D2565 /* ProfileService */,
 				9A815C7A2173C8580042E293 /* AuthorizationService */,
 				9A815C752173C81E0042E293 /* API */,
@@ -635,8 +652,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Curator App/Pods-Curator App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -644,8 +664,11 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -715,6 +738,7 @@
 				9A815C792173C82C0042E293 /* APIWebService.swift in Sources */,
 				9AEED51321A4A81800A9FC03 /* ProgressTableViewCell.swift in Sources */,
 				9A815A842173C6A00042E293 /* WebMultiPart.swift in Sources */,
+				9A23E64F21ADF1700015B779 /* DetailWorkStepViewController.swift in Sources */,
 				9AFC39F92188E62D0021E57D /* StudentProfileViewController.swift in Sources */,
 				9A6E9A13217FC7E2003D2565 /* DefaultProfileExtractor.swift in Sources */,
 				9A63FEB121772DC000D74116 /* CourseWorksTableViewController.swift in Sources */,
@@ -729,6 +753,7 @@
 				9A815EC32173CC160042E293 /* Production.swift in Sources */,
 				9AFC39FC2188E6770021E57D /* StudentTableViewCell.swift in Sources */,
 				9A815EC82173CC440042E293 /* Token.swift in Sources */,
+				9A23E64D21ADE8390015B779 /* CreateCourseWorkStepViewController.swift in Sources */,
 				9A815EBB2173CBB80042E293 /* DefaultAccountUserBufferCoder.swift in Sources */,
 				9AEED50F21A4A5B900A9FC03 /* DetailCourseWorkViewController.swift in Sources */,
 				9AFC3A0321890A400021E57D /* CompetitonTableViewCell.swift in Sources */,
@@ -743,6 +768,7 @@
 				9A63FE9E2175D86100D74116 /* ProfileViewController.swift in Sources */,
 				9AEED50421A1F28E00A9FC03 /* FinalThemeViewController.swift in Sources */,
 				9A815A7E2173C6A00042E293 /* WebMultiPartDataItem.swift in Sources */,
+				9A20253A21ABEA7800BC8F87 /* MoyaTestService.swift in Sources */,
 				9AFC39F7218629AD0021E57D /* StudentsTableViewController.swift in Sources */,
 				9A815EB62173CBB10042E293 /* DefaultTokensCoder.swift in Sources */,
 				9A815A7F2173C6A00042E293 /* AlamofireWebHandler.swift in Sources */,

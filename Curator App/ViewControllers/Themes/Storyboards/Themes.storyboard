@@ -63,8 +63,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Область" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAw-YY-O4Y">
-                                                    <rect key="frame" x="8" y="58" width="67" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Студент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAw-YY-O4Y">
+                                                    <rect key="frame" x="8" y="58" width="66" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Fe3-8D-3VJ"/>
                                                     </constraints>
@@ -72,8 +72,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут Область Темы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYV-Or-YfF">
-                                                    <rect key="frame" x="8" y="83" width="130" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут студент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYV-Or-YfF">
+                                                    <rect key="frame" x="8" y="83" width="84.5" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="KBK-jt-0Od"/>
                                                     </constraints>
@@ -81,8 +81,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Куратор" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ui6-FG-1th">
-                                                    <rect key="frame" x="8" y="112" width="67" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Статус" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ui6-FG-1th">
+                                                    <rect key="frame" x="8" y="112" width="55" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="hug-Ek-02r"/>
                                                     </constraints>
@@ -90,8 +90,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут куратор темы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SI9-ta-i9s">
-                                                    <rect key="frame" x="8" y="137" width="126.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут статус предложения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SI9-ta-i9s">
+                                                    <rect key="frame" x="8" y="137" width="176" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="NVk-Ea-BOx"/>
                                                     </constraints>
@@ -117,9 +117,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="themeCuratorLabel" destination="SI9-ta-i9s" id="rxc-RD-WZa"/>
-                                            <outlet property="themeKnowledgeLabel" destination="zYV-Or-YfF" id="BFM-na-oY9"/>
-                                            <outlet property="themeNameLabel" destination="8W0-1F-Wos" id="TmK-st-VL4"/>
+                                            <outlet property="themeNameLabel" destination="8W0-1F-Wos" id="Owv-RC-BcW"/>
+                                            <outlet property="themeStatusLabel" destination="SI9-ta-i9s" id="sBT-AA-doC"/>
+                                            <outlet property="themeStudentLabel" destination="zYV-Or-YfF" id="DSN-fP-WAq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -150,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itt-N8-Zc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1272.8" y="-255.02248875562222"/>
+            <point key="canvasLocation" x="1067" y="-270"/>
         </scene>
         <!--Edit Theme View Controller-->
         <scene sceneID="Wol-RD-yV3">

@@ -35,6 +35,9 @@ class EditCompetitionTableViewController: UIViewController {
     
     var onThemeSelected: ((_ name:String, _ type: String) -> Void)?
     
+    var name: String!
+    var typeC: String!
+    
     // MARK: - Instance Methods
     
     fileprivate func configure(cell: EditCompetitionTableViewCell, for indexPath: IndexPath) {
@@ -42,11 +45,36 @@ class EditCompetitionTableViewController: UIViewController {
         cell.highLevelButton.isSelected = true
     }
     
+    fileprivate func configureNavigationBar() {
+        
+        switch self.type {
+        case .addTheme?:
+            self.navigationItem.rightBarButtonItem = nil
+            
+            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(onDoneButtonTouchUpInside))
+            
+            self.navigationItem.rightBarButtonItems = [doneButton]
+        
+        case .profile?:
+            return
+            
+        default:
+            return
+        }
+    }
+    
+    @objc
+    private func onDoneButtonTouchUpInside() {
+        self.onThemeSelected?(self.name, self.typeC)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.configureNavigationBar()
         // Do any additional setup after loading the view.
     }
 }
@@ -81,13 +109,26 @@ extension EditCompetitionTableViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        
         switch self.type {
         case .profile?:
             return
         case .addTheme?:
             let cell = self.tableView.cellForRow(at: indexPath) as! EditCompetitionTableViewCell
-            self.onThemeSelected?(cell.competitionNameLabel.text!, cell.returnLevelSelectedButton())
-            self.navigationController?.popViewController(animated: true)
+            
+            if (cell.accessoryType == .none) {
+                cell.accessoryType = .checkmark
+                self.name = cell.competitionNameLabel.text!
+                self.typeC = cell.returnLevelSelectedButton()
+            } else {
+                cell.accessoryType = .none
+                self.name = nil
+                self.typeC = nil
+            }
+            //self.onThemeSelected?(cell.competitionNameLabel.text!, cell.returnLevelSelectedButton())
+            //self.navigationController?.popViewController(animated: true)
         
         default:
             return

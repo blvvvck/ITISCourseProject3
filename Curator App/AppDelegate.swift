@@ -9,6 +9,8 @@
 import UIKit
 import Fabric
 import Crashlytics
+import IQKeyboardManagerSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBar.appearance().tintColor = .white
         UITabBar.appearance().barTintColor = .red
+        
+        IQKeyboardManager.shared.enable = true
         
         return true
     }

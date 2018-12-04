@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 class CourseWorkTableViewController: UIViewController {
     
@@ -39,6 +40,20 @@ class CourseWorkTableViewController: UIViewController {
         
         self.tabBarItem.title = "Курсовые"
         self.title = "Курсовые"
+        
+        let provider = MoyaProvider<MoyaTestService>()
+        
+        provider.request(.getPosts) { (result) in
+            switch result {
+            case let .success(moyaResponse):
+                let encodedData = try? JSONDecoder().decode([Test].self, from: moyaResponse.data)
+                let en = try? moyaResponse.map([Test].self)
+            default:
+                return
+            }
+            
+            
+        }
         // Do any additional setup after loading the view.
     }
 }
@@ -77,4 +92,12 @@ extension CourseWorkTableViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(detailCourseWorkVC!, animated: true)
     }
     
+}
+
+
+struct Test: Codable {
+    var userId: Int?
+    var id: Int?
+    var title: String?
+    var body: String?
 }

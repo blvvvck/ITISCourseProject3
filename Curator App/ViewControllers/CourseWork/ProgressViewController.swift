@@ -30,11 +30,24 @@ class ProgressViewController: UIViewController {
         cell.stepDateLabel.text = "01.01.2021"
     }
     
+    fileprivate func configureNavigationBar() {
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddButtonTouchUpInside))
+        
+        self.navigationItem.rightBarButtonItem = addButton
+    }
+    
+    @objc
+    private func onAddButtonTouchUpInside() {
+        let createStepVC = self.storyboard?.instantiateViewController(withIdentifier: "createCourseWorkStepVC")
+        self.navigationController?.pushViewController(createStepVC!, animated: true)
+    }
+    
     // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.configureNavigationBar()
         // Do any additional setup after loading the view.
     }
 }
@@ -70,14 +83,20 @@ extension ProgressViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.tableView.deselectRow(at: indexPath, animated: true)
-
-        let cell = self.tableView.cellForRow(at: indexPath)
+        let detailStepVC = self.storyboard?.instantiateViewController(withIdentifier: "detailWorkStepVC") as! DetailWorkStepViewController
         
-        if (cell?.accessoryType == .checkmark) {
-            cell?.accessoryType = .none
-        } else {
-            self.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
+        detailStepVC.type = DetailWorkStepViewController.DetailWorkStepControllerType.watch
+        
+        self.navigationController?.pushViewController(detailStepVC, animated: true)
+        
+//        self.tableView.deselectRow(at: indexPath, animated: true)
+//
+//        let cell = self.tableView.cellForRow(at: indexPath)
+//
+//        if (cell?.accessoryType == .checkmark) {
+//            cell?.accessoryType = .none
+//        } else {
+//            self.tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+//        }
     }
 }
