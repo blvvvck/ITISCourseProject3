@@ -30,6 +30,8 @@ class FinalThemeViewController: UIViewController {
     
     var controllerType: FinalThemeControllerType = .finalTheme
     
+    var theme: ThemeModel!
+    
     // MARK: - Instance Methods
     
     private func configureNavigationBar() {
@@ -85,6 +87,14 @@ class FinalThemeViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    fileprivate func configureThemeLabels() {
+//        self.themeTitleLabel.text = self.theme.title
+//        self.themeCuratorLabel.text = "\(self.theme.curator.last_name!) \(self.theme.curator.name!) \(self.theme.curator.patronymic!)"
+//        self.themeStudentLabel.text = "\(self.theme.student?.last_name) \(self.theme.student?.name) \(self.theme.student?.patronymic)"
+//        self.themeAreaLabel.text = self.theme.subject.name
+//        self.themeDescriptionLabel.text = self.theme.description
+    }
    
     // MARK: - UIViewController
     
@@ -92,5 +102,7 @@ class FinalThemeViewController: UIViewController {
         super.viewDidLoad()
         
         self.configureNavigationBar()
+        self.configureThemeLabels()
+        
     }
 }

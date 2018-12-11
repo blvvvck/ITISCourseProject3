@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		86524F15A3EFDE36A6D583CC /* Pods_Curator_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9034EDC0FEDB8C92EBBB52 /* Pods_Curator_App.framework */; };
+		9A0FBA0921BD588500748346 /* MoyaProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0FBA0821BD588500748346 /* MoyaProfileService.swift */; };
 		9A20253A21ABEA7800BC8F87 /* MoyaTestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A20253921ABEA7800BC8F87 /* MoyaTestService.swift */; };
 		9A23E64D21ADE8390015B779 /* CreateCourseWorkStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E64C21ADE8390015B779 /* CreateCourseWorkStepViewController.swift */; };
 		9A23E64F21ADF1700015B779 /* DetailWorkStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E64E21ADF1700015B779 /* DetailWorkStepViewController.swift */; };
@@ -69,6 +70,15 @@
 		9A815EC82173CC440042E293 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A815EC72173CC440042E293 /* Token.swift */; };
 		9A815ECC2173DE160042E293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A815ECB2173DE160042E293 /* Main.storyboard */; };
 		9A815ECE2173DE810042E293 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A815ECD2173DE810042E293 /* MainTabBarController.swift */; };
+		9A9C22EB21BEB12200F914E6 /* MoyaLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22EA21BEB12200F914E6 /* MoyaLoginService.swift */; };
+		9A9C22ED21BEB8B900F914E6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22EC21BEB8B900F914E6 /* LoginModel.swift */; };
+		9A9C22EF21BEBD2500F914E6 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22EE21BEBD2500F914E6 /* Skill.swift */; };
+		9A9C22F121BEF12300F914E6 /* MoyaServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22F021BEF12300F914E6 /* MoyaServices.swift */; };
+		9A9C22F321BEF17300F914E6 /* MoyaThemesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22F221BEF17300F914E6 /* MoyaThemesService.swift */; };
+		9A9C22F721BEFBF000F914E6 /* MoyaWorksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22F621BEFBF000F914E6 /* MoyaWorksService.swift */; };
+		9A9C22F921BFB1AA00F914E6 /* StepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22F821BFB1AA00F914E6 /* StepModel.swift */; };
+		9A9C22FB21BFB33500F914E6 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22FA21BFB33500F914E6 /* ThemeModel.swift */; };
+		9A9C22FD21C05C8B00F914E6 /* MoyaSkillService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22FC21C05C8B00F914E6 /* MoyaSkillService.swift */; };
 		9AEED50421A1F28E00A9FC03 /* FinalThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50321A1F28E00A9FC03 /* FinalThemeViewController.swift */; };
 		9AEED50621A1FDC400A9FC03 /* EditThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50521A1FDC400A9FC03 /* EditThemeViewController.swift */; };
 		9AEED50D21A49EA000A9FC03 /* CourseWorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50C21A49EA000A9FC03 /* CourseWorkTableViewCell.swift */; };
@@ -92,6 +102,7 @@
 /* Begin PBXFileReference section */
 		3C9034EDC0FEDB8C92EBBB52 /* Pods_Curator_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Curator_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F153273B2FFE105DFF06EDC /* Pods-Curator App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curator App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Curator App/Pods-Curator App.release.xcconfig"; sourceTree = "<group>"; };
+		9A0FBA0821BD588500748346 /* MoyaProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaProfileService.swift; sourceTree = "<group>"; };
 		9A20253921ABEA7800BC8F87 /* MoyaTestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaTestService.swift; sourceTree = "<group>"; };
 		9A23E64C21ADE8390015B779 /* CreateCourseWorkStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseWorkStepViewController.swift; sourceTree = "<group>"; };
 		9A23E64E21ADF1700015B779 /* DetailWorkStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkStepViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +166,15 @@
 		9A815EC72173CC440042E293 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		9A815ECB2173DE160042E293 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9A815ECD2173DE810042E293 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		9A9C22EA21BEB12200F914E6 /* MoyaLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoginService.swift; sourceTree = "<group>"; };
+		9A9C22EC21BEB8B900F914E6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		9A9C22EE21BEBD2500F914E6 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		9A9C22F021BEF12300F914E6 /* MoyaServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaServices.swift; sourceTree = "<group>"; };
+		9A9C22F221BEF17300F914E6 /* MoyaThemesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaThemesService.swift; sourceTree = "<group>"; };
+		9A9C22F621BEFBF000F914E6 /* MoyaWorksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaWorksService.swift; sourceTree = "<group>"; };
+		9A9C22F821BFB1AA00F914E6 /* StepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepModel.swift; sourceTree = "<group>"; };
+		9A9C22FA21BFB33500F914E6 /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
+		9A9C22FC21C05C8B00F914E6 /* MoyaSkillService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaSkillService.swift; sourceTree = "<group>"; };
 		9AEED50321A1F28E00A9FC03 /* FinalThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalThemeViewController.swift; sourceTree = "<group>"; };
 		9AEED50521A1FDC400A9FC03 /* EditThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditThemeViewController.swift; sourceTree = "<group>"; };
 		9AEED50C21A49EA000A9FC03 /* CourseWorkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseWorkTableViewCell.swift; sourceTree = "<group>"; };
@@ -209,6 +229,12 @@
 			isa = PBXGroup;
 			children = (
 				9A20253921ABEA7800BC8F87 /* MoyaTestService.swift */,
+				9A0FBA0821BD588500748346 /* MoyaProfileService.swift */,
+				9A9C22EA21BEB12200F914E6 /* MoyaLoginService.swift */,
+				9A9C22F221BEF17300F914E6 /* MoyaThemesService.swift */,
+				9A9C22F621BEFBF000F914E6 /* MoyaWorksService.swift */,
+				9A9C22FC21C05C8B00F914E6 /* MoyaSkillService.swift */,
+				9A9C22F021BEF12300F914E6 /* MoyaServices.swift */,
 			);
 			path = MOYA;
 			sourceTree = "<group>";
@@ -468,6 +494,10 @@
 			children = (
 				9A815EC72173CC440042E293 /* Token.swift */,
 				9A6E9A0E217FC57D003D2565 /* Profile.swift */,
+				9A9C22EC21BEB8B900F914E6 /* LoginModel.swift */,
+				9A9C22EE21BEBD2500F914E6 /* Skill.swift */,
+				9A9C22F821BFB1AA00F914E6 /* StepModel.swift */,
+				9A9C22FA21BFB33500F914E6 /* ThemeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -722,6 +752,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A9C22EB21BEB12200F914E6 /* MoyaLoginService.swift in Sources */,
 				9A815EBF2173CBDE0042E293 /* AuthorizationExtractor.swift in Sources */,
 				9A815A832173C6A00042E293 /* WebRequest.swift in Sources */,
 				9A815A872173C6A00042E293 /* WebRequestAdapter.swift in Sources */,
@@ -748,21 +779,28 @@
 				9A815A822173C6A00042E293 /* AlamofireWebError.swift in Sources */,
 				9A815EBA2173CBB80042E293 /* AccountUserBufferCoder.swift in Sources */,
 				9A455D87219237B6009F160A /* ThemeSuggestionViewController.swift in Sources */,
+				9A9C22EF21BEBD2500F914E6 /* Skill.swift in Sources */,
+				9A9C22FD21C05C8B00F914E6 /* MoyaSkillService.swift in Sources */,
 				9A815A8D2173C6A00042E293 /* WebMultiPartItem.swift in Sources */,
 				9A815A67217369550042E293 /* LoginViewController.swift in Sources */,
 				9A815EC32173CC160042E293 /* Production.swift in Sources */,
 				9AFC39FC2188E6770021E57D /* StudentTableViewCell.swift in Sources */,
+				9A9C22F721BEFBF000F914E6 /* MoyaWorksService.swift in Sources */,
 				9A815EC82173CC440042E293 /* Token.swift in Sources */,
+				9A9C22F321BEF17300F914E6 /* MoyaThemesService.swift in Sources */,
 				9A23E64D21ADE8390015B779 /* CreateCourseWorkStepViewController.swift in Sources */,
 				9A815EBB2173CBB80042E293 /* DefaultAccountUserBufferCoder.swift in Sources */,
 				9AEED50F21A4A5B900A9FC03 /* DetailCourseWorkViewController.swift in Sources */,
 				9AFC3A0321890A400021E57D /* CompetitonTableViewCell.swift in Sources */,
+				9A0FBA0921BD588500748346 /* MoyaProfileService.swift in Sources */,
 				9AFC3A0A21899B880021E57D /* EditCompetitionTableViewCell.swift in Sources */,
 				9A815C7D2173C86B0042E293 /* DefaultAuthorizationService.swift in Sources */,
 				9A815EB72173CBB10042E293 /* TokensCoder.swift in Sources */,
 				9A455D8921923B67009F160A /* SuggestionThemeCommentTableViewCell.swift in Sources */,
 				9A815EBE2173CBDE0042E293 /* DefaultAuthorizationExtractor.swift in Sources */,
+				9A9C22F121BEF12300F914E6 /* MoyaServices.swift in Sources */,
 				9A815ECE2173DE810042E293 /* MainTabBarController.swift in Sources */,
+				9A9C22FB21BFB33500F914E6 /* ThemeModel.swift in Sources */,
 				9A815A802173C6A00042E293 /* AlamofireWebRequestAdapter.swift in Sources */,
 				9AEED50D21A49EA000A9FC03 /* CourseWorkTableViewCell.swift in Sources */,
 				9A63FE9E2175D86100D74116 /* ProfileViewController.swift in Sources */,
@@ -784,11 +822,13 @@
 				9A815A8A2173C6A00042E293 /* UIWebActivityIndicator.swift in Sources */,
 				9A6E9A0B217FC401003D2565 /* ProfileService.swift in Sources */,
 				9A63FEAD2177285F00D74116 /* AboutMyselfViewController.swift in Sources */,
+				9A9C22F921BFB1AA00F914E6 /* StepModel.swift in Sources */,
 				9A815CAB2173C99B0042E293 /* LoggedNavigationController.swift in Sources */,
 				9A815A852173C6A00042E293 /* WebError.swift in Sources */,
 				9A815A862173C6A00042E293 /* WebHandler.swift in Sources */,
 				9AFC3A002188FEF40021E57D /* SubjectsTableViewController.swift in Sources */,
 				9A6E9A08217FBF2A003D2565 /* CourseWorkTableViewController.swift in Sources */,
+				9A9C22ED21BEB8B900F914E6 /* LoginModel.swift in Sources */,
 				9A815C782173C82C0042E293 /* DefaultAPIWebService.swift in Sources */,
 				9A815EC52173CC1B0042E293 /* Services.swift in Sources */,
 				9A815CA82173C99B0042E293 /* LoggedPageViewController.swift in Sources */,

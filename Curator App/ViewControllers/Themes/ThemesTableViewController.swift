@@ -25,6 +25,8 @@ class ThemesTableViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    var themes: [ThemeModel]!
+    
     // MARK: - Instance Methods
     
     @IBAction func onSegmentedControlValueChanged(_ sender: Any) {
@@ -35,6 +37,7 @@ class ThemesTableViewController: UIViewController {
 
         case 1:
             self.configureNavigationBar()
+            self.loadThemes()
             self.tableView.reloadData()
 
        
@@ -77,14 +80,28 @@ class ThemesTableViewController: UIViewController {
             cell.themeStudentLabel.text = "Студент"
             cell.themeStatusLabel.text = "Статус"
             
-        case 0:
-            cell.themeNameLabel.text = "Приложение для генерации отзывов"
+        case 1:
+            cell.themeNameLabel.text = self.themes[indexPath.row].description
             cell.themeStudentLabel.text = "Студент"
             cell.themeStatusLabel.text = "Статус"
             cell.themeStatusLabel.isHidden = true
             cell.themeStudentLabel.isHidden = true
         default:
             return
+        }
+    }
+    
+    fileprivate func loadThemes() {
+        MoyaServices.themesProvider.request(.getThemes(MoyaServices.currentUserId)) { (result) in
+            switch result {
+            case let .success(moyaResponse):
+                let themeModel = try! moyaResponse.map([ThemeModel].self)
+                self.themes = themeModel
+                
+                self.tableView.reloadData()
+            case let .failure(error):
+                print("THEMES ERROR")
+            }
         }
     }
        
@@ -95,6 +112,22 @@ class ThemesTableViewController: UIViewController {
 
 //        self.tableView.rowHeight = UITableView.automaticDimension
 //        self.tableView.estimatedRowHeight = 160
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.loadThemes()
+        
+        MoyaServices.themesProvider.request(.getSuggestions(MoyaServices.currentUserId)) { (result) in
+            switch result {
+            case let .success(moyaResponse):
+                
+                print("SUGGESTION SUCCES")
+            case let .failure(error):
+                print("SUGGESTION ERROR")
+            }
+        }
     }
 }
 
@@ -147,6 +180,7 @@ extension ThemesTableViewController: UITableViewDelegate {
         case 1:
             let finalThemeController = self.storyboard?.instantiateViewController(withIdentifier: "finalThemeVC") as! FinalThemeViewController
             finalThemeController.controllerType = .editOrAddStudent
+            finalThemeController.theme = self.themes[indexPath.row]
             self.navigationController?.pushViewController(finalThemeController, animated: true)
 
         default:

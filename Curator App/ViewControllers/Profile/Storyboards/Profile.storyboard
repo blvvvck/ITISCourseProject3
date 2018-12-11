@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J9S-f3-dto">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J9S-f3-dto">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,14 +25,14 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хасьянов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3j-aQ-eBQ">
-                                <rect key="frame" x="134" y="80" width="111.5" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <rect key="frame" x="134" y="80" width="103" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Айрат Фаридович" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nw-Cf-hba">
-                                <rect key="frame" x="135" y="119.5" width="181" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Айрат Фаридович" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nw-Cf-hba">
+                                <rect key="frame" x="135" y="117" width="236" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -43,7 +43,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hki-Le-1uB" kind="show" id="IiG-Mb-rY5"/>
+                                    <segue destination="hki-Le-1uB" kind="show" identifier="ShowCompetitions" id="IiG-Mb-rY5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0A-9s-0t5">
@@ -77,7 +77,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A58-8a-PCL" kind="presentation" id="cQh-Fr-ZGk"/>
+                                    <segue destination="A58-8a-PCL" kind="presentation" identifier="ShowDescription" id="cQh-Fr-ZGk"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tQ-de-mHU">
@@ -146,10 +146,16 @@
                             <constraint firstItem="rwS-Gd-2zV" firstAttribute="top" secondItem="W8S-PD-Jb1" secondAttribute="bottom" constant="36" id="sv6-00-lNm"/>
                             <constraint firstItem="FZL-Up-alf" firstAttribute="leading" secondItem="RPv-9k-cIv" secondAttribute="leading" constant="16" id="tBz-Ou-n7A"/>
                             <constraint firstAttribute="trailing" secondItem="fcZ-AQ-mVh" secondAttribute="trailing" constant="16" id="v3U-uK-k15"/>
+                            <constraint firstItem="RPv-9k-cIv" firstAttribute="trailing" secondItem="4Nw-Cf-hba" secondAttribute="trailing" constant="4" id="wiO-FD-xZM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RPv-9k-cIv"/>
                     </view>
                     <navigationItem key="navigationItem" id="dRq-jg-LTt"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="4Fm-Qa-yzg" id="ddt-Y3-OyU"/>
+                        <outlet property="nameAndPatronymicLabel" destination="4Nw-Cf-hba" id="8KB-Z1-FIx"/>
+                        <outlet property="surnameLabel" destination="v3j-aQ-eBQ" id="b2U-y2-27B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOr-g4-hVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -200,6 +206,9 @@
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="heh-jA-lah" id="unQ-sI-fIm"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -377,14 +386,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уровень" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zi5-yz-WbJ">
-                                                    <rect key="frame" x="16" y="33" width="67" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djl-UP-n1b">
-                                                    <rect key="frame" x="99" y="28.5" width="54" height="30"/>
+                                                    <rect key="frame" x="23" y="29" width="54" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <state key="normal" title="Низкий"/>
                                                     <connections>
@@ -392,14 +395,14 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdR-gw-0ZP">
-                                                    <rect key="frame" x="249" y="28.5" width="63" height="30"/>
+                                                    <rect key="frame" x="173" y="29" width="63" height="30"/>
                                                     <state key="normal" title="Высокий"/>
                                                     <connections>
                                                         <action selector="onHighButtonTouchUpInside:" destination="br9-rH-4k1" eventType="touchUpInside" id="Lj1-GZ-hdB"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5N-WW-jk8">
-                                                    <rect key="frame" x="169" y="28.5" width="64" height="30"/>
+                                                    <rect key="frame" x="93" y="29" width="64" height="30"/>
                                                     <state key="normal" title="Средний"/>
                                                     <connections>
                                                         <action selector="onMiddleButtonTouchUpInside:" destination="br9-rH-4k1" eventType="touchUpInside" id="m1g-cb-Erh"/>
@@ -408,14 +411,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Bii-Y0-1YF" firstAttribute="top" secondItem="fgw-EP-ZGf" secondAttribute="top" constant="4" id="41h-5s-wCL"/>
-                                                <constraint firstItem="Djl-UP-n1b" firstAttribute="centerY" secondItem="zi5-yz-WbJ" secondAttribute="centerY" id="4t7-vi-OBD"/>
-                                                <constraint firstItem="Djl-UP-n1b" firstAttribute="leading" secondItem="zi5-yz-WbJ" secondAttribute="trailing" constant="16" id="75G-mo-2h1"/>
-                                                <constraint firstItem="zi5-yz-WbJ" firstAttribute="leading" secondItem="fgw-EP-ZGf" secondAttribute="leading" constant="16" id="FzK-n4-UDR"/>
                                                 <constraint firstItem="SdR-gw-0ZP" firstAttribute="leading" secondItem="Z5N-WW-jk8" secondAttribute="trailing" constant="16" id="JXW-AE-ban"/>
+                                                <constraint firstItem="Djl-UP-n1b" firstAttribute="leading" secondItem="fgw-EP-ZGf" secondAttribute="leadingMargin" constant="8" id="Wu4-FH-Sov"/>
                                                 <constraint firstItem="Z5N-WW-jk8" firstAttribute="leading" secondItem="Djl-UP-n1b" secondAttribute="trailing" constant="16" id="Yba-Qi-10D"/>
                                                 <constraint firstItem="SdR-gw-0ZP" firstAttribute="top" secondItem="Z5N-WW-jk8" secondAttribute="top" id="eoD-GS-3Je"/>
+                                                <constraint firstItem="Djl-UP-n1b" firstAttribute="top" secondItem="Bii-Y0-1YF" secondAttribute="bottom" constant="4" id="faw-LE-ERO"/>
                                                 <constraint firstItem="Bii-Y0-1YF" firstAttribute="leading" secondItem="fgw-EP-ZGf" secondAttribute="leading" constant="16" id="gKf-NZ-Fy9"/>
-                                                <constraint firstItem="zi5-yz-WbJ" firstAttribute="top" secondItem="Bii-Y0-1YF" secondAttribute="bottom" constant="8" id="mka-2L-7Hr"/>
                                                 <constraint firstItem="Z5N-WW-jk8" firstAttribute="top" secondItem="Djl-UP-n1b" secondAttribute="top" id="vnY-DE-oWO"/>
                                             </constraints>
                                         </tableViewCellContentView>

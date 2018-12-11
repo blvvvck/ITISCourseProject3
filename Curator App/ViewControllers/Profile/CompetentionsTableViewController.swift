@@ -23,11 +23,35 @@ class CompetentionsTableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: -
+    
+    var profileModel: Profile!
+    
+    var skills: [Skill] = []
+    
     // MARK: - Instance Methods
     
     fileprivate func configure(cell: CompetitonTableViewCell, for indexPath: IndexPath) {
-        cell.competitionNameLabel.text = "iOS"
+        cell.competitionNameLabel.text = self.skills[indexPath.row].name!
         cell.competitionLevelLabel.text = "Уровень: высокий"
+    }
+    
+    func apply(profileModel: Profile) {
+        self.profileModel = profileModel
+        
+        MoyaServices.skillsProvider.request(.getCuratorSkills(MoyaServices.currentUserId)) { (result) in
+            switch result {
+            case .success(let response):
+                self.skills = try! response.map([Skill].self)
+                self.tableView.reloadData()
+            case .failure(let error):
+                print("ERROR CURATOR SKILL LOAD")
+            }
+        }
+        
+        if isViewLoaded {
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - UIViewController
@@ -36,6 +60,12 @@ class CompetentionsTableViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.apply(profileModel: self.profileModel)
     }
 }
 
@@ -46,7 +76,7 @@ extension CompetentionsTableViewController: UITableViewDataSource {
     // MARK: - Instance Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.skills.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

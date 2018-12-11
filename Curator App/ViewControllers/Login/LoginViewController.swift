@@ -8,6 +8,7 @@
 
 import UIKit
 import PromiseKit
+import Moya
 
 class LoginViewController: UIViewController {
 
@@ -23,12 +24,29 @@ class LoginViewController: UIViewController {
             return
         }
         
-        firstly {
-            Services.authorizationService.authorizate(with: login, and: password)
-        }.done { (isAuthorizate) in
-            print("Complete authorization")
-            
+        let provider = MoyaProvider<MoyaLoginService>()
+        provider.request(.login(login, password)) { (result) in
+            switch result {
+            case let .success(moyaResponse):
+                var loginModel: LoginModel = try! moyaResponse.map(LoginModel.self)
+                
+                UserDefaults.standard.set(loginModel.token, forKey: "token")
+                UserDefaults.standard.set(loginModel.user_id, forKey: "user_id")
+                
+                if !loginModel.token.isEmpty {
+                    let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+                    self.present(mainStoryboard.instantiateInitialViewController()!, animated: true, completion: nil)
+                }
+            default:
+                print("FAILURE LOGIN")
+            }
         }
+//        firstly {
+//            Services.authorizationService.authorizate(with: login, and: password)
+//        }.done { (isAuthorizate) in
+//            print("Complete authorization")
+//
+//        }
     }
     
     // MARK: - ViewController

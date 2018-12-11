@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Moya
 
-class AboutMyselfViewController: UIViewController {
+class AboutMyselfViewController: UIViewController, UITextFieldDelegate {
 
-    // MARK: - Instance Properies
+    // MARK: - InstanvarProperies
     
     @IBOutlet weak var aboutMyselfTextView: UITextView!
+    
+    // MARK: -
+    
+    var profileModel: Profile!
     
     // MARK: - Instance Methods
     
@@ -23,12 +28,33 @@ class AboutMyselfViewController: UIViewController {
     @IBAction func onDoneButtonTouchUpInside(_ sender: Any) {
         //запрос на сохранение
         
+        let provider = MoyaProvider<MoyaProfileService>()
+        
+        provider.request(.changeProfileInfo(self.profileModel)) { (result) in
+            switch result {
+            case let .success(moyaResponse):
+                print(moyaResponse.statusCode)
+                print("CHANGE DESCRIPTION")
+            
+            default:
+                return
+            }
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     // MARK: -
     
     fileprivate func configureDesign() {
         self.navigationItem.title = "О себе"
+    }
+    
+    func apply(profileModel: Profile) {
+        self.profileModel = profileModel
+        
+        if isViewLoaded {
+            self.aboutMyselfTextView.text = self.profileModel.description
+        }
     }
     
     // MARK: - ViewController
@@ -39,5 +65,16 @@ class AboutMyselfViewController: UIViewController {
         configureDesign()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.apply(profileModel: self.profileModel)
+    }
+}
+
+extension AboutMyselfViewController: UITextViewDelegate {
     
+    func textViewDidChange(_ textView: UITextView) {
+        self.profileModel.description =  self.aboutMyselfTextView.text
+    }
 }

@@ -41,20 +41,34 @@ class CourseWorkTableViewController: UIViewController {
         self.tabBarItem.title = "Курсовые"
         self.title = "Курсовые"
         
-        let provider = MoyaProvider<MoyaTestService>()
         
-        provider.request(.getPosts) { (result) in
-            switch result {
-            case let .success(moyaResponse):
-                let encodedData = try? JSONDecoder().decode([Test].self, from: moyaResponse.data)
-                let en = try? moyaResponse.map([Test].self)
-            default:
-                return
-            }
-            
-            
-        }
+//        let provider = MoyaProvider<MoyaTestService>()
+//
+//        provider.request(.getPosts) { (result) in
+//            switch result {
+//            case let .success(moyaResponse):
+//                let encodedData = try? JSONDecoder().decode([Test].self, from: moyaResponse.data)
+//                let en = try? moyaResponse.map([Test].self)
+//            default:
+//                return
+//            }
+//
+//
+//        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        MoyaServices.worksProvider.request(.getCourseWorks(MoyaServices.currentUserId)) { (result) in
+            switch result {
+            case .success(let moyaResponse):
+                print("WORKS SUCCESS")
+            case .failure(let error):
+                print("WORKS ERROR")
+            }
+        }
     }
 }
 
