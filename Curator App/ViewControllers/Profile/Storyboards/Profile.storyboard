@@ -46,16 +46,6 @@
                                     <segue destination="hki-Le-1uB" kind="show" identifier="ShowCompetitions" id="IiG-Mb-rY5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0A-9s-0t5">
-                                <rect key="frame" x="16" y="288" width="343" height="33"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <state key="normal" title="Курсовые">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="onCourseWorkButtonTouchUpInside:" destination="Hf4-q3-bhm" eventType="touchUpInside" id="ANb-LE-hPO"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwS-Gd-2zV">
                                 <rect key="frame" x="16" y="226" width="343" height="2"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -71,7 +61,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jE0-Xf-TfA">
-                                <rect key="frame" x="16" y="339" width="343" height="33"/>
+                                <rect key="frame" x="16" y="288" width="343" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="Описание">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -80,28 +70,21 @@
                                     <segue destination="A58-8a-PCL" kind="presentation" identifier="ShowDescription" id="cQh-Fr-ZGk"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tQ-de-mHU">
-                                <rect key="frame" x="16" y="329" width="343" height="2"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="vdR-P2-YpE"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKn-bh-EIC">
-                                <rect key="frame" x="16" y="405" width="343" height="2"/>
+                                <rect key="frame" x="16" y="354" width="343" height="2"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="j8I-uQ-X8K"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fm-Qa-yzg">
-                                <rect key="frame" x="16" y="376" width="343" height="21"/>
+                                <rect key="frame" x="16" y="325" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZL-Up-alf">
-                                <rect key="frame" x="16" y="423" width="343" height="33"/>
+                                <rect key="frame" x="16" y="372" width="343" height="33"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="Выйти">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -110,22 +93,38 @@
                                     <segue destination="Dyb-NK-oLn" kind="presentation" id="oAw-z0-sDW"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t76-cN-mwq" userLabel="Empty State Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8o-yD-Oop" userLabel="Empty State View" customClass="EmptyStateView" customModule="Watchout" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lRc-UP-V57" firstAttribute="bottom" secondItem="a8o-yD-Oop" secondAttribute="bottom" id="0ZI-fU-vLV"/>
+                                    <constraint firstItem="lRc-UP-V57" firstAttribute="trailing" secondItem="a8o-yD-Oop" secondAttribute="trailing" id="AnF-om-XM0"/>
+                                    <constraint firstItem="a8o-yD-Oop" firstAttribute="leading" secondItem="lRc-UP-V57" secondAttribute="leading" id="Yv4-c4-kNE"/>
+                                    <constraint firstItem="a8o-yD-Oop" firstAttribute="top" secondItem="lRc-UP-V57" secondAttribute="top" id="uV0-gP-qGL"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="lRc-UP-V57"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RPv-9k-cIv" firstAttribute="trailing" secondItem="c0A-9s-0t5" secondAttribute="trailing" constant="16" id="0QY-Sz-fc8"/>
+                            <constraint firstItem="t76-cN-mwq" firstAttribute="top" secondItem="7Am-un-6TY" secondAttribute="top" id="0bN-Lx-h1C"/>
                             <constraint firstItem="fcZ-AQ-mVh" firstAttribute="leading" secondItem="7Am-un-6TY" secondAttribute="leading" constant="16" id="1WG-Hs-3jV"/>
                             <constraint firstItem="4Fm-Qa-yzg" firstAttribute="leading" secondItem="RPv-9k-cIv" secondAttribute="leading" constant="16" id="1r7-4r-fsn"/>
-                            <constraint firstAttribute="trailing" secondItem="3tQ-de-mHU" secondAttribute="trailing" constant="16" id="2KC-FX-VdN"/>
+                            <constraint firstItem="jE0-Xf-TfA" firstAttribute="top" secondItem="fcZ-AQ-mVh" secondAttribute="bottom" constant="8" id="50I-um-f4V"/>
                             <constraint firstItem="4Nw-Cf-hba" firstAttribute="top" secondItem="v3j-aQ-eBQ" secondAttribute="bottom" constant="8" id="6t1-Rz-EgW"/>
                             <constraint firstAttribute="trailing" secondItem="mKn-bh-EIC" secondAttribute="trailing" constant="16" id="7YD-MZ-22p"/>
+                            <constraint firstItem="t76-cN-mwq" firstAttribute="trailing" secondItem="RPv-9k-cIv" secondAttribute="trailing" id="ArM-ZP-BsJ"/>
+                            <constraint firstItem="t76-cN-mwq" firstAttribute="leading" secondItem="RPv-9k-cIv" secondAttribute="leading" id="DtP-ox-tpp"/>
                             <constraint firstItem="rwS-Gd-2zV" firstAttribute="leading" secondItem="7Am-un-6TY" secondAttribute="leading" constant="16" id="GjA-IP-JVF"/>
                             <constraint firstItem="4Fm-Qa-yzg" firstAttribute="top" secondItem="jE0-Xf-TfA" secondAttribute="bottom" constant="4" id="J6t-th-xIl"/>
                             <constraint firstItem="RPv-9k-cIv" firstAttribute="trailing" secondItem="jE0-Xf-TfA" secondAttribute="trailing" constant="16" id="Jwg-Cv-OkH"/>
                             <constraint firstItem="fa7-F6-dfC" firstAttribute="top" secondItem="rwS-Gd-2zV" secondAttribute="bottom" constant="8" id="KeP-AT-mqO"/>
-                            <constraint firstItem="c0A-9s-0t5" firstAttribute="leading" secondItem="RPv-9k-cIv" secondAttribute="leading" constant="16" id="PLU-U5-hSW"/>
                             <constraint firstItem="W8S-PD-Jb1" firstAttribute="top" secondItem="RPv-9k-cIv" secondAttribute="top" constant="16" id="Q0c-ef-Z9J"/>
-                            <constraint firstItem="jE0-Xf-TfA" firstAttribute="top" secondItem="3tQ-de-mHU" secondAttribute="bottom" constant="8" id="RjW-sG-Wzb"/>
                             <constraint firstItem="4Nw-Cf-hba" firstAttribute="leading" secondItem="W8S-PD-Jb1" secondAttribute="trailing" constant="9" id="RnQ-Zf-zRp"/>
                             <constraint firstItem="FZL-Up-alf" firstAttribute="top" secondItem="mKn-bh-EIC" secondAttribute="bottom" constant="16" id="TQx-xf-ZmO"/>
                             <constraint firstItem="v3j-aQ-eBQ" firstAttribute="leading" secondItem="W8S-PD-Jb1" secondAttribute="trailing" constant="8" id="V6o-LF-eif"/>
@@ -133,16 +132,14 @@
                             <constraint firstItem="v3j-aQ-eBQ" firstAttribute="top" secondItem="RPv-9k-cIv" secondAttribute="top" constant="16" id="Zgp-l0-RHg"/>
                             <constraint firstItem="fcZ-AQ-mVh" firstAttribute="top" secondItem="fa7-F6-dfC" secondAttribute="bottom" constant="8" id="bug-Nh-VcT"/>
                             <constraint firstItem="fa7-F6-dfC" firstAttribute="leading" secondItem="RPv-9k-cIv" secondAttribute="leading" constant="16" id="cgC-0T-Wib"/>
-                            <constraint firstItem="3tQ-de-mHU" firstAttribute="top" secondItem="c0A-9s-0t5" secondAttribute="bottom" constant="8" id="eo5-Xk-9ZS"/>
-                            <constraint firstItem="c0A-9s-0t5" firstAttribute="top" secondItem="fcZ-AQ-mVh" secondAttribute="bottom" constant="8" id="gBm-zT-eRl"/>
                             <constraint firstItem="jE0-Xf-TfA" firstAttribute="leading" secondItem="RPv-9k-cIv" secondAttribute="leading" constant="16" id="gVC-IL-wzO"/>
                             <constraint firstItem="RPv-9k-cIv" firstAttribute="trailing" secondItem="fa7-F6-dfC" secondAttribute="trailing" constant="16" id="haO-96-tNO"/>
+                            <constraint firstItem="RPv-9k-cIv" firstAttribute="bottom" secondItem="t76-cN-mwq" secondAttribute="bottom" id="hrs-P4-3Ip"/>
                             <constraint firstItem="mKn-bh-EIC" firstAttribute="leading" secondItem="7Am-un-6TY" secondAttribute="leading" constant="16" id="jJG-fG-ND4"/>
                             <constraint firstItem="W8S-PD-Jb1" firstAttribute="leading" secondItem="RPv-9k-cIv" secondAttribute="leading" constant="16" id="ob9-nz-5Uv"/>
                             <constraint firstItem="RPv-9k-cIv" firstAttribute="trailing" secondItem="FZL-Up-alf" secondAttribute="trailing" constant="16" id="odV-V6-VGV"/>
                             <constraint firstItem="mKn-bh-EIC" firstAttribute="top" secondItem="4Fm-Qa-yzg" secondAttribute="bottom" constant="8" id="pLA-h7-sng"/>
                             <constraint firstItem="RPv-9k-cIv" firstAttribute="trailing" secondItem="4Fm-Qa-yzg" secondAttribute="trailing" constant="16" id="riH-wC-2ql"/>
-                            <constraint firstItem="3tQ-de-mHU" firstAttribute="leading" secondItem="7Am-un-6TY" secondAttribute="leading" constant="16" id="sjl-5M-EP2"/>
                             <constraint firstItem="rwS-Gd-2zV" firstAttribute="top" secondItem="W8S-PD-Jb1" secondAttribute="bottom" constant="36" id="sv6-00-lNm"/>
                             <constraint firstItem="FZL-Up-alf" firstAttribute="leading" secondItem="RPv-9k-cIv" secondAttribute="leading" constant="16" id="tBz-Ou-n7A"/>
                             <constraint firstAttribute="trailing" secondItem="fcZ-AQ-mVh" secondAttribute="trailing" constant="16" id="v3U-uK-k15"/>
@@ -153,6 +150,8 @@
                     <navigationItem key="navigationItem" id="dRq-jg-LTt"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="4Fm-Qa-yzg" id="ddt-Y3-OyU"/>
+                        <outlet property="emptyStateContainerView" destination="t76-cN-mwq" id="YjR-Ks-qPH"/>
+                        <outlet property="emptyStateView" destination="a8o-yD-Oop" id="N8Y-Kn-PgF"/>
                         <outlet property="nameAndPatronymicLabel" destination="4Nw-Cf-hba" id="8KB-Z1-FIx"/>
                         <outlet property="surnameLabel" destination="v3j-aQ-eBQ" id="b2U-y2-27B"/>
                     </connections>
@@ -295,12 +294,33 @@
                                     <outlet property="delegate" destination="hki-Le-1uB" id="kbU-LM-ezn"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAI-PY-UIb" userLabel="Empty State Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MW2-EW-JB6" userLabel="Empty State View" customClass="EmptyStateView" customModule="Watchout" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MW2-EW-JB6" firstAttribute="top" secondItem="6HM-hv-SHw" secondAttribute="top" id="GhZ-XZ-9Aq"/>
+                                    <constraint firstItem="6HM-hv-SHw" firstAttribute="trailing" secondItem="MW2-EW-JB6" secondAttribute="trailing" id="I6N-Ck-wE1"/>
+                                    <constraint firstAttribute="width" constant="375" id="JrX-HM-SGf"/>
+                                    <constraint firstItem="6HM-hv-SHw" firstAttribute="bottom" secondItem="MW2-EW-JB6" secondAttribute="bottom" id="Yf8-lg-3hm"/>
+                                    <constraint firstItem="MW2-EW-JB6" firstAttribute="leading" secondItem="6HM-hv-SHw" secondAttribute="leading" id="uE5-9i-Ahm"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="6HM-hv-SHw"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8rK-zP-o2a" firstAttribute="top" secondItem="WPS-JT-y8d" secondAttribute="top" id="3ZL-fC-qNe"/>
+                            <constraint firstItem="hAI-PY-UIb" firstAttribute="top" secondItem="quv-Zb-SOu" secondAttribute="top" id="TBd-yR-qjv"/>
                             <constraint firstItem="WPS-JT-y8d" firstAttribute="bottom" secondItem="8rK-zP-o2a" secondAttribute="bottom" id="hBh-pV-Jq1"/>
+                            <constraint firstItem="hAI-PY-UIb" firstAttribute="leading" secondItem="WPS-JT-y8d" secondAttribute="leading" id="nDH-K5-Ysr"/>
+                            <constraint firstItem="hAI-PY-UIb" firstAttribute="bottom" secondItem="WPS-JT-y8d" secondAttribute="bottom" id="qKn-fb-6N3"/>
                             <constraint firstItem="8rK-zP-o2a" firstAttribute="leading" secondItem="WPS-JT-y8d" secondAttribute="leading" id="sC9-Mc-kul"/>
+                            <constraint firstItem="hAI-PY-UIb" firstAttribute="trailing" secondItem="WPS-JT-y8d" secondAttribute="trailing" id="u7Q-gq-3u9"/>
                             <constraint firstItem="WPS-JT-y8d" firstAttribute="trailing" secondItem="8rK-zP-o2a" secondAttribute="trailing" id="vu1-hZ-GKX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WPS-JT-y8d"/>
@@ -313,6 +333,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyStateContainerView" destination="hAI-PY-UIb" id="Mb4-Ue-sXV"/>
+                        <outlet property="emptyStateView" destination="MW2-EW-JB6" id="Dj2-hf-Wud"/>
                         <outlet property="tableView" destination="8rK-zP-o2a" id="9pS-Ug-ZOm"/>
                     </connections>
                 </viewController>
@@ -433,13 +455,34 @@
                                     <outlet property="delegate" destination="Suv-8F-9NR" id="YWA-ia-0xt"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxK-Nq-utd" userLabel="Empty State Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVI-IS-r87" userLabel="Empty State View" customClass="EmptyStateView" customModule="Watchout" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oUv-ig-2i0" firstAttribute="bottom" secondItem="wVI-IS-r87" secondAttribute="bottom" id="1Fm-Pb-Jnn"/>
+                                    <constraint firstItem="oUv-ig-2i0" firstAttribute="trailing" secondItem="wVI-IS-r87" secondAttribute="trailing" id="AJx-kw-7bv"/>
+                                    <constraint firstItem="wVI-IS-r87" firstAttribute="leading" secondItem="oUv-ig-2i0" secondAttribute="leading" id="Ir8-Va-eTS"/>
+                                    <constraint firstAttribute="width" constant="375" id="SRS-VH-9Wf"/>
+                                    <constraint firstItem="wVI-IS-r87" firstAttribute="top" secondItem="oUv-ig-2i0" secondAttribute="top" id="sb6-cJ-wSd"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="oUv-ig-2i0"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="BxK-Nq-utd" firstAttribute="bottom" secondItem="TB9-eO-fpd" secondAttribute="bottom" id="3wU-Fi-NUe"/>
                             <constraint firstItem="TB9-eO-fpd" firstAttribute="bottom" secondItem="rny-uH-kWg" secondAttribute="bottom" id="9fL-Lb-Lp5"/>
+                            <constraint firstItem="BxK-Nq-utd" firstAttribute="trailing" secondItem="TB9-eO-fpd" secondAttribute="trailing" id="DM1-GH-hun"/>
                             <constraint firstItem="rny-uH-kWg" firstAttribute="top" secondItem="TB9-eO-fpd" secondAttribute="top" id="R6t-vs-PPk"/>
                             <constraint firstItem="TB9-eO-fpd" firstAttribute="trailing" secondItem="rny-uH-kWg" secondAttribute="trailing" id="bZb-FS-exc"/>
+                            <constraint firstItem="BxK-Nq-utd" firstAttribute="top" secondItem="ZcP-Mo-dSA" secondAttribute="top" id="epF-SV-OZG"/>
                             <constraint firstItem="rny-uH-kWg" firstAttribute="leading" secondItem="TB9-eO-fpd" secondAttribute="leading" id="gHx-kD-wjk"/>
+                            <constraint firstItem="BxK-Nq-utd" firstAttribute="leading" secondItem="TB9-eO-fpd" secondAttribute="leading" id="raP-Yf-8tJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TB9-eO-fpd"/>
                     </view>
@@ -447,6 +490,8 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="krO-e8-fwL"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyStateContainerView" destination="BxK-Nq-utd" id="Xaa-Mf-bDX"/>
+                        <outlet property="emptyStateView" destination="wVI-IS-r87" id="EVh-OF-Tzr"/>
                         <outlet property="searchBar" destination="fjG-eO-sPE" id="t0J-GD-2I2"/>
                         <outlet property="tableView" destination="rny-uH-kWg" id="jst-Ht-4db"/>
                     </connections>

@@ -59,7 +59,7 @@ extension MoyaProfileService: TargetType {
             parameters["skills"] = skillsIds
             
             //ХЗ КАКОЙ ЕНКОДИНГ // вроде норм энкодинг
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.httpBody)
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     

@@ -79,6 +79,11 @@
 		9A9C22F921BFB1AA00F914E6 /* StepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22F821BFB1AA00F914E6 /* StepModel.swift */; };
 		9A9C22FB21BFB33500F914E6 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22FA21BFB33500F914E6 /* ThemeModel.swift */; };
 		9A9C22FD21C05C8B00F914E6 /* MoyaSkillService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22FC21C05C8B00F914E6 /* MoyaSkillService.swift */; };
+		9A9C230021C14BD700F914E6 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22FF21C14BD700F914E6 /* EmptyStateView.swift */; };
+		9A9C230321C14CEB00F914E6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C230221C14CEB00F914E6 /* Colors.swift */; };
+		9A9C230621C14D8C00F914E6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C230521C14D8C00F914E6 /* UIColorExtension.swift */; };
+		9A9C230821C14DB700F914E6 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C230721C14DB700F914E6 /* Fonts.swift */; };
+		9A9C230B21C14DF200F914E6 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C230A21C14DF200F914E6 /* Button.swift */; };
 		9AEED50421A1F28E00A9FC03 /* FinalThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50321A1F28E00A9FC03 /* FinalThemeViewController.swift */; };
 		9AEED50621A1FDC400A9FC03 /* EditThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50521A1FDC400A9FC03 /* EditThemeViewController.swift */; };
 		9AEED50D21A49EA000A9FC03 /* CourseWorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50C21A49EA000A9FC03 /* CourseWorkTableViewCell.swift */; };
@@ -175,6 +180,11 @@
 		9A9C22F821BFB1AA00F914E6 /* StepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepModel.swift; sourceTree = "<group>"; };
 		9A9C22FA21BFB33500F914E6 /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		9A9C22FC21C05C8B00F914E6 /* MoyaSkillService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaSkillService.swift; sourceTree = "<group>"; };
+		9A9C22FF21C14BD700F914E6 /* EmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		9A9C230221C14CEB00F914E6 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		9A9C230521C14D8C00F914E6 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		9A9C230721C14DB700F914E6 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		9A9C230A21C14DF200F914E6 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		9AEED50321A1F28E00A9FC03 /* FinalThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalThemeViewController.swift; sourceTree = "<group>"; };
 		9AEED50521A1FDC400A9FC03 /* EditThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditThemeViewController.swift; sourceTree = "<group>"; };
 		9AEED50C21A49EA000A9FC03 /* CourseWorkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseWorkTableViewCell.swift; sourceTree = "<group>"; };
@@ -316,6 +326,7 @@
 		9A7DC87121728DF900F8B884 /* Curator App */ = {
 			isa = PBXGroup;
 			children = (
+				9A9C22FE21C14BC800F914E6 /* View */,
 				9A815EC62173CC330042E293 /* Models */,
 				9A815EC02173CC000042E293 /* Configuration */,
 				9A815CAF2173CB390042E293 /* Coders */,
@@ -363,6 +374,8 @@
 		9A815A692173C6970042E293 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9A9C230921C14DEC00F914E6 /* Views */,
+				9A9C230421C14D8300F914E6 /* Extensions */,
 				9A815CAD2173CAD50042E293 /* Log.swift */,
 				9A815CA22173C99B0042E293 /* ViewControllers */,
 				9A815A6A2173C6A00042E293 /* WebService */,
@@ -475,6 +488,8 @@
 		9A815EC02173CC000042E293 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				9A9C230221C14CEB00F914E6 /* Colors.swift */,
+				9A9C230721C14DB700F914E6 /* Fonts.swift */,
 				9A815EC42173CC1B0042E293 /* Services.swift */,
 				9A815EC12173CC0F0042E293 /* Keys */,
 			);
@@ -517,6 +532,30 @@
 				9A815ECB2173DE160042E293 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9A9C22FE21C14BC800F914E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A9C22FF21C14BD700F914E6 /* EmptyStateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A9C230421C14D8300F914E6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A9C230521C14D8C00F914E6 /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9A9C230921C14DEC00F914E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A9C230A21C14DF200F914E6 /* Button.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9AEED50B21A49E8700A9FC03 /* Cell */ = {
@@ -787,15 +826,18 @@
 				9AFC39FC2188E6770021E57D /* StudentTableViewCell.swift in Sources */,
 				9A9C22F721BEFBF000F914E6 /* MoyaWorksService.swift in Sources */,
 				9A815EC82173CC440042E293 /* Token.swift in Sources */,
+				9A9C230B21C14DF200F914E6 /* Button.swift in Sources */,
 				9A9C22F321BEF17300F914E6 /* MoyaThemesService.swift in Sources */,
 				9A23E64D21ADE8390015B779 /* CreateCourseWorkStepViewController.swift in Sources */,
 				9A815EBB2173CBB80042E293 /* DefaultAccountUserBufferCoder.swift in Sources */,
 				9AEED50F21A4A5B900A9FC03 /* DetailCourseWorkViewController.swift in Sources */,
 				9AFC3A0321890A400021E57D /* CompetitonTableViewCell.swift in Sources */,
 				9A0FBA0921BD588500748346 /* MoyaProfileService.swift in Sources */,
+				9A9C230821C14DB700F914E6 /* Fonts.swift in Sources */,
 				9AFC3A0A21899B880021E57D /* EditCompetitionTableViewCell.swift in Sources */,
 				9A815C7D2173C86B0042E293 /* DefaultAuthorizationService.swift in Sources */,
 				9A815EB72173CBB10042E293 /* TokensCoder.swift in Sources */,
+				9A9C230321C14CEB00F914E6 /* Colors.swift in Sources */,
 				9A455D8921923B67009F160A /* SuggestionThemeCommentTableViewCell.swift in Sources */,
 				9A815EBE2173CBDE0042E293 /* DefaultAuthorizationExtractor.swift in Sources */,
 				9A9C22F121BEF12300F914E6 /* MoyaServices.swift in Sources */,
@@ -808,6 +850,7 @@
 				9A815A7E2173C6A00042E293 /* WebMultiPartDataItem.swift in Sources */,
 				9A20253A21ABEA7800BC8F87 /* MoyaTestService.swift in Sources */,
 				9AFC39F7218629AD0021E57D /* StudentsTableViewController.swift in Sources */,
+				9A9C230021C14BD700F914E6 /* EmptyStateView.swift in Sources */,
 				9A815EB62173CBB10042E293 /* DefaultTokensCoder.swift in Sources */,
 				9A815A7F2173C6A00042E293 /* AlamofireWebHandler.swift in Sources */,
 				9A815A8B2173C6A00042E293 /* WebMethod.swift in Sources */,
@@ -821,6 +864,7 @@
 				9A815CAC2173C99B0042E293 /* LoggedTabBarController.swift in Sources */,
 				9A815A8A2173C6A00042E293 /* UIWebActivityIndicator.swift in Sources */,
 				9A6E9A0B217FC401003D2565 /* ProfileService.swift in Sources */,
+				9A9C230621C14D8C00F914E6 /* UIColorExtension.swift in Sources */,
 				9A63FEAD2177285F00D74116 /* AboutMyselfViewController.swift in Sources */,
 				9A9C22F921BFB1AA00F914E6 /* StepModel.swift in Sources */,
 				9A815CAB2173C99B0042E293 /* LoggedNavigationController.swift in Sources */,

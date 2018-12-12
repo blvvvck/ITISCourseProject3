@@ -59,18 +59,40 @@
                                     <outlet property="delegate" destination="Exj-JY-VrD" id="4Cw-Mv-pB9"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxE-BZ-jFs" userLabel="Empty State Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIw-1q-LfZ" userLabel="Empty State View" customClass="EmptyStateView" customModule="Curator_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YIw-1q-LfZ" firstAttribute="leading" secondItem="OFi-rX-UCq" secondAttribute="leading" id="Kgw-TV-HZk"/>
+                                    <constraint firstItem="OFi-rX-UCq" firstAttribute="trailing" secondItem="YIw-1q-LfZ" secondAttribute="trailing" id="Ygg-Ut-hkc"/>
+                                    <constraint firstItem="YIw-1q-LfZ" firstAttribute="top" secondItem="OFi-rX-UCq" secondAttribute="top" id="atg-CF-smE"/>
+                                    <constraint firstItem="OFi-rX-UCq" firstAttribute="bottom" secondItem="YIw-1q-LfZ" secondAttribute="bottom" id="kai-hh-y3f"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="OFi-rX-UCq"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="i0z-Ro-flB" firstAttribute="top" secondItem="4Rs-7w-JWs" secondAttribute="top" id="Du7-QG-SP2"/>
+                            <constraint firstItem="hxE-BZ-jFs" firstAttribute="leading" secondItem="dfW-7L-9Ph" secondAttribute="leading" id="Qyc-YB-9aI"/>
+                            <constraint firstAttribute="bottom" secondItem="hxE-BZ-jFs" secondAttribute="bottom" id="a1I-sl-e4P"/>
                             <constraint firstItem="4Rs-7w-JWs" firstAttribute="bottom" secondItem="i0z-Ro-flB" secondAttribute="bottom" id="d0f-Dp-7In"/>
+                            <constraint firstItem="hxE-BZ-jFs" firstAttribute="top" secondItem="dfW-7L-9Ph" secondAttribute="top" id="eFb-R1-v0f"/>
                             <constraint firstItem="i0z-Ro-flB" firstAttribute="leading" secondItem="4Rs-7w-JWs" secondAttribute="leading" id="hQn-sm-8h4"/>
                             <constraint firstItem="4Rs-7w-JWs" firstAttribute="trailing" secondItem="i0z-Ro-flB" secondAttribute="trailing" id="n8R-lo-tPf"/>
+                            <constraint firstAttribute="trailing" secondItem="hxE-BZ-jFs" secondAttribute="trailing" id="wfU-OC-b8e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Rs-7w-JWs"/>
                     </view>
                     <navigationItem key="navigationItem" title="Курсовые" id="dwN-LS-m9r"/>
                     <connections>
+                        <outlet property="emptyStateContainerView" destination="hxE-BZ-jFs" id="p0f-ht-wTX"/>
+                        <outlet property="emptyStateView" destination="YIw-1q-LfZ" id="sD3-rp-UyO"/>
                         <outlet property="tableView" destination="i0z-Ro-flB" id="FVZ-wg-S15"/>
                     </connections>
                 </viewController>
@@ -229,17 +251,39 @@
                                     <outlet property="delegate" destination="U35-Qd-3Mb" id="UCF-sJ-xdP"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YR9-LU-gip" userLabel="Empty State Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISw-0v-qev" userLabel="Empty State View" customClass="EmptyStateView" customModule="Curator_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ISw-0v-qev" firstAttribute="top" secondItem="mV6-a9-ehJ" secondAttribute="top" id="40e-ew-LSh"/>
+                                    <constraint firstItem="mV6-a9-ehJ" firstAttribute="trailing" secondItem="ISw-0v-qev" secondAttribute="trailing" id="HiA-ej-Knf"/>
+                                    <constraint firstItem="ISw-0v-qev" firstAttribute="leading" secondItem="mV6-a9-ehJ" secondAttribute="leading" id="MIP-ud-fNZ"/>
+                                    <constraint firstItem="mV6-a9-ehJ" firstAttribute="bottom" secondItem="ISw-0v-qev" secondAttribute="bottom" id="YGK-ls-Wn7"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="mV6-a9-ehJ"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="YR9-LU-gip" firstAttribute="bottom" secondItem="ds2-nG-soV" secondAttribute="bottom" id="7nH-ux-Sdd"/>
+                            <constraint firstItem="YR9-LU-gip" firstAttribute="leading" secondItem="ds2-nG-soV" secondAttribute="leading" id="8Qc-QY-THM"/>
                             <constraint firstItem="yFF-gA-QTg" firstAttribute="leading" secondItem="ds2-nG-soV" secondAttribute="leading" id="BDa-sB-zUC"/>
                             <constraint firstItem="ds2-nG-soV" firstAttribute="bottom" secondItem="yFF-gA-QTg" secondAttribute="bottom" id="G2z-6r-nyv"/>
                             <constraint firstItem="ds2-nG-soV" firstAttribute="trailing" secondItem="yFF-gA-QTg" secondAttribute="trailing" id="MUL-mP-exE"/>
+                            <constraint firstItem="YR9-LU-gip" firstAttribute="top" secondItem="ipf-wt-DTL" secondAttribute="top" id="UQg-DG-o91"/>
                             <constraint firstItem="yFF-gA-QTg" firstAttribute="top" secondItem="ds2-nG-soV" secondAttribute="top" id="btc-rY-Pcq"/>
+                            <constraint firstItem="YR9-LU-gip" firstAttribute="trailing" secondItem="ds2-nG-soV" secondAttribute="trailing" id="ux4-fo-iSc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ds2-nG-soV"/>
                     </view>
                     <connections>
+                        <outlet property="emptyStateContainerView" destination="YR9-LU-gip" id="pfS-sp-31c"/>
+                        <outlet property="emptyStateView" destination="ISw-0v-qev" id="K9g-lE-7Sm"/>
                         <outlet property="tableView" destination="yFF-gA-QTg" id="MEI-Qk-XYE"/>
                     </connections>
                 </viewController>
