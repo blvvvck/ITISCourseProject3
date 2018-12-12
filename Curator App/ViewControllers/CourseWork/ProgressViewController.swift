@@ -23,6 +23,65 @@ class ProgressViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var emptyStateContainerView: UIView!
+    @IBOutlet weak var emptyStateView: EmptyStateView!
+    
+    // MARK: - Empty State
+    
+    fileprivate func showEmptyState(image: UIImage? = nil, title: String, message: String, action: EmptyStateAction? = nil) {
+        self.emptyStateView.hideActivityIndicator()
+        
+        self.emptyStateView.image = image
+        self.emptyStateView.title = title
+        self.emptyStateView.message = message
+        self.emptyStateView.action = action
+        
+        self.emptyStateContainerView.isHidden = false
+    }
+    
+    fileprivate func hideEmptyState() {
+        self.emptyStateContainerView.isHidden = true
+    }
+    
+    fileprivate func showNoDataState() {
+        self.showEmptyState(image: #imageLiteral(resourceName: "NoDataStateIcon.pdf"),
+                            title: "No data for display",
+                            message: "We are already working on correcting this error.")
+    }
+    
+    fileprivate func showLoadingState() {
+        if self.emptyStateContainerView.isHidden {
+            self.showEmptyState(title: "Loading...",
+                                message: "We are loading profile information. Please wait a bit.")
+        }
+        
+        self.emptyStateView.showActivityIndicator()
+    }
+    
+    fileprivate func handle(stateError error: Error, retryHandler: (() -> Void)? = nil) {
+        //        let action = EmptyStateAction(title: "Try again".localized(), onClicked: {
+        //            retryHandler?()
+        //        })
+        //
+        //        switch error as? WebError {
+        //        case .some(.connection), .some(.timeOut):
+        //            if self.presets.isEmpty {
+        //                self.showEmptyState(image: #imageLiteral(resourceName: "NoConnectionStateIcon.pdf"),
+        //                                    title: "No internet connection".localized(),
+        //                                    message: "We couldn’t connect to the server. Please check your internet connection and try again.".localized(),
+        //                                    action: action)
+        //            }
+        //
+        //        default:
+        //            if self.presets.isEmpty {
+        //                self.showEmptyState(image: #imageLiteral(resourceName: "ErrorStateIcon.pdf"),
+        //                                    title: "Ooops! Something went wrong".localized(),
+        //                                    message: "We are already working on correcting this error.".localized(),
+        //                                    action: action)
+        //            }
+        //        }
+    }
+    
     // MARK: - Instance Mehtods
     
     fileprivate func config(cell: ProgressTableViewCell, for indexPath: IndexPath) {
