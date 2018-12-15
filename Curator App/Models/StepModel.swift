@@ -12,8 +12,8 @@ struct StepModel: Codable {
     var id: Int
     var title: String
     var description: String
-    var date_start: Date
-    var date_finish: Date
+    var date_start: String
+    var date_finish: String
     var status: StepStatusModel
     
 }

@@ -21,5 +21,9 @@ struct MoyaServices {
     
     static let skillsProvider = MoyaProvider<MoyaSkillSerice>()
     
+    static let subjectProvider = MoyaProvider<MoyaSubjectService>()
+    
+    static let studentsProvider = MoyaProvider<MoyaStudentService>()
+    
     static let currentUserId = UserDefaults.standard.value(forKey: "user_id") as! Int
 }

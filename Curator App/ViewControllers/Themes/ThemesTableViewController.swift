@@ -25,7 +25,67 @@ class ThemesTableViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    var themes: [ThemeModel]!
+    @IBOutlet weak var emptyStateContainerView: UIView!
+    @IBOutlet weak var emptyStateView: EmptyStateView!
+    
+    var themes: [ThemeModel] = []
+    var suggestions: [SuggestionModel] = []
+    
+    // MARK: - Empty State
+    
+    fileprivate func showEmptyState(image: UIImage? = nil, title: String, message: String, action: EmptyStateAction? = nil) {
+        self.emptyStateView.hideActivityIndicator()
+        
+        self.emptyStateView.image = image
+        self.emptyStateView.title = title
+        self.emptyStateView.message = message
+        self.emptyStateView.action = action
+        
+        self.emptyStateContainerView.isHidden = false
+    }
+    
+    fileprivate func hideEmptyState() {
+        self.emptyStateContainerView.isHidden = true
+    }
+    
+    fileprivate func showNoDataState() {
+        self.showEmptyState(image: #imageLiteral(resourceName: "NoDataStateIcon.pdf"),
+                            title: "No data for display",
+                            message: "We are already working on correcting this error.")
+    }
+    
+    fileprivate func showLoadingState() {
+        if self.emptyStateContainerView.isHidden {
+            self.showEmptyState(title: "Loading...",
+                                message: "We are loading profile information. Please wait a bit.")
+        }
+        
+        self.emptyStateView.showActivityIndicator()
+    }
+    
+    fileprivate func handle(stateError error: Error, retryHandler: (() -> Void)? = nil) {
+        //        let action = EmptyStateAction(title: "Try again".localized(), onClicked: {
+        //            retryHandler?()
+        //        })
+        //
+        //        switch error as? WebError {
+        //        case .some(.connection), .some(.timeOut):
+        //            if self.presets.isEmpty {
+        //                self.showEmptyState(image: #imageLiteral(resourceName: "NoConnectionStateIcon.pdf"),
+        //                                    title: "No internet connection".localized(),
+        //                                    message: "We couldn’t connect to the server. Please check your internet connection and try again.".localized(),
+        //                                    action: action)
+        //            }
+        //
+        //        default:
+        //            if self.presets.isEmpty {
+        //                self.showEmptyState(image: #imageLiteral(resourceName: "ErrorStateIcon.pdf"),
+        //                                    title: "Ooops! Something went wrong".localized(),
+        //                                    message: "We are already working on correcting this error.".localized(),
+        //                                    action: action)
+        //            }
+        //        }
+    }
     
     // MARK: - Instance Methods
     
@@ -33,6 +93,7 @@ class ThemesTableViewController: UIViewController {
         switch self.segmentedControl.selectedSegmentIndex {
         case 0:
             self.navigationItem.rightBarButtonItem = nil
+            self.loadSuggestions()
             self.tableView.reloadData()
 
         case 1:
@@ -76,9 +137,13 @@ class ThemesTableViewController: UIViewController {
     fileprivate func configure(cell: ThemeTableViewCell, for indexPath: IndexPath) {
         switch self.segmentedControl.selectedSegmentIndex {
         case 0:
-            cell.themeNameLabel.text = "Приложение для генерации отзывов"
-            cell.themeStudentLabel.text = "Студент"
-            cell.themeStatusLabel.text = "Статус"
+            cell.themeNameLabel.text = self.suggestions[indexPath.row].theme.title
+            cell.themeStudentLabel.text = "\(self.suggestions[indexPath.row].student!.last_name) \(self.suggestions[indexPath.row].student!.name) \(self.suggestions[indexPath.row].student!.patronymic)"
+            
+            cell.themeStatusLabel.text = self.suggestions[indexPath.row].status.name
+            
+            cell.themeStatusLabel.isHidden = false
+            cell.themeStudentLabel.isHidden = false
             
         case 1:
             cell.themeNameLabel.text = self.themes[indexPath.row].description
@@ -92,6 +157,8 @@ class ThemesTableViewController: UIViewController {
     }
     
     fileprivate func loadThemes() {
+        self.showLoadingState()
+        
         MoyaServices.themesProvider.request(.getThemes(MoyaServices.currentUserId)) { (result) in
             switch result {
             case let .success(moyaResponse):
@@ -99,8 +166,28 @@ class ThemesTableViewController: UIViewController {
                 self.themes = themeModel
                 
                 self.tableView.reloadData()
+                
+                self.hideEmptyState()
             case let .failure(error):
                 print("THEMES ERROR")
+            }
+        }
+    }
+    
+    fileprivate func loadSuggestions() {
+        self.showLoadingState()
+        
+        MoyaServices.themesProvider.request(.getSuggestions(MoyaServices.currentUserId)) { (result) in
+            switch result {
+            case .success(let response):
+                let suggestions = try! response.map([SuggestionModel].self)
+                self.suggestions = suggestions
+                
+                self.tableView.reloadData()
+                
+                self.hideEmptyState()
+            case .failure(let error):
+                print("ERROR GET SUGGESTIONS")
             }
         }
     }
@@ -117,17 +204,10 @@ class ThemesTableViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.loadSuggestions()
         self.loadThemes()
         
-        MoyaServices.themesProvider.request(.getSuggestions(MoyaServices.currentUserId)) { (result) in
-            switch result {
-            case let .success(moyaResponse):
-                
-                print("SUGGESTION SUCCES")
-            case let .failure(error):
-                print("SUGGESTION ERROR")
-            }
-        }
+
     }
 }
 
@@ -138,7 +218,16 @@ extension ThemesTableViewController: UITableViewDataSource {
     // MARK: - Instance Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch self.segmentedControl.selectedSegmentIndex {
+        case 0:
+            return self.suggestions.count
+            
+        case 1:
+            return self.themes.count
+            
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

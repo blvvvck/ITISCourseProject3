@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.0)
+  - BEMCheckBox (1.4.1)
   - Crashlytics (3.11.1):
     - Fabric (~> 1.8.1)
   - Fabric (1.8.2)
@@ -24,6 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - BEMCheckBox
   - Crashlytics
   - Fabric
   - Gloss (~> 2.0)
@@ -35,6 +37,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - BEMCheckBox
     - Crashlytics
     - Fabric
     - Gloss
@@ -46,6 +49,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   Crashlytics: ca7ab4bc304aa216bdc2e4c1a96389ee77252203
   Fabric: d2b22f443ba195d8a7cc204da230977c72733b40
   Gloss: 1e8743f8de1fbe14a97f220ff901cba91ae5f8f8
@@ -55,6 +59,6 @@ SPEC CHECKSUMS:
   PromiseKit: c609029bdd801f792551a504c695c7d3098b42cd
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
 
-PODFILE CHECKSUM: d7d7ad67231989361184c71b04807ec7485a69d1
+PODFILE CHECKSUM: 932d7d3a63a4049224e5576e10f4d9d02af9f703
 
 COCOAPODS: 1.5.3

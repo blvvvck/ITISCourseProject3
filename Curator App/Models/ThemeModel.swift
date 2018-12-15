@@ -9,19 +9,16 @@
 import Foundation
 
 struct ThemeModel: Codable {
+    
     var id: Int
-    var title: String?
-    var description: String?
-    var date_creation: String?
+    var title: String
+    var description: String
+    var date_creation: String
     var date_acceptance: String?
-    //var curator: Profile?
-    var curator: Int
-    //var student: Profile?
-    var student: Int
-    //var subject: SubjectModel?
-    var subject: Int
-    var skills: [Int]
-    //var skills: [Skill]?
+    var curator: Profile
+    var student: Profile?
+    var subject: SubjectModel?
+    var skills: [Skill]?
 
 }
 

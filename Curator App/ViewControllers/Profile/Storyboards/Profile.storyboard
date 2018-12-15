@@ -90,13 +90,14 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="onExitButtonTouchUpInside:" destination="Hf4-q3-bhm" eventType="touchUpInside" id="Rgs-Qd-cxW"/>
                                     <segue destination="Dyb-NK-oLn" kind="presentation" id="oAw-z0-sDW"/>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t76-cN-mwq" userLabel="Empty State Container View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8o-yD-Oop" userLabel="Empty State View" customClass="EmptyStateView" customModule="Watchout" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8o-yD-Oop" userLabel="Empty State View" customClass="EmptyStateView" customModule="Curator_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -297,7 +298,7 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAI-PY-UIb" userLabel="Empty State Container View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MW2-EW-JB6" userLabel="Empty State View" customClass="EmptyStateView" customModule="Watchout" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MW2-EW-JB6" userLabel="Empty State View" customClass="EmptyStateView" customModule="Curator_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -458,7 +459,7 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxK-Nq-utd" userLabel="Empty State Container View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVI-IS-r87" userLabel="Empty State View" customClass="EmptyStateView" customModule="Watchout" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVI-IS-r87" userLabel="Empty State View" customClass="EmptyStateView" customModule="Curator_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>

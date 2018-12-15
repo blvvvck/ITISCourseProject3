@@ -26,6 +26,11 @@ class ProgressViewController: UIViewController {
     @IBOutlet weak var emptyStateContainerView: UIView!
     @IBOutlet weak var emptyStateView: EmptyStateView!
     
+    // MARK: -
+    
+    var courseWork: CourseWork!
+    var workSteps: [StepModel] = []
+    
     // MARK: - Empty State
     
     fileprivate func showEmptyState(image: UIImage? = nil, title: String, message: String, action: EmptyStateAction? = nil) {
@@ -85,8 +90,33 @@ class ProgressViewController: UIViewController {
     // MARK: - Instance Mehtods
     
     fileprivate func config(cell: ProgressTableViewCell, for indexPath: IndexPath) {
-        cell.stepNameLabel.text = "Закончить приложение"
-        cell.stepDateLabel.text = "01.01.2021"
+        cell.stepNameLabel.text = self.workSteps[indexPath.row].title
+        let correctDate = DateService.shared.correctStringDate(from: self.workSteps[indexPath.row].date_finish)
+        cell.stepDateLabel.text = correctDate
+        
+        if self.workSteps[indexPath.row].status.id == 3 {
+            cell.checkBox.setOn(true, animated: false)
+        } else {
+            cell.checkBox.setOn(false, animated: false) 
+        }
+        
+        cell.onCheckBoxClicked = { [unowned self] in
+            
+            if self.workSteps[indexPath.row].status.id == 1 {
+                self.workSteps[indexPath.row].status.id = 3
+            } else if self.workSteps[indexPath.row].status.id == 3 {
+                self.workSteps[indexPath.row].status.id = 1
+            }
+        MoyaServices.worksProvider.request(.updateWorkStep(MoyaServices.currentUserId,self.courseWork.id, self.workSteps[indexPath.row]), completion: { (result) in
+                switch result {
+                case .success(let response):
+                    print("UPDATE WORK STEP STATUS SUCCESS")
+                
+                case .failure(let error):
+                    print("UPDATE WORK STEP STATUS ERROR")
+                }
+            })
+        }
     }
     
     fileprivate func configureNavigationBar() {
@@ -97,8 +127,35 @@ class ProgressViewController: UIViewController {
     
     @objc
     private func onAddButtonTouchUpInside() {
-        let createStepVC = self.storyboard?.instantiateViewController(withIdentifier: "createCourseWorkStepVC")
-        self.navigationController?.pushViewController(createStepVC!, animated: true)
+        
+        let detailStepVC = self.storyboard?.instantiateViewController(withIdentifier: "detailWorkStepVC") as! DetailWorkStepViewController
+        
+        detailStepVC.type = DetailWorkStepViewController.DetailWorkStepControllerType.add
+        detailStepVC.courseWork = self.courseWork
+        
+        self.navigationController?.pushViewController(detailStepVC, animated: true)
+    }
+    
+    func apply(courseWork: CourseWork) {
+        self.courseWork = courseWork
+        
+        if isViewLoaded {
+            self.showLoadingState()
+            
+            MoyaServices.worksProvider.request(.getWorkSteps(self.courseWork.id)) { (result) in
+                switch result {
+                case .success(let response):
+                    let steps = try! response.map([StepModel].self)
+                    self.workSteps = steps
+        
+                    self.tableView.reloadData()
+        
+                    self.hideEmptyState()
+                case .failure(let error):
+                    print("GET STEPS ERROR")
+                }
+            }
+        }
     }
     
     // MARK: - UIViewController
@@ -109,6 +166,12 @@ class ProgressViewController: UIViewController {
         self.configureNavigationBar()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.apply(courseWork: self.courseWork)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -118,7 +181,7 @@ extension ProgressViewController: UITableViewDataSource {
     // MARK: - Instance Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.workSteps.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -145,6 +208,7 @@ extension ProgressViewController: UITableViewDelegate {
         let detailStepVC = self.storyboard?.instantiateViewController(withIdentifier: "detailWorkStepVC") as! DetailWorkStepViewController
         
         detailStepVC.type = DetailWorkStepViewController.DetailWorkStepControllerType.watch
+        detailStepVC.apply(workStep: self.workSteps[indexPath.row], courseWork: self.courseWork)
         
         self.navigationController?.pushViewController(detailStepVC, animated: true)
         

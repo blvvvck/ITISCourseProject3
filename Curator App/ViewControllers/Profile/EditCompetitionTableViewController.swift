@@ -44,7 +44,7 @@ class EditCompetitionTableViewController: UIViewController {
     
     var type: EditCompetitionType!
     
-    var onThemeSelected: ((_ name:String, _ type: String) -> Void)?
+    var onThemeSelected: ((_ selectedSkills: [Skill]) -> Void)?
     
     var name: String!
     var typeC: String!
@@ -114,8 +114,15 @@ class EditCompetitionTableViewController: UIViewController {
             cell.highLevelButton.isSelected = true
             
         case .addTheme?:
-            cell.competitionNameLabel.text = "iOS"
+            cell.competitionNameLabel.text = self.skills?[indexPath.row].name!
             cell.highLevelButton.isSelected = true
+            
+//            self.profileModel.skills?.forEach({ (skill) in
+//                if skill.id == self.skills?[indexPath.row].id {
+//                    cell.accessoryType = .checkmark
+//                    self.selectedSkills.append(skill)
+//                }
+//            })
         
         case .none:
             cell.competitionNameLabel.text = self.skills?[indexPath.row].name!
@@ -154,7 +161,7 @@ class EditCompetitionTableViewController: UIViewController {
     private func onDoneButtonTouchUpInside() {
         switch self.type {
         case .addTheme?:
-            self.onThemeSelected?(self.name, self.typeC)
+            self.onThemeSelected?(self.selectedSkills)
             self.navigationController?.popViewController(animated: true)
             
         default:
@@ -263,13 +270,21 @@ extension EditCompetitionTableViewController: UITableViewDelegate {
             
             if (cell.accessoryType == .none) {
                 cell.accessoryType = .checkmark
-                self.name = cell.competitionNameLabel.text!
-                self.typeC = cell.returnLevelSelectedButton()
+                self.selectedSkills.append(self.skills![indexPath.row])
             } else {
                 cell.accessoryType = .none
-                self.name = nil
-                self.typeC = nil
+                self.selectedSkills.removeAll(where: {$0.id == self.skills![indexPath.row].id})
             }
+            
+//            if (cell.accessoryType == .none) {
+//                cell.accessoryType = .checkmark
+//                self.name = cell.competitionNameLabel.text!
+//                self.typeC = cell.returnLevelSelectedButton()
+//            } else {
+//                cell.accessoryType = .none
+//                self.name = nil
+//                self.typeC = nil
+//            }
             //self.onThemeSelected?(cell.competitionNameLabel.text!, cell.returnLevelSelectedButton())
             //self.navigationController?.popViewController(animated: true)
         

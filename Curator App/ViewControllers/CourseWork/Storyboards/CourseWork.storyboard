@@ -28,14 +28,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название курсовой" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGk-nj-OyM">
-                                                    <rect key="frame" x="23" y="19" width="158" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название курсовой" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGk-nj-OyM">
+                                                    <rect key="frame" x="19" y="19" width="155.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Студент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otz-we-SQc">
-                                                    <rect key="frame" x="23" y="44" width="66" height="21"/>
+                                                    <rect key="frame" x="19" y="42.5" width="66" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                                 <constraint firstItem="hGk-nj-OyM" firstAttribute="top" secondItem="iA2-Mn-JFj" secondAttribute="topMargin" constant="8" id="FpX-6b-SpM"/>
                                                 <constraint firstItem="Otz-we-SQc" firstAttribute="leading" secondItem="hGk-nj-OyM" secondAttribute="leading" id="LyY-GM-LN2"/>
                                                 <constraint firstItem="Otz-we-SQc" firstAttribute="top" secondItem="hGk-nj-OyM" secondAttribute="bottom" constant="4" id="MGp-Kx-zRf"/>
-                                                <constraint firstItem="hGk-nj-OyM" firstAttribute="leading" secondItem="iA2-Mn-JFj" secondAttribute="leadingMargin" constant="8" id="TnK-va-emJ"/>
+                                                <constraint firstItem="hGk-nj-OyM" firstAttribute="leading" secondItem="iA2-Mn-JFj" secondAttribute="leadingMargin" constant="4" id="TnK-va-emJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -188,6 +188,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wPM-rL-DST"/>
                     </view>
+                    <connections>
+                        <outlet property="courseWorkAuthorLabel" destination="5c8-IN-QGu" id="mGN-9q-TX5"/>
+                        <outlet property="courseWorkCuratorLabel" destination="F69-yW-Lb7" id="IXq-Mc-Jzl"/>
+                        <outlet property="courseWorkDescription" destination="lzG-td-Xuk" id="7Yn-JQ-VTK"/>
+                        <outlet property="courseWorkNameLabel" destination="0nr-Zh-IIa" id="RY6-vd-6WS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOv-Vb-vv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,17 +236,32 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-Wu-GgY" customClass="BEMCheckBox">
+                                                    <rect key="frame" x="286" y="27" width="30" height="30.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="0GV-mC-FdK"/>
+                                                        <constraint firstAttribute="height" constant="30.5" id="3mV-mC-A0u"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="onCheckBoxTouchUpInside:" destination="Laj-sV-GvP" eventType="valueChanged" id="nCJ-6a-fwD"/>
+                                                    </connections>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="nVw-bx-CII" firstAttribute="leading" secondItem="Igu-aT-jnN" secondAttribute="leadingMargin" constant="8" id="49F-oA-bTG"/>
                                                 <constraint firstItem="nVw-bx-CII" firstAttribute="top" secondItem="2KY-7a-tz4" secondAttribute="bottom" constant="8" id="67Q-Ib-a9s"/>
+                                                <constraint firstAttribute="trailing" secondItem="eb2-Wu-GgY" secondAttribute="trailing" constant="4" id="6a6-8e-HG7"/>
                                                 <constraint firstItem="MAG-nx-PQv" firstAttribute="top" secondItem="2KY-7a-tz4" secondAttribute="bottom" constant="8" id="D3y-gV-FSK"/>
                                                 <constraint firstItem="2KY-7a-tz4" firstAttribute="leading" secondItem="Igu-aT-jnN" secondAttribute="leadingMargin" constant="8" id="cp8-Jd-4M0"/>
                                                 <constraint firstItem="MAG-nx-PQv" firstAttribute="leading" secondItem="nVw-bx-CII" secondAttribute="trailing" constant="8" id="fxW-MS-iSm"/>
+                                                <constraint firstItem="eb2-Wu-GgY" firstAttribute="top" secondItem="Igu-aT-jnN" secondAttribute="top" constant="27" id="hD6-UB-HXt"/>
                                                 <constraint firstItem="2KY-7a-tz4" firstAttribute="top" secondItem="Igu-aT-jnN" secondAttribute="topMargin" constant="8" id="kd7-JB-KHe"/>
+                                                <constraint firstAttribute="bottom" secondItem="eb2-Wu-GgY" secondAttribute="bottom" constant="27" id="vvY-BR-8wL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkBox" destination="eb2-Wu-GgY" id="huJ-el-Kuo"/>
                                             <outlet property="stepDateLabel" destination="MAG-nx-PQv" id="d2r-lp-Oam"/>
                                             <outlet property="stepNameLabel" destination="2KY-7a-tz4" id="8x9-P2-K63"/>
                                         </connections>
@@ -289,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ot2-jT-4Zu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2796" y="-205.54722638680661"/>
+            <point key="canvasLocation" x="2795.625" y="-205.98591549295776"/>
         </scene>
         <!--Create Course Work Step View Controller-->
         <scene sceneID="xdl-IS-HQD">
@@ -408,14 +429,14 @@
             <objects>
                 <viewController storyboardIdentifier="detailWorkStepVC" id="teh-ug-kFH" customClass="DetailWorkStepViewController" customModule="Curator_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BH5-nH-qZ8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="599"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seT-RK-VWH">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="579"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlW-vE-PNZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="579"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3L-Jd-X8c">
                                                 <rect key="frame" x="8" y="16" width="78" height="21"/>
@@ -524,17 +545,45 @@
                                     <constraint firstItem="rlW-vE-PNZ" firstAttribute="height" secondItem="seT-RK-VWH" secondAttribute="height" priority="250" id="gGo-i0-9DD"/>
                                 </constraints>
                             </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVM-QF-1da" userLabel="Empty State Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWr-qA-e4e" userLabel="Empty State View" customClass="EmptyStateView" customModule="Curator_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sWr-qA-e4e" firstAttribute="top" secondItem="J3x-cx-Dkr" secondAttribute="top" id="Bib-NJ-b1p"/>
+                                    <constraint firstItem="J3x-cx-Dkr" firstAttribute="trailing" secondItem="sWr-qA-e4e" secondAttribute="trailing" id="IYc-Ui-PuO"/>
+                                    <constraint firstItem="sWr-qA-e4e" firstAttribute="leading" secondItem="J3x-cx-Dkr" secondAttribute="leading" id="vLQ-5C-31c"/>
+                                    <constraint firstItem="J3x-cx-Dkr" firstAttribute="bottom" secondItem="sWr-qA-e4e" secondAttribute="bottom" id="zfl-MY-4D1"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="J3x-cx-Dkr"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ORG-sM-jXh" firstAttribute="trailing" secondItem="seT-RK-VWH" secondAttribute="trailing" id="0rJ-8F-UVL"/>
+                            <constraint firstItem="nVM-QF-1da" firstAttribute="bottom" secondItem="ORG-sM-jXh" secondAttribute="bottom" id="ZqB-46-dqz"/>
                             <constraint firstItem="seT-RK-VWH" firstAttribute="top" secondItem="ORG-sM-jXh" secondAttribute="top" id="awi-Ht-TGu"/>
+                            <constraint firstItem="nVM-QF-1da" firstAttribute="trailing" secondItem="ORG-sM-jXh" secondAttribute="trailing" id="erH-aQ-NP1"/>
+                            <constraint firstItem="nVM-QF-1da" firstAttribute="leading" secondItem="ORG-sM-jXh" secondAttribute="leading" id="gIS-kP-Zsb"/>
                             <constraint firstItem="ORG-sM-jXh" firstAttribute="bottom" secondItem="seT-RK-VWH" secondAttribute="bottom" id="noD-lw-ZJC"/>
                             <constraint firstItem="seT-RK-VWH" firstAttribute="leading" secondItem="ORG-sM-jXh" secondAttribute="leading" id="tla-Cl-v8S"/>
+                            <constraint firstItem="nVM-QF-1da" firstAttribute="top" secondItem="BH5-nH-qZ8" secondAttribute="top" id="vVO-d8-EyQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ORG-sM-jXh"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="nVM-QF-1da"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <size key="freeformSize" width="320" height="599"/>
                     <connections>
+                        <outlet property="emptyStateContainerView" destination="nVM-QF-1da" id="5qP-lK-B0v"/>
+                        <outlet property="emptyStateView" destination="sWr-qA-e4e" id="sz9-sM-qpN"/>
                         <outlet property="stepDescriptionTextView" destination="xR8-gv-LhC" id="Zyo-IQ-lqc"/>
                         <outlet property="stepEndDateTextField" destination="zdZ-3i-zf5" id="CMJ-wF-VBI"/>
                         <outlet property="stepMaterialsTextView" destination="Yvs-Kh-ohP" id="Yrm-wC-BK4"/>
@@ -544,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ldj-EJ-8Ou" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4317.6000000000004" y="-206.44677661169416"/>
+            <point key="canvasLocation" x="4316" y="-223"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="27X-IM-xwZ">

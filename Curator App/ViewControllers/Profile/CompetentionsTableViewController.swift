@@ -101,8 +101,6 @@ class CompetentionsTableViewController: UIViewController {
         self.showLoadingState()
 
         MoyaServices.skillsProvider.request(.getCuratorSkills(MoyaServices.currentUserId)) { (result) in
-            
-            
             switch result {
             case .success(let response):
                 self.skills = try! response.map([Skill].self)

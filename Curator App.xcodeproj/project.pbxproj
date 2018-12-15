@@ -9,11 +9,19 @@
 /* Begin PBXBuildFile section */
 		86524F15A3EFDE36A6D583CC /* Pods_Curator_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9034EDC0FEDB8C92EBBB52 /* Pods_Curator_App.framework */; };
 		9A0FBA0921BD588500748346 /* MoyaProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0FBA0821BD588500748346 /* MoyaProfileService.swift */; };
-		9A20253A21ABEA7800BC8F87 /* MoyaTestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A20253921ABEA7800BC8F87 /* MoyaTestService.swift */; };
 		9A23E64D21ADE8390015B779 /* CreateCourseWorkStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E64C21ADE8390015B779 /* CreateCourseWorkStepViewController.swift */; };
 		9A23E64F21ADF1700015B779 /* DetailWorkStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E64E21ADF1700015B779 /* DetailWorkStepViewController.swift */; };
 		9A455D87219237B6009F160A /* ThemeSuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A455D86219237B6009F160A /* ThemeSuggestionViewController.swift */; };
 		9A455D8921923B67009F160A /* SuggestionThemeCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A455D8821923B67009F160A /* SuggestionThemeCommentTableViewCell.swift */; };
+		9A553D7921C3AB2B0054609D /* Curator_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D7821C3AB2B0054609D /* Curator_AppUITests.swift */; };
+		9A553D8321C3AC5C0054609D /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D8221C3AC5C0054609D /* AppManager.swift */; };
+		9A553D8621C3AD260054609D /* HelperBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D8521C3AD260054609D /* HelperBase.swift */; };
+		9A553D8821C3AD360054609D /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D8721C3AD360054609D /* LoginHelper.swift */; };
+		9A553D8A21C3AE370054609D /* TestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D8921C3AE370054609D /* TestBase.swift */; };
+		9A553D8F21C3AEE60054609D /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D8E21C3AEE60054609D /* UserData.swift */; };
+		9A553D9221C3FB550054609D /* MoyaSubjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D9121C3FB550054609D /* MoyaSubjectService.swift */; };
+		9A553D9421C43A750054609D /* MoyaStudentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D9321C43A750054609D /* MoyaStudentService.swift */; };
+		9A553D9621C55B100054609D /* SuggestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D9521C55B100054609D /* SuggestionModel.swift */; };
 		9A63FE9E2175D86100D74116 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63FE9D2175D86100D74116 /* ProfileViewController.swift */; };
 		9A63FEAA21767D5500D74116 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A63FEA921767D5500D74116 /* Profile.storyboard */; };
 		9A63FEAD2177285F00D74116 /* AboutMyselfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63FEAC2177285F00D74116 /* AboutMyselfViewController.swift */; };
@@ -70,6 +78,8 @@
 		9A815EC82173CC440042E293 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A815EC72173CC440042E293 /* Token.swift */; };
 		9A815ECC2173DE160042E293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A815ECB2173DE160042E293 /* Main.storyboard */; };
 		9A815ECE2173DE810042E293 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A815ECD2173DE810042E293 /* MainTabBarController.swift */; };
+		9A91755921C1A0A80033D056 /* CourseWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91755821C1A0A80033D056 /* CourseWork.swift */; };
+		9A91755C21C1AE210033D056 /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A91755B21C1AE210033D056 /* DateService.swift */; };
 		9A9C22EB21BEB12200F914E6 /* MoyaLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22EA21BEB12200F914E6 /* MoyaLoginService.swift */; };
 		9A9C22ED21BEB8B900F914E6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22EC21BEB8B900F914E6 /* LoginModel.swift */; };
 		9A9C22EF21BEBD2500F914E6 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C22EE21BEBD2500F914E6 /* Skill.swift */; };
@@ -104,15 +114,35 @@
 		9AFC3A0C21899BC20021E57D /* EditCompetitionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFC3A0B21899BC20021E57D /* EditCompetitionTableViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9A553D7B21C3AB2B0054609D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A7DC86721728DF900F8B884 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A7DC86E21728DF900F8B884;
+			remoteInfo = "Curator App";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3C9034EDC0FEDB8C92EBBB52 /* Pods_Curator_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Curator_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F153273B2FFE105DFF06EDC /* Pods-Curator App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curator App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Curator App/Pods-Curator App.release.xcconfig"; sourceTree = "<group>"; };
 		9A0FBA0821BD588500748346 /* MoyaProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaProfileService.swift; sourceTree = "<group>"; };
-		9A20253921ABEA7800BC8F87 /* MoyaTestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaTestService.swift; sourceTree = "<group>"; };
 		9A23E64C21ADE8390015B779 /* CreateCourseWorkStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseWorkStepViewController.swift; sourceTree = "<group>"; };
 		9A23E64E21ADF1700015B779 /* DetailWorkStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkStepViewController.swift; sourceTree = "<group>"; };
 		9A455D86219237B6009F160A /* ThemeSuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSuggestionViewController.swift; sourceTree = "<group>"; };
 		9A455D8821923B67009F160A /* SuggestionThemeCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionThemeCommentTableViewCell.swift; sourceTree = "<group>"; };
+		9A553D7621C3AB2B0054609D /* Curator AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Curator AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A553D7821C3AB2B0054609D /* Curator_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curator_AppUITests.swift; sourceTree = "<group>"; };
+		9A553D7A21C3AB2B0054609D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A553D8221C3AC5C0054609D /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		9A553D8521C3AD260054609D /* HelperBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperBase.swift; sourceTree = "<group>"; };
+		9A553D8721C3AD360054609D /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
+		9A553D8921C3AE370054609D /* TestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBase.swift; sourceTree = "<group>"; };
+		9A553D8E21C3AEE60054609D /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		9A553D9121C3FB550054609D /* MoyaSubjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaSubjectService.swift; sourceTree = "<group>"; };
+		9A553D9321C43A750054609D /* MoyaStudentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaStudentService.swift; sourceTree = "<group>"; };
+		9A553D9521C55B100054609D /* SuggestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionModel.swift; sourceTree = "<group>"; };
 		9A63FE9D2175D86100D74116 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9A63FEA921767D5500D74116 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9A63FEAC2177285F00D74116 /* AboutMyselfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMyselfViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +201,8 @@
 		9A815EC72173CC440042E293 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		9A815ECB2173DE160042E293 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9A815ECD2173DE810042E293 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		9A91755821C1A0A80033D056 /* CourseWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseWork.swift; sourceTree = "<group>"; };
+		9A91755B21C1AE210033D056 /* DateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateService.swift; sourceTree = "<group>"; };
 		9A9C22EA21BEB12200F914E6 /* MoyaLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoginService.swift; sourceTree = "<group>"; };
 		9A9C22EC21BEB8B900F914E6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		9A9C22EE21BEBD2500F914E6 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
@@ -207,6 +239,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9A553D7321C3AB2B0054609D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A7DC86C21728DF900F8B884 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,15 +277,70 @@
 		9A20253821ABEA6C00BC8F87 /* MOYA */ = {
 			isa = PBXGroup;
 			children = (
-				9A20253921ABEA7800BC8F87 /* MoyaTestService.swift */,
 				9A0FBA0821BD588500748346 /* MoyaProfileService.swift */,
 				9A9C22EA21BEB12200F914E6 /* MoyaLoginService.swift */,
 				9A9C22F221BEF17300F914E6 /* MoyaThemesService.swift */,
 				9A9C22F621BEFBF000F914E6 /* MoyaWorksService.swift */,
 				9A9C22FC21C05C8B00F914E6 /* MoyaSkillService.swift */,
+				9A553D9121C3FB550054609D /* MoyaSubjectService.swift */,
+				9A553D9321C43A750054609D /* MoyaStudentService.swift */,
 				9A9C22F021BEF12300F914E6 /* MoyaServices.swift */,
 			);
 			path = MOYA;
+			sourceTree = "<group>";
+		};
+		9A553D7721C3AB2B0054609D /* Curator AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9A553D9021C3AEFE0054609D /* Tests */,
+				9A553D8B21C3AEB90054609D /* Models */,
+				9A553D8421C3AD0D0054609D /* Helpers */,
+				9A553D8121C3AC520054609D /* Manager */,
+				9A553D8021C3AC350054609D /* Base */,
+				9A553D7821C3AB2B0054609D /* Curator_AppUITests.swift */,
+				9A553D7A21C3AB2B0054609D /* Info.plist */,
+			);
+			path = "Curator AppUITests";
+			sourceTree = "<group>";
+		};
+		9A553D8021C3AC350054609D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9A553D8921C3AE370054609D /* TestBase.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9A553D8121C3AC520054609D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9A553D8221C3AC5C0054609D /* AppManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		9A553D8421C3AD0D0054609D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9A553D8521C3AD260054609D /* HelperBase.swift */,
+				9A553D8721C3AD360054609D /* LoginHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9A553D8B21C3AEB90054609D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A553D8E21C3AEE60054609D /* UserData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9A553D9021C3AEFE0054609D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		9A63FE9C2175D85200D74116 /* Profile */ = {
@@ -309,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				9A7DC87121728DF900F8B884 /* Curator App */,
+				9A553D7721C3AB2B0054609D /* Curator AppUITests */,
 				9A7DC87021728DF900F8B884 /* Products */,
 				1DDBE2D662C76673FC62534D /* Pods */,
 				5D6A9A5A97B9CB21CDABB1A8 /* Frameworks */,
@@ -319,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				9A7DC86F21728DF900F8B884 /* Curator App.app */,
+				9A553D7621C3AB2B0054609D /* Curator AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -374,6 +470,7 @@
 		9A815A692173C6970042E293 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9A91755A21C1AE090033D056 /* Date */,
 				9A9C230921C14DEC00F914E6 /* Views */,
 				9A9C230421C14D8300F914E6 /* Extensions */,
 				9A815CAD2173CAD50042E293 /* Log.swift */,
@@ -513,6 +610,8 @@
 				9A9C22EE21BEBD2500F914E6 /* Skill.swift */,
 				9A9C22F821BFB1AA00F914E6 /* StepModel.swift */,
 				9A9C22FA21BFB33500F914E6 /* ThemeModel.swift */,
+				9A91755821C1A0A80033D056 /* CourseWork.swift */,
+				9A553D9521C55B100054609D /* SuggestionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -532,6 +631,14 @@
 				9A815ECB2173DE160042E293 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9A91755A21C1AE090033D056 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				9A91755B21C1AE210033D056 /* DateService.swift */,
+			);
+			path = Date;
 			sourceTree = "<group>";
 		};
 		9A9C22FE21C14BC800F914E6 /* View */ = {
@@ -638,6 +745,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9A553D7521C3AB2B0054609D /* Curator AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A553D7F21C3AB2B0054609D /* Build configuration list for PBXNativeTarget "Curator AppUITests" */;
+			buildPhases = (
+				9A553D7221C3AB2B0054609D /* Sources */,
+				9A553D7321C3AB2B0054609D /* Frameworks */,
+				9A553D7421C3AB2B0054609D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A553D7C21C3AB2B0054609D /* PBXTargetDependency */,
+			);
+			name = "Curator AppUITests";
+			productName = "Curator AppUITests";
+			productReference = 9A553D7621C3AB2B0054609D /* Curator AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		9A7DC86E21728DF900F8B884 /* Curator App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A7DC88121728DFB00F8B884 /* Build configuration list for PBXNativeTarget "Curator App" */;
@@ -664,10 +789,14 @@
 		9A7DC86721728DF900F8B884 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "ITIS Mobile Lab";
 				TargetAttributes = {
+					9A553D7521C3AB2B0054609D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 9A7DC86E21728DF900F8B884;
+					};
 					9A7DC86E21728DF900F8B884 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -687,11 +816,19 @@
 			projectRoot = "";
 			targets = (
 				9A7DC86E21728DF900F8B884 /* Curator App */,
+				9A553D7521C3AB2B0054609D /* Curator AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9A553D7421C3AB2B0054609D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A7DC86D21728DF900F8B884 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -720,6 +857,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Curator App/Pods-Curator App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -732,6 +870,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMCheckBox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -787,6 +926,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9A553D7221C3AB2B0054609D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A553D8F21C3AEE60054609D /* UserData.swift in Sources */,
+				9A553D7921C3AB2B0054609D /* Curator_AppUITests.swift in Sources */,
+				9A553D8321C3AC5C0054609D /* AppManager.swift in Sources */,
+				9A553D8821C3AD360054609D /* LoginHelper.swift in Sources */,
+				9A553D8621C3AD260054609D /* HelperBase.swift in Sources */,
+				9A553D8A21C3AE370054609D /* TestBase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A7DC86B21728DF900F8B884 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -794,6 +946,7 @@
 				9A9C22EB21BEB12200F914E6 /* MoyaLoginService.swift in Sources */,
 				9A815EBF2173CBDE0042E293 /* AuthorizationExtractor.swift in Sources */,
 				9A815A832173C6A00042E293 /* WebRequest.swift in Sources */,
+				9A91755921C1A0A80033D056 /* CourseWork.swift in Sources */,
 				9A815A872173C6A00042E293 /* WebRequestAdapter.swift in Sources */,
 				9A6E9A0F217FC57D003D2565 /* Profile.swift in Sources */,
 				9A815A812173C6A00042E293 /* AlamofireWebService.swift in Sources */,
@@ -847,8 +1000,9 @@
 				9AEED50D21A49EA000A9FC03 /* CourseWorkTableViewCell.swift in Sources */,
 				9A63FE9E2175D86100D74116 /* ProfileViewController.swift in Sources */,
 				9AEED50421A1F28E00A9FC03 /* FinalThemeViewController.swift in Sources */,
+				9A553D9621C55B100054609D /* SuggestionModel.swift in Sources */,
 				9A815A7E2173C6A00042E293 /* WebMultiPartDataItem.swift in Sources */,
-				9A20253A21ABEA7800BC8F87 /* MoyaTestService.swift in Sources */,
+				9A91755C21C1AE210033D056 /* DateService.swift in Sources */,
 				9AFC39F7218629AD0021E57D /* StudentsTableViewController.swift in Sources */,
 				9A9C230021C14BD700F914E6 /* EmptyStateView.swift in Sources */,
 				9A815EB62173CBB10042E293 /* DefaultTokensCoder.swift in Sources */,
@@ -857,6 +1011,7 @@
 				9A815CA92173C99B0042E293 /* LoggedTableViewController.swift in Sources */,
 				9A815CAA2173C99B0042E293 /* LoggedViewController.swift in Sources */,
 				9A7DC87321728DF900F8B884 /* AppDelegate.swift in Sources */,
+				9A553D9221C3FB550054609D /* MoyaSubjectService.swift in Sources */,
 				9AFC3A082189117D0021E57D /* ThemeTableViewCell.swift in Sources */,
 				9AEED50621A1FDC400A9FC03 /* EditThemeViewController.swift in Sources */,
 				9A63FEAF21772D1700D74116 /* CompetitionsViewController.swift in Sources */,
@@ -869,6 +1024,7 @@
 				9A9C22F921BFB1AA00F914E6 /* StepModel.swift in Sources */,
 				9A815CAB2173C99B0042E293 /* LoggedNavigationController.swift in Sources */,
 				9A815A852173C6A00042E293 /* WebError.swift in Sources */,
+				9A553D9421C43A750054609D /* MoyaStudentService.swift in Sources */,
 				9A815A862173C6A00042E293 /* WebHandler.swift in Sources */,
 				9AFC3A002188FEF40021E57D /* SubjectsTableViewController.swift in Sources */,
 				9A6E9A08217FBF2A003D2565 /* CourseWorkTableViewController.swift in Sources */,
@@ -881,6 +1037,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A553D7C21C3AB2B0054609D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A7DC86E21728DF900F8B884 /* Curator App */;
+			targetProxy = 9A553D7B21C3AB2B0054609D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9A7DC87621728DF900F8B884 /* Login.storyboard */ = {
@@ -902,6 +1066,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9A553D7D21C3AB2B0054609D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4RKR6MD56N;
+				INFOPLIST_FILE = "Curator AppUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blvvvck.RxLearning.Curator-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Curator App";
+			};
+			name = Debug;
+		};
+		9A553D7E21C3AB2B0054609D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4RKR6MD56N;
+				INFOPLIST_FILE = "Curator AppUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blvvvck.RxLearning.Curator-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Curator App";
+			};
+			name = Release;
+		};
 		9A7DC87F21728DFB00F8B884 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1070,6 +1274,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9A553D7F21C3AB2B0054609D /* Build configuration list for PBXNativeTarget "Curator AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A553D7D21C3AB2B0054609D /* Debug */,
+				9A553D7E21C3AB2B0054609D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9A7DC86A21728DF900F8B884 /* Build configuration list for PBXProject "Curator App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

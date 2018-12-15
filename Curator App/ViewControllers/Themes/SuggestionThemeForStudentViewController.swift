@@ -30,12 +30,16 @@ class SuggestionThemeForStudentViewController: UIViewController {
     
     var controllerType: SuggestionThemeForStudentControllerType = .final
     
+    var selectedSubject: SubjectModel!
+    var selectedSkills: [Skill] = []
+    
     // MARK: - Instance Methods
     
     @IBAction func onSelectSubjectTouchUpInside(_ sender: Any) {
         let subjectsVC = self.storyboard?.instantiateViewController(withIdentifier: "SubjectsVC") as! SubjectsTableViewController
         subjectsVC.onCellTouchUpInside = { [unowned self] selectedSubject in
-            self.selectedSubjectLabel.text = selectedSubject
+            self.selectedSubject = selectedSubject
+            self.selectedSubjectLabel.text = self.selectedSubject.name
         }
         
         self.present(subjectsVC, animated: true, completion: nil)
@@ -58,8 +62,20 @@ class SuggestionThemeForStudentViewController: UIViewController {
         let competitionVC = storyboard.instantiateViewController(withIdentifier: "EditCompetitionVC") as! EditCompetitionTableViewController
         competitionVC.type = .addTheme
         
-        competitionVC.onThemeSelected = { [unowned self] title, level in
-            self.competitonsLabel.text = "\(title) Уровень: \(level)"
+        competitionVC.onThemeSelected = { [unowned self] selectedSkills in
+            self.selectedSkills = selectedSkills
+            if selectedSkills.count > 0 {
+                var skills = ""
+                selectedSkills.forEach( {
+                    
+                    skills.append(" \($0.name!),")
+                    
+                })
+                skills.removeLast()
+                self.competitonsLabel.text = skills
+            } else {
+                self.competitonsLabel.text = "Не выбрано"
+            }
         }
         
         self.navigationController?.pushViewController(competitionVC, animated: true)
@@ -74,8 +90,19 @@ class SuggestionThemeForStudentViewController: UIViewController {
     private func onAddButtonTouchUpInside() {
         switch controllerType {
         case .final:
-            let finalThemeVC = self.storyboard?.instantiateViewController(withIdentifier: "finalThemeVC")
-            self.navigationController?.pushViewController(finalThemeVC!, animated: true)
+            var themeModel: ThemeModel = ThemeModel(id: 1, title: self.themeNameTextField.text!, description: self.themeDescriptionTextField.text!, date_creation: "", date_acceptance: "", curator: Profile(id: 1, name: "", last_name: "", patronymic: "", description: "", skills: nil), student: nil, subject: self.selectedSubject, skills: self.selectedSkills)
+            
+            themeModel.title = self.themeNameTextField.text!
+            themeModel.description = self.themeDescriptionTextField.text!
+            themeModel.skills = self.selectedSkills
+            themeModel.subject = self.selectedSubject
+            themeModel.curator.id = MoyaServices.currentUserId
+            
+            let finalThemeVC = self.storyboard?.instantiateViewController(withIdentifier: "finalThemeVC") as! FinalThemeViewController
+            
+            finalThemeVC.controllerType = .finalTheme
+            finalThemeVC.apply(themeModel: themeModel)
+            self.navigationController?.pushViewController(finalThemeVC, animated: true)
             
         case .edit:
             self.navigationController?.popViewController(animated: true)

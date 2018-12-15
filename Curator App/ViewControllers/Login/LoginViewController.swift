@@ -29,10 +29,10 @@ class LoginViewController: UIViewController {
             switch result {
             case let .success(moyaResponse):
                 var loginModel: LoginModel = try! moyaResponse.map(LoginModel.self)
-                
+
                 UserDefaults.standard.set(loginModel.token, forKey: "token")
                 UserDefaults.standard.set(loginModel.user_id, forKey: "user_id")
-                
+
                 if !loginModel.token.isEmpty {
                     let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
                     self.present(mainStoryboard.instantiateInitialViewController()!, animated: true, completion: nil)
@@ -41,11 +41,10 @@ class LoginViewController: UIViewController {
                 print("FAILURE LOGIN")
             }
         }
-//        firstly {
-//            Services.authorizationService.authorizate(with: login, and: password)
-//        }.done { (isAuthorizate) in
-//            print("Complete authorization")
-//
+
+//        if login == "login" && password == "123" {
+//            let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+//            self.present(mainStoryboard.instantiateInitialViewController()!, animated: true, completion: nil)
 //        }
     }
     

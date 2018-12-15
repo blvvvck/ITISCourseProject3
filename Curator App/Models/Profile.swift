@@ -10,9 +10,9 @@ import Foundation
 
 struct Profile: Codable {
     var id: Int
-    var name: String?
-    var last_name: String?
-    var patronymic: String?
-    var description: String?
+    var name: String
+    var last_name: String
+    var patronymic: String
+    var description: String
     var skills: [Skill]?
 }

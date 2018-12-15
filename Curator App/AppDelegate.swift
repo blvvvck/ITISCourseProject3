@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = UIStoryboard.init(name: "Login", bundle: nil).instantiateInitialViewController()
         }
         
+//        window?.rootViewController = UIStoryboard.init(name: "Login", bundle: nil).instantiateInitialViewController()
+        
         UINavigationBar.appearance().barTintColor = .red
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

@@ -30,6 +30,10 @@ class CourseWorkTableViewController: UIViewController {
     
     @IBOutlet weak var emptyStateView: EmptyStateView!
     
+    // MARK: -
+    
+    var courseWorks: [CourseWork] = []
+    
     // MARK: - Empty State
     
     fileprivate func showEmptyState(image: UIImage? = nil, title: String, message: String, action: EmptyStateAction? = nil) {
@@ -89,8 +93,8 @@ class CourseWorkTableViewController: UIViewController {
     // MARK: - Instance Methods
     
     fileprivate func config(cell: CourseWorkTableViewCell, for indexPath: IndexPath) {
-        cell.corseWorkNameLabel.text = "iOS"
-        cell.studentNameLabel.text = "Ринат"
+        cell.corseWorkNameLabel.text = self.courseWorks[indexPath.row].theme.description
+        cell.studentNameLabel.text = "\(self.courseWorks[indexPath.row].theme.student!.last_name) \(self.courseWorks[indexPath.row].theme.student!.name) \(self.courseWorks[indexPath.row].theme.student!.patronymic)"
     }
     
     fileprivate func loadCourseWorks() {
@@ -100,14 +104,14 @@ class CourseWorkTableViewController: UIViewController {
         MoyaServices.worksProvider.request(.getCourseWorks(MoyaServices.currentUserId)) { (result) in
             switch result {
             case .success(let moyaResponse):
-                print("WORKS SUCCESS")
-                
+                let courseWorks = try! moyaResponse.map([CourseWork].self)
+                self.courseWorks = courseWorks
+                self.tableView.reloadData()
                 self.hideEmptyState()
             case .failure(let error):
                 print("WORKS ERROR")
             }
         }
-        
     }
     
     // MARK: - UIViewController
@@ -117,22 +121,6 @@ class CourseWorkTableViewController: UIViewController {
         
         self.tabBarItem.title = "Курсовые"
         self.title = "Курсовые"
-        
-        
-//        let provider = MoyaProvider<MoyaTestService>()
-//
-//        provider.request(.getPosts) { (result) in
-//            switch result {
-//            case let .success(moyaResponse):
-//                let encodedData = try? JSONDecoder().decode([Test].self, from: moyaResponse.data)
-//                let en = try? moyaResponse.map([Test].self)
-//            default:
-//                return
-//            }
-//
-//
-//        }
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -149,7 +137,7 @@ extension CourseWorkTableViewController: UITableViewDataSource {
     // MARK: - Instance Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.courseWorks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -172,16 +160,10 @@ extension CourseWorkTableViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailCourseWorkVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailCourseWorkVC")
-        self.navigationController?.pushViewController(detailCourseWorkVC!, animated: true)
+        let detailCourseWorkVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailCourseWorkVC") as! DetailCourseWorkViewController
+       
+        detailCourseWorkVC.apply(courseWork: self.courseWorks[indexPath.row])
+        
+        self.navigationController?.pushViewController(detailCourseWorkVC, animated: true)
     }
-    
-}
-
-
-struct Test: Codable {
-    var userId: Int?
-    var id: Int?
-    var title: String?
-    var body: String?
 }

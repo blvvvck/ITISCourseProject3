@@ -92,6 +92,9 @@ class ProfileViewController: UIViewController {
         self.tabBarController?.selectedIndex = 2
     }
     
+    @IBAction func onExitButtonTouchUpInside(_ sender: Any) { let mainStoryboard = UIStoryboard.init(name: "Login", bundle: nil)
+        self.present(mainStoryboard.instantiateInitialViewController()!, animated: true, completion: nil)
+    }
     // MARK: -
     
     fileprivate func loadProfileInfo() {

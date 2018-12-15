@@ -14,6 +14,7 @@ target 'Curator App' do
   pod 'Crashlytics'
   pod 'Moya'
  pod 'IQKeyboardManagerSwift'
+pod 'BEMCheckBox'
 
 
 end

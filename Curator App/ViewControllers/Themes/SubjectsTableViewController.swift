@@ -23,14 +23,92 @@ class SubjectsTableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let subjectList = ["iOS 1", "iOS 2", "iOS 3", "iOS 4", "iOS 5", "iOS 6", "iOS 7", "iOS 8", "iOS 9", "iOS 10"]
+    @IBOutlet weak var emptyStateContainerView: UIView!
+    @IBOutlet weak var emptyStateView: EmptyStateView!
     
-    var onCellTouchUpInside: ((_ selectedSubject: String) -> Void)?
+    var subjectList: [SubjectModel] = []
+    
+    var onCellTouchUpInside: ((_ selectedSubject: SubjectModel) -> Void)?
+    
+    // MARK: - Empty State
+    
+    fileprivate func showEmptyState(image: UIImage? = nil, title: String, message: String, action: EmptyStateAction? = nil) {
+        self.emptyStateView.hideActivityIndicator()
+        
+        self.emptyStateView.image = image
+        self.emptyStateView.title = title
+        self.emptyStateView.message = message
+        self.emptyStateView.action = action
+        
+        self.emptyStateContainerView.isHidden = false
+    }
+    
+    fileprivate func hideEmptyState() {
+        self.emptyStateContainerView.isHidden = true
+    }
+    
+    fileprivate func showNoDataState() {
+        self.showEmptyState(image: #imageLiteral(resourceName: "NoDataStateIcon.pdf"),
+                            title: "No data for display",
+                            message: "We are already working on correcting this error.")
+    }
+    
+    fileprivate func showLoadingState() {
+        if self.emptyStateContainerView.isHidden {
+            self.showEmptyState(title: "Loading...",
+                                message: "We are loading profile information. Please wait a bit.")
+        }
+        
+        self.emptyStateView.showActivityIndicator()
+    }
+    
+    fileprivate func handle(stateError error: Error, retryHandler: (() -> Void)? = nil) {
+        //        let action = EmptyStateAction(title: "Try again".localized(), onClicked: {
+        //            retryHandler?()
+        //        })
+        //
+        //        switch error as? WebError {
+        //        case .some(.connection), .some(.timeOut):
+        //            if self.presets.isEmpty {
+        //                self.showEmptyState(image: #imageLiteral(resourceName: "NoConnectionStateIcon.pdf"),
+        //                                    title: "No internet connection".localized(),
+        //                                    message: "We couldn’t connect to the server. Please check your internet connection and try again.".localized(),
+        //                                    action: action)
+        //            }
+        //
+        //        default:
+        //            if self.presets.isEmpty {
+        //                self.showEmptyState(image: #imageLiteral(resourceName: "ErrorStateIcon.pdf"),
+        //                                    title: "Ooops! Something went wrong".localized(),
+        //                                    message: "We are already working on correcting this error.".localized(),
+        //                                    action: action)
+        //            }
+        //        }
+    }
     
     // MARK: - Instance Methods
     
     fileprivate func configure(cell: UITableViewCell, for indexPath: IndexPath) {
-        cell.textLabel?.text = self.subjectList[indexPath.row]
+        cell.textLabel?.text = self.subjectList[indexPath.row].name
+    }
+    
+    fileprivate func loadSubjects() {
+        self.showLoadingState()
+        
+        MoyaServices.subjectProvider.request(.getSubjects) { (result) in
+            switch result {
+            case .success(let response):
+                let subjectModel = try! response.map([SubjectModel].self)
+                self.subjectList = subjectModel
+                
+                self.tableView.reloadData()
+                
+                self.hideEmptyState()
+            
+            case .failure(let error):
+                print("GET SUBJECTS ERROR")
+            }
+        }
     }
     
     // MARK: - UIViewController
@@ -41,6 +119,11 @@ class SubjectsTableViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.loadSubjects()
+    }
 
 }
 
@@ -51,7 +134,7 @@ extension SubjectsTableViewController: UITableViewDataSource {
     // MARK: - Instance Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.subjectList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
