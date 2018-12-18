@@ -11,14 +11,7 @@ import XCTest
 class Curator_AppUITests: TestBase {
 
 
-    func testExample() {
-        
-//        let userData = UserData(login: "login", password: "123")
-//
-//        self.appManager.loginHelper.login(with: userData)
-//
-//        assert(self.appManager.loginHelper.isLogin())
-        
+    func testExample() {        
         self.appManager.loginHelper.logout()
         
         assert(self.appManager.loginHelper.isLogout())

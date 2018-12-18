@@ -15,6 +15,9 @@ enum MoyaWorksService {
     case updateWorkStep(Int, Int, StepModel)
     case getWorkStep(Int, Int, Int)
     case addWorkStep(Int, Int, StepModel)
+    case getStepComments(Int, Int, Int)
+    case getStepMaterials(Int, Int, Int)
+    case addStepMaterial(Int, Int, Int, MaterialModel)
 }
 
 extension MoyaWorksService: TargetType {
@@ -38,19 +41,28 @@ extension MoyaWorksService: TargetType {
             
         case .addWorkStep(let curatorId, let workId, _):
             return "curators/\(curatorId)/works/\(workId)/steps"
+            
+        case .getStepComments(let curatorId, let workId, let stepId):
+            return "curators/\(curatorId)/works/\(workId)/steps/\(stepId)/comments"
+            
+        case .getStepMaterials(let curatorId, let workId, let stepId):
+            return "curators/\(curatorId)/works/\(workId)/steps/\(stepId)/materials"
+            
+        case .addStepMaterial(let curatorId, let workId, let stepId, _):
+            return "curators/\(curatorId)/works/\(workId)/steps/\(stepId)/materials"
         }
         
     }
     
     var method: Moya.Method {
         switch self {
-        case .getCourseWorks,.getWorkSteps,.getWorkStep:
+        case .getCourseWorks,.getWorkSteps,.getWorkStep, .getStepComments, .getStepMaterials:
             return .get
             
         case .updateWorkStep:
             return .put
             
-        case .addWorkStep:
+        case .addWorkStep, .addStepMaterial:
             return .post
         }
     }
@@ -61,7 +73,7 @@ extension MoyaWorksService: TargetType {
     
     var task: Task {
         switch self {
-        case .getCourseWorks, .getWorkSteps, .getWorkStep:
+        case .getCourseWorks, .getWorkSteps, .getWorkStep, .getStepComments, .getStepMaterials:
             return .requestPlain
             
         case .updateWorkStep(let curatorId, let workId, let stepModel):
@@ -81,6 +93,13 @@ extension MoyaWorksService: TargetType {
             parameters["date_start"] = DateService.shared.stringDateToServerFormat(from: stepModel.date_start)
             parameters["date_finish"] = DateService.shared.stringDateToServerFormat(from: stepModel.date_finish)
 //            parameters["status"] = stepModel.status.id
+            
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            
+        case .addStepMaterial(_, _, _, let materialModel):
+            var parameters = [String: Any]()
+            
+            parameters["content"] = materialModel.content
             
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }

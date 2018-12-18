@@ -18,6 +18,10 @@ class DetailWorkStepViewController: UIViewController {
         case add
     }
     
+    fileprivate enum Constants {
+        static let commentCellIdentifier = "stepCommentCellIdentifier"
+    }
+    
     
     // MARK: - Intance Properties
     
@@ -35,6 +39,7 @@ class DetailWorkStepViewController: UIViewController {
     
     @IBOutlet weak var emptyStateView: EmptyStateView!
     
+    @IBOutlet weak var commentsTableView: UITableView!
     // MARK: -
     
     var type: DetailWorkStepControllerType!
@@ -44,6 +49,7 @@ class DetailWorkStepViewController: UIViewController {
     
     var workStep: StepModel!
     var courseWork: CourseWork!
+    var comments: [CommentModel] = []
     
     // MARK: - Empty State
     
@@ -110,21 +116,21 @@ class DetailWorkStepViewController: UIViewController {
             self.stepStartDateTextField.isUserInteractionEnabled = false
             self.stepEndDateTextField.isUserInteractionEnabled = false
             self.stepDescriptionTextView.isUserInteractionEnabled = false
-            self.stepMaterialsTextView.isUserInteractionEnabled = false
+            //self.stepMaterialsTextView.isUserInteractionEnabled = false
             
         case .edit?:
             self.stepNameTextField.isUserInteractionEnabled = true
             self.stepStartDateTextField.isUserInteractionEnabled = true
             self.stepEndDateTextField.isUserInteractionEnabled = true
             self.stepDescriptionTextView.isUserInteractionEnabled = true
-            self.stepMaterialsTextView.isUserInteractionEnabled = true
+            //self.stepMaterialsTextView.isUserInteractionEnabled = true
             
         case .add?:
             self.stepNameTextField.isUserInteractionEnabled = true
             self.stepStartDateTextField.isUserInteractionEnabled = true
             self.stepEndDateTextField.isUserInteractionEnabled = true
             self.stepDescriptionTextView.isUserInteractionEnabled = true
-            self.stepMaterialsTextView.isUserInteractionEnabled = true
+            //self.stepMaterialsTextView.isUserInteractionEnabled = true
             
         default:
             return
@@ -235,6 +241,14 @@ class DetailWorkStepViewController: UIViewController {
         self.stepEndDateTextField.text = dateFormatter.string(from: datePicker.date)
     }
     
+    @IBAction func onMaterialsButtonTouchUpInside(_ sender: Any) {
+        let materialsVC = self.storyboard?.instantiateViewController(withIdentifier: "MaterialsVC") as! MaterialsTableViewController
+        materialsVC.work = self.courseWork
+        materialsVC.step = self.workStep
+        
+        self.navigationController?.pushViewController(materialsVC, animated: true)
+    }
+    
     func apply(workStep: StepModel, courseWork: CourseWork) {
         self.workStep = workStep
         self.courseWork = courseWork
@@ -253,14 +267,34 @@ class DetailWorkStepViewController: UIViewController {
                     self.stepEndDateTextField.text = DateService.shared.correctStringDate(from: self.workStep.date_finish)
                     self.stepDescriptionTextView.text = self.workStep.description
                     
-                    self.hideEmptyState()
+                    //self.hideEmptyState()
                 case .failure(let error):
                     print("GET WORK STEP ERROR")
                 }
             }
             
+            MoyaServices.worksProvider.request(.getStepComments(MoyaServices.currentUserId, self.courseWork.id, self.workStep.id)) { (result) in
+                switch result {
+                case .success(let response):
+                    print("GET STEP COMMENTS SUCCESS")
+                    print(String(data: response.data, encoding: .utf8))
+                    let comments = try! response.map([CommentModel].self)
+                    self.comments = comments
+                    
+                    self.commentsTableView.reloadData()
+                    
+                case .failure(let error):
+                    print("ERROR GET STEP COMMENTS")
+                }
+            }
+            
             
         }
+    }
+    
+    fileprivate func config(cell: StepCommentTableViewCell, for indexPath: IndexPath) {
+        cell.authorLabel.text = self.comments[indexPath.row].author_name
+        cell.commentLabel.text = self.comments[indexPath.row].content
     }
    
     // MARK: - UIViewController
@@ -286,5 +320,35 @@ class DetailWorkStepViewController: UIViewController {
         default:
             return
         }
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension DetailWorkStepViewController: UITableViewDataSource {
+    
+    // MARK: - Instance Methods
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.comments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.commentsTableView.dequeueReusableCell(withIdentifier: Constants.commentCellIdentifier, for: indexPath)
+        
+        self.config(cell: cell as! StepCommentTableViewCell, for: indexPath)
+        
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension DetailWorkStepViewController: UITableViewDelegate {
+    
+    // MARK: - Instance Properties
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 }

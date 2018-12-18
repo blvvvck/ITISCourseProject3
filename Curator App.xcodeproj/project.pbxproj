@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		86524F15A3EFDE36A6D583CC /* Pods_Curator_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9034EDC0FEDB8C92EBBB52 /* Pods_Curator_App.framework */; };
 		9A0FBA0921BD588500748346 /* MoyaProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0FBA0821BD588500748346 /* MoyaProfileService.swift */; };
+		9A133C2F21C82F85006DA32D /* MaterialsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A133C2E21C82F85006DA32D /* MaterialsTableViewController.swift */; };
+		9A133C3121C8308B006DA32D /* MaterialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A133C3021C8308B006DA32D /* MaterialModel.swift */; };
+		9A133C3321C8352D006DA32D /* AddMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A133C3221C8352D006DA32D /* AddMaterialViewController.swift */; };
 		9A23E64D21ADE8390015B779 /* CreateCourseWorkStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E64C21ADE8390015B779 /* CreateCourseWorkStepViewController.swift */; };
 		9A23E64F21ADF1700015B779 /* DetailWorkStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A23E64E21ADF1700015B779 /* DetailWorkStepViewController.swift */; };
 		9A455D87219237B6009F160A /* ThemeSuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A455D86219237B6009F160A /* ThemeSuggestionViewController.swift */; };
@@ -22,6 +25,8 @@
 		9A553D9221C3FB550054609D /* MoyaSubjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D9121C3FB550054609D /* MoyaSubjectService.swift */; };
 		9A553D9421C43A750054609D /* MoyaStudentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D9321C43A750054609D /* MoyaStudentService.swift */; };
 		9A553D9621C55B100054609D /* SuggestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D9521C55B100054609D /* SuggestionModel.swift */; };
+		9A553D9A21C5C60A0054609D /* StepCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D9921C5C60A0054609D /* StepCommentTableViewCell.swift */; };
+		9A553D9C21C5C9180054609D /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A553D9B21C5C9180054609D /* CommentModel.swift */; };
 		9A63FE9E2175D86100D74116 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63FE9D2175D86100D74116 /* ProfileViewController.swift */; };
 		9A63FEAA21767D5500D74116 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A63FEA921767D5500D74116 /* Profile.storyboard */; };
 		9A63FEAD2177285F00D74116 /* AboutMyselfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63FEAC2177285F00D74116 /* AboutMyselfViewController.swift */; };
@@ -128,6 +133,9 @@
 		3C9034EDC0FEDB8C92EBBB52 /* Pods_Curator_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Curator_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F153273B2FFE105DFF06EDC /* Pods-Curator App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curator App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Curator App/Pods-Curator App.release.xcconfig"; sourceTree = "<group>"; };
 		9A0FBA0821BD588500748346 /* MoyaProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaProfileService.swift; sourceTree = "<group>"; };
+		9A133C2E21C82F85006DA32D /* MaterialsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsTableViewController.swift; sourceTree = "<group>"; };
+		9A133C3021C8308B006DA32D /* MaterialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialModel.swift; sourceTree = "<group>"; };
+		9A133C3221C8352D006DA32D /* AddMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMaterialViewController.swift; sourceTree = "<group>"; };
 		9A23E64C21ADE8390015B779 /* CreateCourseWorkStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseWorkStepViewController.swift; sourceTree = "<group>"; };
 		9A23E64E21ADF1700015B779 /* DetailWorkStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkStepViewController.swift; sourceTree = "<group>"; };
 		9A455D86219237B6009F160A /* ThemeSuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSuggestionViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +151,8 @@
 		9A553D9121C3FB550054609D /* MoyaSubjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaSubjectService.swift; sourceTree = "<group>"; };
 		9A553D9321C43A750054609D /* MoyaStudentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaStudentService.swift; sourceTree = "<group>"; };
 		9A553D9521C55B100054609D /* SuggestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionModel.swift; sourceTree = "<group>"; };
+		9A553D9921C5C60A0054609D /* StepCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCommentTableViewCell.swift; sourceTree = "<group>"; };
+		9A553D9B21C5C9180054609D /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		9A63FE9D2175D86100D74116 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9A63FEA921767D5500D74116 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9A63FEAC2177285F00D74116 /* AboutMyselfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMyselfViewController.swift; sourceTree = "<group>"; };
@@ -376,6 +386,8 @@
 				9AEED51021A4A6D300A9FC03 /* ProgressViewController.swift */,
 				9A23E64C21ADE8390015B779 /* CreateCourseWorkStepViewController.swift */,
 				9A23E64E21ADF1700015B779 /* DetailWorkStepViewController.swift */,
+				9A133C2E21C82F85006DA32D /* MaterialsTableViewController.swift */,
+				9A133C3221C8352D006DA32D /* AddMaterialViewController.swift */,
 			);
 			path = CourseWork;
 			sourceTree = "<group>";
@@ -612,6 +624,8 @@
 				9A9C22FA21BFB33500F914E6 /* ThemeModel.swift */,
 				9A91755821C1A0A80033D056 /* CourseWork.swift */,
 				9A553D9521C55B100054609D /* SuggestionModel.swift */,
+				9A553D9B21C5C9180054609D /* CommentModel.swift */,
+				9A133C3021C8308B006DA32D /* MaterialModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -670,6 +684,7 @@
 			children = (
 				9AEED50C21A49EA000A9FC03 /* CourseWorkTableViewCell.swift */,
 				9AEED51221A4A81800A9FC03 /* ProgressTableViewCell.swift */,
+				9A553D9921C5C60A0054609D /* StepCommentTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -976,6 +991,7 @@
 				9A815A8D2173C6A00042E293 /* WebMultiPartItem.swift in Sources */,
 				9A815A67217369550042E293 /* LoginViewController.swift in Sources */,
 				9A815EC32173CC160042E293 /* Production.swift in Sources */,
+				9A553D9C21C5C9180054609D /* CommentModel.swift in Sources */,
 				9AFC39FC2188E6770021E57D /* StudentTableViewCell.swift in Sources */,
 				9A9C22F721BEFBF000F914E6 /* MoyaWorksService.swift in Sources */,
 				9A815EC82173CC440042E293 /* Token.swift in Sources */,
@@ -984,6 +1000,7 @@
 				9A23E64D21ADE8390015B779 /* CreateCourseWorkStepViewController.swift in Sources */,
 				9A815EBB2173CBB80042E293 /* DefaultAccountUserBufferCoder.swift in Sources */,
 				9AEED50F21A4A5B900A9FC03 /* DetailCourseWorkViewController.swift in Sources */,
+				9A553D9A21C5C60A0054609D /* StepCommentTableViewCell.swift in Sources */,
 				9AFC3A0321890A400021E57D /* CompetitonTableViewCell.swift in Sources */,
 				9A0FBA0921BD588500748346 /* MoyaProfileService.swift in Sources */,
 				9A9C230821C14DB700F914E6 /* Fonts.swift in Sources */,
@@ -991,6 +1008,7 @@
 				9A815C7D2173C86B0042E293 /* DefaultAuthorizationService.swift in Sources */,
 				9A815EB72173CBB10042E293 /* TokensCoder.swift in Sources */,
 				9A9C230321C14CEB00F914E6 /* Colors.swift in Sources */,
+				9A133C2F21C82F85006DA32D /* MaterialsTableViewController.swift in Sources */,
 				9A455D8921923B67009F160A /* SuggestionThemeCommentTableViewCell.swift in Sources */,
 				9A815EBE2173CBDE0042E293 /* DefaultAuthorizationExtractor.swift in Sources */,
 				9A9C22F121BEF12300F914E6 /* MoyaServices.swift in Sources */,
@@ -1002,6 +1020,8 @@
 				9AEED50421A1F28E00A9FC03 /* FinalThemeViewController.swift in Sources */,
 				9A553D9621C55B100054609D /* SuggestionModel.swift in Sources */,
 				9A815A7E2173C6A00042E293 /* WebMultiPartDataItem.swift in Sources */,
+				9A133C3121C8308B006DA32D /* MaterialModel.swift in Sources */,
+				9A133C3321C8352D006DA32D /* AddMaterialViewController.swift in Sources */,
 				9A91755C21C1AE210033D056 /* DateService.swift in Sources */,
 				9AFC39F7218629AD0021E57D /* StudentsTableViewController.swift in Sources */,
 				9A9C230021C14BD700F914E6 /* EmptyStateView.swift in Sources */,
