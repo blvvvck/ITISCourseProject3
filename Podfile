@@ -16,5 +16,13 @@ target 'Curator App' do
  pod 'IQKeyboardManagerSwift'
 pod 'BEMCheckBox'
 
+pod 'GoogleAPIClientForREST/Sheets', '~> 1.2.1'
+    pod 'GoogleSignIn', '~> 4.1.1'
+	pod 'RealmSwift'
+pod 'DLRadioButton'
+pod 'BetterSegmentedControl', '~> 0.9'
+    pod 'ILPDFKit'
+pod 'IQKeyboardManagerSwift'
+
 
 end

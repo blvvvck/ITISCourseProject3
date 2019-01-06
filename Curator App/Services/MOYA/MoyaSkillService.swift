@@ -13,6 +13,7 @@ enum MoyaSkillSerice {
     case getSkills
     case getSkill(Int)
     case getCuratorSkills(Int)
+    case getThemeSkills(Int)
 }
 
 extension MoyaSkillSerice: TargetType {
@@ -30,6 +31,9 @@ extension MoyaSkillSerice: TargetType {
             
         case .getCuratorSkills(let id):
             return "curators/\(id)/skills"
+            
+        case .getThemeSkills(let themeId):
+            return "themes/\(themeId)/skills"
         }
     }
     

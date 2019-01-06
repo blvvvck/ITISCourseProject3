@@ -11,6 +11,7 @@ import Moya
 
 enum MoyaStudentService {
     case getStudents
+    case getStudentSkills(Int)
 }
 
 extension MoyaStudentService: TargetType {
@@ -22,6 +23,9 @@ extension MoyaStudentService: TargetType {
         switch self {
         case .getStudents:
             return "students"
+            
+        case .getStudentSkills(let id):
+            return "students/\(id)/skills"
         }
     }
     

@@ -41,7 +41,7 @@ class StudentsTableViewController: UIViewController {
     
     var type: StudentsControllerType = .usual
     
-    var onStudentSelected: ((_ surname: String) -> Void)?
+    var onStudentSelected: ((_ student: Profile) -> Void)?
     
     // MARK: - Empty State
     
@@ -177,9 +177,13 @@ extension StudentsTableViewController: UITableViewDelegate {
             
         case .addTheme:
             studentProfileVC.type = .addTheme
+            studentProfileVC.theme = self.theme
+            studentProfileVC.student = self.students[indexPath.row]
+            
             studentProfileVC.onStudentSelected = { [unowned self] student in
-                self.onStudentSelected?(student.last_name)
+                self.onStudentSelected?(student)
                 self.navigationController?.popViewController(animated: true)
+                //self.navigationController?.popViewController(animated: true)
             }
         
         case .addToExistingTheme:

@@ -19,6 +19,10 @@ class StudentProfileViewController: UIViewController {
     }
     
     // MARK: - Instance Properties
+    @IBOutlet weak var surnameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var patronymicLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     var type: StudentsProfileType!
     
@@ -28,6 +32,16 @@ class StudentProfileViewController: UIViewController {
     var onStudentSelected: ((_ students: Profile) -> Void)?
 
     // MARK: - Instance Method
+    
+    @IBAction func onCompetitionsButtonTouchUpInside(_ sender: Any) {
+        let competitionsVC = UIStoryboard.init(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "CompetitionsTableVC") as! CompetentionsTableViewController
+        
+        competitionsVC.type = .addStudentToTheme
+        competitionsVC.skills = self.student.skills ?? []
+        competitionsVC.studentId = self.student.id
+        
+        self.navigationController?.pushViewController(competitionsVC, animated: true)
+    }
     
     private func configureNavigationBar() {
         switch self.type {
@@ -50,7 +64,7 @@ class StudentProfileViewController: UIViewController {
         //self.navigationController?.pushViewController(suggestionThemeForStudentVC!, animated: true)
         switch self.type {
         case .addTheme?:
-            //self.onStudentSelected?()
+            self.onStudentSelected?(self.student)
             self.navigationController?.popViewController(animated: true)
             
         case .addToExistingTheme?:
@@ -99,5 +113,11 @@ class StudentProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if isViewLoaded {
+            self.nameLabel.text = self.student.name
+            self.surnameLabel.text = self.student.last_name
+            self.patronymicLabel.text = self.student.patronymic
+            self.descriptionLabel.text = self.student.description
+        }
     }
 }

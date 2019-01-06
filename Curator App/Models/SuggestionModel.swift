@@ -15,10 +15,17 @@ struct SuggestionModel: Codable {
     var student: Profile?
     var curator: Profile?
     var status: SuggestionStatus
-    var progress: String?
+    var progress: Progress?
 }
 
 struct SuggestionStatus: Codable {
     var id: Int
     var name: String
+}
+
+struct Progress: Codable {
+    var id: Int
+    var title: String
+    var description: String
+    var date_update: String
 }

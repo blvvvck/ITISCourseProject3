@@ -64,27 +64,27 @@ class ThemesTableViewController: UIViewController {
     }
     
     fileprivate func handle(stateError error: Error, retryHandler: (() -> Void)? = nil) {
-        //        let action = EmptyStateAction(title: "Try again".localized(), onClicked: {
-        //            retryHandler?()
-        //        })
-        //
-        //        switch error as? WebError {
-        //        case .some(.connection), .some(.timeOut):
-        //            if self.presets.isEmpty {
-        //                self.showEmptyState(image: #imageLiteral(resourceName: "NoConnectionStateIcon.pdf"),
-        //                                    title: "No internet connection".localized(),
-        //                                    message: "We couldn’t connect to the server. Please check your internet connection and try again.".localized(),
-        //                                    action: action)
-        //            }
-        //
-        //        default:
-        //            if self.presets.isEmpty {
-        //                self.showEmptyState(image: #imageLiteral(resourceName: "ErrorStateIcon.pdf"),
-        //                                    title: "Ooops! Something went wrong".localized(),
-        //                                    message: "We are already working on correcting this error.".localized(),
-        //                                    action: action)
-        //            }
-        //        }
+                let action = EmptyStateAction(title: "Try again", onClicked: {
+                    retryHandler?()
+                })
+        
+                switch error as? WebError {
+                case .some(.connection), .some(.timeOut):
+                    if self.themes.isEmpty {
+                        self.showEmptyState(image: #imageLiteral(resourceName: "NoConnectionStateIcon.pdf"),
+                                            title: "No internet connection",
+                                            message: "We couldn’t connect to the server. Please check your internet connection and try again.",
+                                            action: action)
+                    }
+        
+                default:
+                    if self.themes.isEmpty {
+                        self.showEmptyState(image: #imageLiteral(resourceName: "ErrorStateIcon.pdf"),
+                                            title: "Ooops! Something went wrong",
+                                            message: "We are already working on correcting this error.",
+                                            action: action)
+                    }
+                }
     }
     
     // MARK: - Instance Methods
@@ -137,16 +137,22 @@ class ThemesTableViewController: UIViewController {
     fileprivate func configure(cell: ThemeTableViewCell, for indexPath: IndexPath) {
         switch self.segmentedControl.selectedSegmentIndex {
         case 0:
-            cell.themeNameLabel.text = self.suggestions[indexPath.row].theme.title
+            
+            if let progressTitle = self.suggestions[indexPath.row].progress?.title {
+                cell.themeNameLabel.text = progressTitle
+            } else {
+                cell.themeNameLabel.text = self.suggestions[indexPath.row].theme.title
+            }
+            
             cell.themeStudentLabel.text = "\(self.suggestions[indexPath.row].student!.last_name) \(self.suggestions[indexPath.row].student!.name) \(self.suggestions[indexPath.row].student!.patronymic)"
             
-            cell.themeStatusLabel.text = self.suggestions[indexPath.row].status.name
+            cell.themeStatusLabel.text = ThemeStatusesHelper.shared.getCorrectStatus(from:              self.suggestions[indexPath.row].status.name)
             
             cell.themeStatusLabel.isHidden = false
             cell.themeStudentLabel.isHidden = false
             
         case 1:
-            cell.themeNameLabel.text = self.themes[indexPath.row].description
+            cell.themeNameLabel.text = self.themes[indexPath.row].title
             cell.themeStudentLabel.text = "Студент"
             cell.themeStatusLabel.text = "Статус"
             cell.themeStatusLabel.isHidden = true
@@ -170,6 +176,9 @@ class ThemesTableViewController: UIViewController {
                 self.hideEmptyState()
             case let .failure(error):
                 print("THEMES ERROR")
+                self.handle(stateError: error, retryHandler: { [weak self] in
+                    self?.loadThemes()
+                })
             }
         }
     }
@@ -263,9 +272,12 @@ extension ThemesTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch self.segmentedControl.selectedSegmentIndex {
         case 0:
-            let themeSuggestionController = self.storyboard?.instantiateViewController(withIdentifier: "ThemeSuggestionVC")
-            self.navigationController?.pushViewController(themeSuggestionController!, animated: true)
+            let themeSuggestionController = self.storyboard?.instantiateViewController(withIdentifier: "ThemeSuggestionVC") as! ThemeSuggestionViewController
             
+            themeSuggestionController.suggestionId = self.suggestions[indexPath.row].id
+    
+            self.navigationController?.pushViewController(themeSuggestionController, animated: true)
+        
         case 1:
             let finalThemeController = self.storyboard?.instantiateViewController(withIdentifier: "finalThemeVC") as! FinalThemeViewController
             finalThemeController.controllerType = .editOrAddStudent

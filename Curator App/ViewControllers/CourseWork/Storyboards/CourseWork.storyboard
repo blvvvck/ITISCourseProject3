@@ -164,9 +164,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8P0-jp-6BQ">
+                                <rect key="frame" x="16" y="406" width="113" height="30"/>
+                                <state key="normal" title="Оставить отзыв"/>
+                                <connections>
+                                    <action selector="onSendReviewButtonTouchUpInside:" destination="9gr-a6-Vsb" eventType="touchUpInside" id="kgb-Bu-MQQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8P0-jp-6BQ" firstAttribute="leading" secondItem="wPM-rL-DST" secondAttribute="leading" constant="16" id="0xz-fT-O6X"/>
                             <constraint firstItem="gcW-bv-ZbV" firstAttribute="top" secondItem="5c8-IN-QGu" secondAttribute="bottom" constant="16" id="3Ac-7T-rtv"/>
                             <constraint firstItem="wPM-rL-DST" firstAttribute="trailing" secondItem="lzG-td-Xuk" secondAttribute="trailing" constant="16" id="64i-ma-KjK"/>
                             <constraint firstItem="F69-yW-Lb7" firstAttribute="leading" secondItem="wPM-rL-DST" secondAttribute="leading" constant="16" id="FRK-EM-UhW"/>
@@ -185,6 +193,7 @@
                             <constraint firstItem="F69-yW-Lb7" firstAttribute="top" secondItem="gcW-bv-ZbV" secondAttribute="bottom" constant="4" id="qEN-29-peb"/>
                             <constraint firstItem="Jiy-3V-6Tq" firstAttribute="leading" secondItem="wPM-rL-DST" secondAttribute="leading" constant="16" id="r7Q-kK-yBt"/>
                             <constraint firstItem="0nr-Zh-IIa" firstAttribute="leading" secondItem="wPM-rL-DST" secondAttribute="leading" constant="16" id="vwa-m5-2CD"/>
+                            <constraint firstItem="8P0-jp-6BQ" firstAttribute="top" secondItem="lzG-td-Xuk" secondAttribute="bottom" constant="8" id="yU4-1G-uDn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wPM-rL-DST"/>
                     </view>
@@ -441,6 +450,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mM-Kg-vrH">
                                 <rect key="frame" x="282" y="617" width="36" height="30"/>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="onSendButtonTouchUpInside:" destination="teh-ug-kFH" eventType="touchUpInside" id="VoO-d8-wKt"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seT-RK-VWH">
                                 <rect key="frame" x="0.0" y="20" width="320" height="597"/>
@@ -635,10 +647,14 @@
                     <size key="freeformSize" width="320" height="647"/>
                     <connections>
                         <outlet property="commentsTableView" destination="Tfm-TH-3zn" id="j9e-eL-pqh"/>
+                        <outlet property="commentsTextField" destination="MIq-1G-wJT" id="SRs-sp-Awc"/>
                         <outlet property="emptyStateContainerView" destination="nVM-QF-1da" id="5qP-lK-B0v"/>
                         <outlet property="emptyStateView" destination="sWr-qA-e4e" id="sz9-sM-qpN"/>
+                        <outlet property="sendCommentButton" destination="1mM-Kg-vrH" id="39I-L8-Gzc"/>
+                        <outlet property="stepDescriptionLabel" destination="sW3-zB-OrA" id="oJV-Bg-p7V"/>
                         <outlet property="stepDescriptionTextView" destination="xR8-gv-LhC" id="Zyo-IQ-lqc"/>
                         <outlet property="stepEndDateTextField" destination="zdZ-3i-zf5" id="CMJ-wF-VBI"/>
+                        <outlet property="stepMaterialsButton" destination="Fe5-P8-hrc" id="xzi-Pg-c5k"/>
                         <outlet property="stepNameTextField" destination="NPT-ui-L6o" id="vVE-YO-558"/>
                         <outlet property="stepStartDateTextField" destination="nLm-rN-kue" id="MOL-SL-NIg"/>
                     </connections>

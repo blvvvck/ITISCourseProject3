@@ -10,6 +10,7 @@ import UIKit
 import Fabric
 import Crashlytics
 import IQKeyboardManagerSwift
+import GoogleSignIn
 
 
 @UIApplicationMain
@@ -42,7 +43,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         
+        UserDefaults.standard.set(false, forKey: "isAddedStudents")
+        UserDefaults.standard.set(false, forKey: "isAddedSettings")
+        GIDSignIn.sharedInstance().clientID = "986855244295-f3128ajn936ejbdv7n6senv6bian7dor.apps.googleusercontent.com"
+        
         return true
+    }
+    
+    func application(_ application: UIApplication,
+                     open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url,
+                                                 sourceApplication: sourceApplication,
+                                                 annotation: annotation)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

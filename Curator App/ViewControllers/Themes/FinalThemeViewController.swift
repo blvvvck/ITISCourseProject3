@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 class FinalThemeViewController: UIViewController {
     
@@ -34,6 +35,7 @@ class FinalThemeViewController: UIViewController {
     var controllerType: FinalThemeControllerType = .finalTheme
     
     var theme: ThemeModel!
+    var curator: Profile!
     
     // MARK: - Empty State
     
@@ -134,25 +136,37 @@ class FinalThemeViewController: UIViewController {
                     print("ADD THEME SUCCESS")
                     print(String(data: response.data, encoding: .utf8))
                     
-                    MoyaServices.themesProvider.request(.updateTheme(self.theme), completion: { (result) in
-                        switch result {
-                        case .success(let respone):
-                        print("UPDATE AFTER ADD THEME SUCCESS")
-                        print(String(data: response.data, encoding: .utf8))
-                        
-                        case .failure(let error):
-                            print("UPDATE AFTER ADD THEME ERROR")
-                        }
-                    })
+                    let themeFromServer = try! response.map(ThemeModel.self)
+                    
+                    self.theme.id = themeFromServer.id
+                    
+                    if self.theme.student != nil {
+                        MoyaServices.themesProvider.request(.addSuggestion(self.theme), completion: { (result) in
+                            switch result {
+                            case .success(let response):
+                                print("SUCCESS ADD SUGGESTION AFTER THEME")
+                                self.navigationController?.popToRootViewController(animated: true)
+                                
+                            case .failure(let error):
+                                print("ERRROR ADD SUGGESTION AFTER THEME")
+                            }
+                        })
+                    } 
+//                    MoyaServices.themesProvider.request(.updateTheme(self.theme), completion: { (result) in
+//                        switch result {
+//                        case .success(let respone):
+//                        print("UPDATE AFTER ADD THEME SUCCESS")
+//                        print(String(data: response.data, encoding: .utf8))
+//                        
+//                        case .failure(let error):
+//                            print("UPDATE AFTER ADD THEME ERROR")
+//                        }
+//                    })
                 
                 case .failure(let error):
                     print("ADD THEME ERROR")
                 }
             }
-            
-            
-            self.navigationController?.popToRootViewController(animated: true)
-            
         }
     }
     
@@ -234,7 +248,7 @@ class FinalThemeViewController: UIViewController {
             
             if isViewLoaded {
                 self.themeTitleLabel.text = self.theme.title
-                self.themeCuratorLabel.text = "\(self.theme.curator.last_name) \(self.theme.curator.name) \(self.theme.curator.patronymic)"
+                self.themeCuratorLabel.text = "\(self.curator.last_name) \(self.curator.name) \(self.curator.patronymic)"
                 
                 if let subject = self.theme.subject {
                     self.themeAreaLabel.text = subject.name

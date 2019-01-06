@@ -18,6 +18,7 @@ enum MoyaWorksService {
     case getStepComments(Int, Int, Int)
     case getStepMaterials(Int, Int, Int)
     case addStepMaterial(Int, Int, Int, MaterialModel)
+    case addStepComment(Int, Int, CommentModel)
 }
 
 extension MoyaWorksService: TargetType {
@@ -50,6 +51,9 @@ extension MoyaWorksService: TargetType {
             
         case .addStepMaterial(let curatorId, let workId, let stepId, _):
             return "curators/\(curatorId)/works/\(workId)/steps/\(stepId)/materials"
+            
+        case .addStepComment(let curatorId, let workId, let comment):
+            return "curators/\(curatorId)/works/\(workId)/steps/\(comment.step_id!)/comments"
         }
         
     }
@@ -62,7 +66,7 @@ extension MoyaWorksService: TargetType {
         case .updateWorkStep:
             return .put
             
-        case .addWorkStep, .addStepMaterial:
+        case .addWorkStep, .addStepMaterial, .addStepComment:
             return .post
         }
     }
@@ -82,7 +86,7 @@ extension MoyaWorksService: TargetType {
             parameters["description"] = stepModel.description
             parameters["date_start"] = DateService.shared.stringDateToServerFormat(from: stepModel.date_start)
             parameters["date_finish"] = DateService.shared.stringDateToServerFormat(from: stepModel.date_finish)
-            parameters["status"] = stepModel.status.id
+            parameters["status_id"] = stepModel.status.id
 
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
             
@@ -92,7 +96,7 @@ extension MoyaWorksService: TargetType {
             parameters["description"] = stepModel.description
             parameters["date_start"] = DateService.shared.stringDateToServerFormat(from: stepModel.date_start)
             parameters["date_finish"] = DateService.shared.stringDateToServerFormat(from: stepModel.date_finish)
-//            parameters["status"] = stepModel.status.id
+            parameters["status_id"] = stepModel.status.id
             
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
             
@@ -100,6 +104,15 @@ extension MoyaWorksService: TargetType {
             var parameters = [String: Any]()
             
             parameters["content"] = materialModel.content
+            
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            
+        case .addStepComment(_, _, let commentModel):
+            var parameters = [String: Any]()
+            
+            parameters["author_name"] = commentModel.author_name
+            parameters["content"] = commentModel.content
+            //parameters["date_creation"] = commentModel.date_creation
             
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }

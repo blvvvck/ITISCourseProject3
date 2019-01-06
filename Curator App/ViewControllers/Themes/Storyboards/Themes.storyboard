@@ -269,6 +269,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHD-Bp-HOh">
                                 <rect key="frame" x="284" y="826" width="36" height="30"/>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="onSendCommentButtonTouchUpInside:" destination="mAc-YL-HkD" eventType="touchUpInside" id="sWo-k2-98B"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbI-Dl-Q5z">
                                 <rect key="frame" x="0.0" y="20" width="320" height="806"/>
@@ -374,6 +377,9 @@
                                                 <state key="normal" title="ПРИНЯТЬ ТЕМУ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onAcceptThemeButtonTouchUpInside:" destination="mAc-YL-HkD" eventType="touchUpInside" id="vX6-Qj-oZt"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc7-YV-GxE">
                                                 <rect key="frame" x="8" y="481" width="304" height="50"/>
@@ -384,6 +390,9 @@
                                                 <state key="normal" title="ОТКЛОНИТЬ ТЕМУ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onRejectThemeButtonTouchUpInside:" destination="mAc-YL-HkD" eventType="touchUpInside" id="qzd-8l-BFi"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOU-co-vCQ">
                                                 <rect key="frame" x="8" y="539" width="304" height="50"/>
@@ -394,6 +403,9 @@
                                                 <state key="normal" title="НА ДОРАБОТКУ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onSomeChangesThemeButtonTouchUpInside:" destination="mAc-YL-HkD" eventType="touchUpInside" id="si2-qX-dhF"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnF-Na-lOg">
                                                 <rect key="frame" x="8" y="597" width="84" height="21"/>
@@ -575,6 +587,22 @@
                                     <constraint firstItem="I86-eL-XdZ" firstAttribute="leading" secondItem="dbI-Dl-Q5z" secondAttribute="leading" id="vMg-b8-gMZ"/>
                                 </constraints>
                             </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poI-0f-kvh" userLabel="Empty State Container View">
+                                <rect key="frame" x="0.0" y="20" width="320" height="806"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTn-2P-wPC" userLabel="Empty State View" customClass="EmptyStateView" customModule="Curator_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="806"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4a5-t1-9bd" firstAttribute="trailing" secondItem="zTn-2P-wPC" secondAttribute="trailing" id="FUS-2W-sPb"/>
+                                    <constraint firstItem="4a5-t1-9bd" firstAttribute="bottom" secondItem="zTn-2P-wPC" secondAttribute="bottom" id="bca-UU-fTp"/>
+                                    <constraint firstItem="zTn-2P-wPC" firstAttribute="leading" secondItem="4a5-t1-9bd" secondAttribute="leading" id="w2K-ll-khG"/>
+                                    <constraint firstItem="zTn-2P-wPC" firstAttribute="top" secondItem="4a5-t1-9bd" secondAttribute="top" id="yKV-RN-lvD"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="4a5-t1-9bd"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -582,8 +610,12 @@
                             <constraint firstItem="Gej-Bu-Yyf" firstAttribute="top" secondItem="XHD-Bp-HOh" secondAttribute="top" id="29E-aL-PxF"/>
                             <constraint firstItem="dbI-Dl-Q5z" firstAttribute="top" secondItem="2P5-Yz-kvu" secondAttribute="top" id="6fx-I1-1ae"/>
                             <constraint firstItem="2P5-Yz-kvu" firstAttribute="bottom" secondItem="XHD-Bp-HOh" secondAttribute="bottom" id="7vk-u4-sCs"/>
+                            <constraint firstItem="poI-0f-kvh" firstAttribute="trailing" secondItem="2P5-Yz-kvu" secondAttribute="trailing" id="83n-RK-Gky"/>
                             <constraint firstItem="dbI-Dl-Q5z" firstAttribute="leading" secondItem="2P5-Yz-kvu" secondAttribute="leading" id="AFC-Nr-D4O"/>
                             <constraint firstItem="XHD-Bp-HOh" firstAttribute="trailing" secondItem="2P5-Yz-kvu" secondAttribute="trailing" id="EGO-Sf-1S4"/>
+                            <constraint firstItem="poI-0f-kvh" firstAttribute="leading" secondItem="2P5-Yz-kvu" secondAttribute="leading" id="JNb-Z1-z0n"/>
+                            <constraint firstItem="Gej-Bu-Yyf" firstAttribute="top" secondItem="poI-0f-kvh" secondAttribute="bottom" id="Ogm-dQ-BWz"/>
+                            <constraint firstItem="poI-0f-kvh" firstAttribute="top" secondItem="2P5-Yz-kvu" secondAttribute="top" id="YlV-8t-Ze9"/>
                             <constraint firstItem="XHD-Bp-HOh" firstAttribute="leading" secondItem="Gej-Bu-Yyf" secondAttribute="trailing" id="ey0-Tk-gIT"/>
                             <constraint firstItem="Gej-Bu-Yyf" firstAttribute="top" secondItem="dbI-Dl-Q5z" secondAttribute="bottom" id="hrI-fv-zx7"/>
                             <constraint firstItem="Gej-Bu-Yyf" firstAttribute="leading" secondItem="2P5-Yz-kvu" secondAttribute="leading" id="xP1-8o-THj"/>
@@ -592,7 +624,17 @@
                     </view>
                     <size key="freeformSize" width="320" height="856"/>
                     <connections>
+                        <outlet property="commentLabel" destination="Gej-Bu-Yyf" id="wSH-Lt-Ypa"/>
+                        <outlet property="emptyStateContainerView" destination="poI-0f-kvh" id="sns-nm-X6S"/>
+                        <outlet property="emptyStateView" destination="zTn-2P-wPC" id="BY7-OC-eN6"/>
+                        <outlet property="studentLabel" destination="aN8-Fv-ky8" id="hI9-8V-S0g"/>
                         <outlet property="tableView" destination="Dcq-KQ-tr4" id="KRa-6e-jb9"/>
+                        <outlet property="themeAreaLabel" destination="ElB-Jf-qZj" id="el8-7f-12g"/>
+                        <outlet property="themeCompetitions" destination="EI7-4V-Vsa" id="G6K-Fl-IP2"/>
+                        <outlet property="themeCuratorLabel" destination="8rc-6L-3Le" id="ETU-Z8-85g"/>
+                        <outlet property="themeDescription" destination="Odw-ud-bg2" id="rch-1Q-Fj3"/>
+                        <outlet property="themeStatus" destination="Fog-FN-uOd" id="FZP-vx-UEr"/>
+                        <outlet property="themeTitleLabel" destination="Zv9-x3-uia" id="uqf-ye-ZBV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdF-PW-dhU" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -42,6 +42,12 @@ class DetailCourseWorkViewController: UIViewController {
         }
     }
     
+    @IBAction func onSendReviewButtonTouchUpInside(_ sender: Any) {
+        let reviewStart = UIStoryboard(name: "Review", bundle: nil).instantiateInitialViewController()
+        //self.navigationController?.pushViewController(reviewStart!, animated: true)
+        self.present(reviewStart!, animated: true, completion: nil)
+    }
+    
     // MARK: - UIViewController
     
     override func viewDidLoad() {

@@ -243,7 +243,7 @@
         <!--Компетенции-->
         <scene sceneID="W1e-aq-acq">
             <objects>
-                <viewController id="hki-Le-1uB" customClass="CompetentionsTableViewController" customModule="Curator_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompetitionsTableVC" id="hki-Le-1uB" customClass="CompetentionsTableViewController" customModule="Curator_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="quv-Zb-SOu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,7 +329,7 @@
                     <navigationItem key="navigationItem" title="Компетенции" id="lr6-YX-LIn">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="PPK-FN-lyw">
                             <connections>
-                                <segue destination="Suv-8F-9NR" kind="show" id="QKQ-zd-MAd"/>
+                                <segue destination="Suv-8F-9NR" kind="show" identifier="ShowEditCompetitions" id="QKQ-zd-MAd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

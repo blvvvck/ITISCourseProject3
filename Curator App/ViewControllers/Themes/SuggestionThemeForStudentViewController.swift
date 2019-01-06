@@ -32,6 +32,9 @@ class SuggestionThemeForStudentViewController: UIViewController {
     
     var selectedSubject: SubjectModel!
     var selectedSkills: [Skill] = []
+    var curator: Profile!
+    
+    var selectedStudent: Profile? = nil
     
     // MARK: - Instance Methods
     
@@ -50,8 +53,10 @@ class SuggestionThemeForStudentViewController: UIViewController {
         let studentsVC = studentStoryboard.instantiateViewController(withIdentifier: "StudentsVC") as! StudentsTableViewController
         studentsVC.type = .addTheme
         
-        studentsVC.onStudentSelected = { [unowned self] surname in
-            self.selectedStudentButton.setTitle(surname, for: .normal)
+        studentsVC.onStudentSelected = { [unowned self] student in
+            self.selectedStudentButton.setTitle("\(student.last_name) \(student.name)", for: .normal)
+            
+            self.selectedStudent = student
         }
         
         self.navigationController?.pushViewController(studentsVC, animated: true)
@@ -90,7 +95,20 @@ class SuggestionThemeForStudentViewController: UIViewController {
     private func onAddButtonTouchUpInside() {
         switch controllerType {
         case .final:
-            var themeModel: ThemeModel = ThemeModel(id: 1, title: self.themeNameTextField.text!, description: self.themeDescriptionTextField.text!, date_creation: "", date_acceptance: "", curator: Profile(id: 1, name: "", last_name: "", patronymic: "", description: "", skills: nil), student: nil, subject: self.selectedSubject, skills: self.selectedSkills)
+            if self.themeNameTextField.text == "" || self.themeDescriptionTextField.text == "" ||
+                self.competitonsLabel.text == "" || self.selectedSkills.count == 0 {
+                // create the alert
+                let alert = UIAlertController(title: "Ошибка", message: "Пожалуйста, заполните все поля", preferredStyle: UIAlertController.Style.alert)
+                
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            
+            var themeModel: ThemeModel = ThemeModel(id: 1, title: self.themeNameTextField.text!, description: self.themeDescriptionTextField.text!, date_creation: "", date_acceptance: "", curator: Profile(id: MoyaServices.currentUserId, name: "", last_name: "", patronymic: "", description: "", skills: nil), student: self.selectedStudent, subject: self.selectedSubject, skills: self.selectedSkills)
             
             themeModel.title = self.themeNameTextField.text!
             themeModel.description = self.themeDescriptionTextField.text!
@@ -101,6 +119,7 @@ class SuggestionThemeForStudentViewController: UIViewController {
             let finalThemeVC = self.storyboard?.instantiateViewController(withIdentifier: "finalThemeVC") as! FinalThemeViewController
             
             finalThemeVC.controllerType = .finalTheme
+            finalThemeVC.curator = self.curator
             finalThemeVC.apply(themeModel: themeModel)
             self.navigationController?.pushViewController(finalThemeVC, animated: true)
             
@@ -115,5 +134,16 @@ class SuggestionThemeForStudentViewController: UIViewController {
         super.viewDidLoad()
 
         configureNavigationBar()
+        
+        MoyaServices.profileProvider.request(.getProfileInfo(MoyaServices.currentUserId)) { (result) in
+            switch result {
+            case .success(let response):
+                let curatorProfile = try! response.map(Profile.self)
+                self.curator = curatorProfile
+                
+            case .failure(let error):
+                print("GET PROFILE INFO FAILURE")
+            }
+        }
     }
 }

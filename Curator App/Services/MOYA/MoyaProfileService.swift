@@ -12,6 +12,7 @@ import Moya
 enum MoyaProfileService {
     case getProfileInfo(Int)
     case changeProfileInfo(Profile)
+    case getCuratorSkills(Int)
 }
 
 extension MoyaProfileService: TargetType {
@@ -26,12 +27,15 @@ extension MoyaProfileService: TargetType {
             
         case .changeProfileInfo(let profile):
             return "curators/\(profile.id)"
+            
+        case .getCuratorSkills(let curatorId):
+            return "curators/\(curatorId)/skills"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getProfileInfo:
+        case .getProfileInfo, .getCuratorSkills:
             return .get
         case .changeProfileInfo:
             return .put
@@ -44,7 +48,7 @@ extension MoyaProfileService: TargetType {
     
     var task: Task {
         switch self {
-        case .getProfileInfo:
+        case .getProfileInfo, .getCuratorSkills:
             return .requestPlain
         
         case.changeProfileInfo(let profile):
@@ -56,7 +60,7 @@ extension MoyaProfileService: TargetType {
             
             let skillsIds = profile.skills!.map({$0.id})
             
-            parameters["skills"] = skillsIds
+            parameters["skills_id"] = skillsIds
             
             //ХЗ КАКОЙ ЕНКОДИНГ // вроде норм энкодинг
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
@@ -64,14 +68,7 @@ extension MoyaProfileService: TargetType {
     }
     
     var headers: [String : String]? {
-        switch self {
-        case .getProfileInfo:
-            let token = UserDefaults.standard.value(forKey: "token")
-            return ["Authorization":"Token \(token as! String)"]
-            
-        case.changeProfileInfo:
-            let token = UserDefaults.standard.value(forKey: "token")
-            return ["Authorization":"Token \(token as! String)"]
-        }
+        let token = UserDefaults.standard.value(forKey: "token")
+        return ["Authorization":"Token \(token as! String)"]
     }
 }

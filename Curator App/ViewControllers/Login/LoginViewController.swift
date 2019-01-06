@@ -28,17 +28,39 @@ class LoginViewController: UIViewController {
         provider.request(.login(login, password)) { (result) in
             switch result {
             case let .success(moyaResponse):
-                var loginModel: LoginModel = try! moyaResponse.map(LoginModel.self)
-
-                UserDefaults.standard.set(loginModel.token, forKey: "token")
-                UserDefaults.standard.set(loginModel.user_id, forKey: "user_id")
-
-                if !loginModel.token.isEmpty {
-                    let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-                    self.present(mainStoryboard.instantiateInitialViewController()!, animated: true, completion: nil)
+                
+                if moyaResponse.statusCode == 200 {
+                    var loginModel: LoginModel = try! moyaResponse.map(LoginModel.self)
+                    
+                    UserDefaults.standard.set(loginModel.token, forKey: "token")
+                    UserDefaults.standard.set(loginModel.user_id, forKey: "user_id")
+                    
+                    if !loginModel.token.isEmpty {
+                        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+                        self.present(mainStoryboard.instantiateInitialViewController()!, animated: true, completion: nil)
+                    }
+                } else {
+                    // create the alert
+                    let alert = UIAlertController(title: "Ошибка", message: "Введены некоректные данные", preferredStyle: UIAlertController.Style.alert)
+                    
+                    // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
                 }
-            default:
+                
+                
+            case .failure(let error):
                 print("FAILURE LOGIN")
+                print(error.localizedDescription)
+                let alert = UIAlertController(title: "Ошибка", message: "Ошибка сервера. Попробуйте еще раз", preferredStyle: UIAlertController.Style.alert)
+                
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
             }
         }
 

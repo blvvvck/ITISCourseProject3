@@ -99,6 +99,75 @@
 		9A9C230621C14D8C00F914E6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C230521C14D8C00F914E6 /* UIColorExtension.swift */; };
 		9A9C230821C14DB700F914E6 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C230721C14DB700F914E6 /* Fonts.swift */; };
 		9A9C230B21C14DF200F914E6 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9C230A21C14DF200F914E6 /* Button.swift */; };
+		9ABCAA1221D9637000156673 /* ThemeStatusesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABCAA1121D9637000156673 /* ThemeStatusesHelper.swift */; };
+		9AD526BE21C9A788002AC8E2 /* courseProject2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266221C9A788002AC8E2 /* courseProject2.pdf */; };
+		9AD526BF21C9A788002AC8E2 /* courseProject3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266321C9A788002AC8E2 /* courseProject3.pdf */; };
+		9AD526C021C9A788002AC8E2 /* courseProject7.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266421C9A788002AC8E2 /* courseProject7.pdf */; };
+		9AD526C121C9A788002AC8E2 /* courseProject6.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266521C9A788002AC8E2 /* courseProject6.pdf */; };
+		9AD526C221C9A788002AC8E2 /* courseProject5.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266621C9A788002AC8E2 /* courseProject5.pdf */; };
+		9AD526C321C9A788002AC8E2 /* courseProject14.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266721C9A788002AC8E2 /* courseProject14.pdf */; };
+		9AD526C421C9A788002AC8E2 /* courseProject15.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266821C9A788002AC8E2 /* courseProject15.pdf */; };
+		9AD526C521C9A788002AC8E2 /* courseProject17.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266921C9A788002AC8E2 /* courseProject17.pdf */; };
+		9AD526C621C9A788002AC8E2 /* courseProject1 13-07-12-555.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266A21C9A788002AC8E2 /* courseProject1 13-07-12-555.pdf */; };
+		9AD526C721C9A788002AC8E2 /* courseProject16.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266B21C9A788002AC8E2 /* courseProject16.pdf */; };
+		9AD526C821C9A788002AC8E2 /* courseProject12.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266C21C9A788002AC8E2 /* courseProject12.pdf */; };
+		9AD526C921C9A788002AC8E2 /* courseProject13.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266D21C9A788002AC8E2 /* courseProject13.pdf */; };
+		9AD526CA21C9A788002AC8E2 /* courseProject11.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5266E21C9A788002AC8E2 /* courseProject11.pdf */; };
+		9AD526CB21C9A788002AC8E2 /* ModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5266F21C9A788002AC8E2 /* ModuleInput.swift */; };
+		9AD526CC21C9A788002AC8E2 /* courseProject10.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5267021C9A788002AC8E2 /* courseProject10.pdf */; };
+		9AD526CD21C9A788002AC8E2 /* courseProject21.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5267121C9A788002AC8E2 /* courseProject21.pdf */; };
+		9AD526CE21C9A788002AC8E2 /* courseProject20.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5267221C9A788002AC8E2 /* courseProject20.pdf */; };
+		9AD526CF21C9A788002AC8E2 /* courseProject22.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5267321C9A788002AC8E2 /* courseProject22.pdf */; };
+		9AD526D021C9A788002AC8E2 /* courseProject18.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5267421C9A788002AC8E2 /* courseProject18.pdf */; };
+		9AD526D121C9A788002AC8E2 /* courseProject19.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5267521C9A788002AC8E2 /* courseProject19.pdf */; };
+		9AD526D221C9A788002AC8E2 /* courseProject8.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5267621C9A788002AC8E2 /* courseProject8.pdf */; };
+		9AD526D321C9A788002AC8E2 /* courseProject9.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5267721C9A788002AC8E2 /* courseProject9.pdf */; };
+		9AD526D421C9A788002AC8E2 /* courseProject5 copy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5267821C9A788002AC8E2 /* courseProject5 copy.pdf */; };
+		9AD526D521C9A788002AC8E2 /* ModuleInputHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5267921C9A788002AC8E2 /* ModuleInputHolder.swift */; };
+		9AD526D621C9A788002AC8E2 /* AlertFactoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5267B21C9A788002AC8E2 /* AlertFactoryImplementation.swift */; };
+		9AD526D721C9A788002AC8E2 /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5267C21C9A788002AC8E2 /* AlertFactory.swift */; };
+		9AD526D821C9A788002AC8E2 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5267E21C9A788002AC8E2 /* ReviewModel.swift */; };
+		9AD526D921C9A788002AC8E2 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5268021C9A788002AC8E2 /* CellModel.swift */; };
+		9AD526DA21C9A788002AC8E2 /* CellModelImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5268121C9A788002AC8E2 /* CellModelImplementation.swift */; };
+		9AD526DB21C9A788002AC8E2 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5268221C9A788002AC8E2 /* SettingsModel.swift */; };
+		9AD526DC21C9A788002AC8E2 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5268321C9A788002AC8E2 /* Student.swift */; };
+		9AD526DD21C9A788002AC8E2 /* GoogleTableParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5268621C9A788002AC8E2 /* GoogleTableParserManager.swift */; };
+		9AD526DE21C9A788002AC8E2 /* GoogleTableParserManagerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5268721C9A788002AC8E2 /* GoogleTableParserManagerImplementation.swift */; };
+		9AD526DF21C9A788002AC8E2 /* StudentDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5268921C9A788002AC8E2 /* StudentDbManager.swift */; };
+		9AD526E021C9A788002AC8E2 /* DbManagerImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5268A21C9A788002AC8E2 /* DbManagerImplementation.swift */; };
+		9AD526E121C9A788002AC8E2 /* DbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5268B21C9A788002AC8E2 /* DbManager.swift */; };
+		9AD526E221C9A788002AC8E2 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5268F21C9A788002AC8E2 /* SettingsPresenter.swift */; };
+		9AD526E321C9A788002AC8E2 /* SettingsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5269121C9A788002AC8E2 /* SettingsViewOutput.swift */; };
+		9AD526E421C9A788002AC8E2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5269221C9A788002AC8E2 /* SettingsViewController.swift */; };
+		9AD526E521C9A788002AC8E2 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5269321C9A788002AC8E2 /* SettingsViewInput.swift */; };
+		9AD526E621C9A788002AC8E2 /* SettingsInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5269521C9A788002AC8E2 /* SettingsInitializer.swift */; };
+		9AD526E721C9A788002AC8E2 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5269621C9A788002AC8E2 /* SettingsConfigurator.swift */; };
+		9AD526E821C9A788002AC8E2 /* SettingsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5269821C9A788002AC8E2 /* SettingsInteractorOutput.swift */; };
+		9AD526E921C9A788002AC8E2 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5269921C9A788002AC8E2 /* SettingsInteractor.swift */; };
+		9AD526EA21C9A788002AC8E2 /* SettingsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5269A21C9A788002AC8E2 /* SettingsInteractorInput.swift */; };
+		9AD526EB21C9A788002AC8E2 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5269C21C9A788002AC8E2 /* SettingsRouter.swift */; };
+		9AD526EC21C9A788002AC8E2 /* SettingsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD5269D21C9A788002AC8E2 /* SettingsRouterInput.swift */; };
+		9AD526ED21C9A788002AC8E2 /* StudentsDataSourceInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526A121C9A788002AC8E2 /* StudentsDataSourceInput.swift */; };
+		9AD526EE21C9A788002AC8E2 /* StudentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526A221C9A788002AC8E2 /* StudentsDataSource.swift */; };
+		9AD526EF21C9A788002AC8E2 /* StudentReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526A421C9A788002AC8E2 /* StudentReviewTableViewCell.swift */; };
+		9AD526F021C9A788002AC8E2 /* StudentReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD526A521C9A788002AC8E2 /* StudentReviewTableViewCell.xib */; };
+		9AD526F121C9A788002AC8E2 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526A721C9A788002AC8E2 /* StudentModel.swift */; };
+		9AD526F221C9A788002AC8E2 /* CoursePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526A921C9A788002AC8E2 /* CoursePresenter.swift */; };
+		9AD526F321C9A788002AC8E2 /* FirstCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526AB21C9A788002AC8E2 /* FirstCourseViewController.swift */; };
+		9AD526F421C9A788002AC8E2 /* CourseViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526AC21C9A788002AC8E2 /* CourseViewInput.swift */; };
+		9AD526F521C9A788002AC8E2 /* CourseViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526AD21C9A788002AC8E2 /* CourseViewOutput.swift */; };
+		9AD526F621C9A788002AC8E2 /* FirstCourseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526AF21C9A788002AC8E2 /* FirstCourseConfigurator.swift */; };
+		9AD526F721C9A788002AC8E2 /* FirstCourseInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526B021C9A788002AC8E2 /* FirstCourseInitializer.swift */; };
+		9AD526F821C9A788002AC8E2 /* CourseInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526B221C9A788002AC8E2 /* CourseInteractorInput.swift */; };
+		9AD526F921C9A788002AC8E2 /* CourseInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526B321C9A788002AC8E2 /* CourseInteractorOutput.swift */; };
+		9AD526FA21C9A788002AC8E2 /* CourseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526B421C9A788002AC8E2 /* CourseInteractor.swift */; };
+		9AD526FB21C9A788002AC8E2 /* CourseRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526B621C9A788002AC8E2 /* CourseRouterInput.swift */; };
+		9AD526FC21C9A788002AC8E2 /* CourseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526B721C9A788002AC8E2 /* CourseRouter.swift */; };
+		9AD526FD21C9A788002AC8E2 /* DetailReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526B921C9A788002AC8E2 /* DetailReviewViewController.swift */; };
+		9AD526FE21C9A788002AC8E2 /* CompleteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526BB21C9A788002AC8E2 /* CompleteReviewViewController.swift */; };
+		9AD526FF21C9A788002AC8E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD526BD21C9A788002AC8E2 /* ViewController.swift */; };
+		9AD5270121C9A792002AC8E2 /* Review.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5270021C9A792002AC8E2 /* Review.storyboard */; };
+		9AD5270321C9A79F002AC8E2 /* courseProject23.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9AD5270221C9A79F002AC8E2 /* courseProject23.pdf */; };
 		9AEED50421A1F28E00A9FC03 /* FinalThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50321A1F28E00A9FC03 /* FinalThemeViewController.swift */; };
 		9AEED50621A1FDC400A9FC03 /* EditThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50521A1FDC400A9FC03 /* EditThemeViewController.swift */; };
 		9AEED50D21A49EA000A9FC03 /* CourseWorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEED50C21A49EA000A9FC03 /* CourseWorkTableViewCell.swift */; };
@@ -227,6 +296,75 @@
 		9A9C230521C14D8C00F914E6 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9A9C230721C14DB700F914E6 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		9A9C230A21C14DF200F914E6 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		9ABCAA1121D9637000156673 /* ThemeStatusesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStatusesHelper.swift; sourceTree = "<group>"; };
+		9AD5266221C9A788002AC8E2 /* courseProject2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject2.pdf; sourceTree = "<group>"; };
+		9AD5266321C9A788002AC8E2 /* courseProject3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject3.pdf; sourceTree = "<group>"; };
+		9AD5266421C9A788002AC8E2 /* courseProject7.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject7.pdf; sourceTree = "<group>"; };
+		9AD5266521C9A788002AC8E2 /* courseProject6.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject6.pdf; sourceTree = "<group>"; };
+		9AD5266621C9A788002AC8E2 /* courseProject5.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject5.pdf; sourceTree = "<group>"; };
+		9AD5266721C9A788002AC8E2 /* courseProject14.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject14.pdf; sourceTree = "<group>"; };
+		9AD5266821C9A788002AC8E2 /* courseProject15.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject15.pdf; sourceTree = "<group>"; };
+		9AD5266921C9A788002AC8E2 /* courseProject17.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject17.pdf; sourceTree = "<group>"; };
+		9AD5266A21C9A788002AC8E2 /* courseProject1 13-07-12-555.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "courseProject1 13-07-12-555.pdf"; sourceTree = "<group>"; };
+		9AD5266B21C9A788002AC8E2 /* courseProject16.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject16.pdf; sourceTree = "<group>"; };
+		9AD5266C21C9A788002AC8E2 /* courseProject12.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject12.pdf; sourceTree = "<group>"; };
+		9AD5266D21C9A788002AC8E2 /* courseProject13.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject13.pdf; sourceTree = "<group>"; };
+		9AD5266E21C9A788002AC8E2 /* courseProject11.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject11.pdf; sourceTree = "<group>"; };
+		9AD5266F21C9A788002AC8E2 /* ModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleInput.swift; sourceTree = "<group>"; };
+		9AD5267021C9A788002AC8E2 /* courseProject10.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject10.pdf; sourceTree = "<group>"; };
+		9AD5267121C9A788002AC8E2 /* courseProject21.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject21.pdf; sourceTree = "<group>"; };
+		9AD5267221C9A788002AC8E2 /* courseProject20.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject20.pdf; sourceTree = "<group>"; };
+		9AD5267321C9A788002AC8E2 /* courseProject22.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject22.pdf; sourceTree = "<group>"; };
+		9AD5267421C9A788002AC8E2 /* courseProject18.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject18.pdf; sourceTree = "<group>"; };
+		9AD5267521C9A788002AC8E2 /* courseProject19.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject19.pdf; sourceTree = "<group>"; };
+		9AD5267621C9A788002AC8E2 /* courseProject8.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject8.pdf; sourceTree = "<group>"; };
+		9AD5267721C9A788002AC8E2 /* courseProject9.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject9.pdf; sourceTree = "<group>"; };
+		9AD5267821C9A788002AC8E2 /* courseProject5 copy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "courseProject5 copy.pdf"; sourceTree = "<group>"; };
+		9AD5267921C9A788002AC8E2 /* ModuleInputHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleInputHolder.swift; sourceTree = "<group>"; };
+		9AD5267B21C9A788002AC8E2 /* AlertFactoryImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFactoryImplementation.swift; sourceTree = "<group>"; };
+		9AD5267C21C9A788002AC8E2 /* AlertFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
+		9AD5267E21C9A788002AC8E2 /* ReviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		9AD5268021C9A788002AC8E2 /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		9AD5268121C9A788002AC8E2 /* CellModelImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModelImplementation.swift; sourceTree = "<group>"; };
+		9AD5268221C9A788002AC8E2 /* SettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		9AD5268321C9A788002AC8E2 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		9AD5268621C9A788002AC8E2 /* GoogleTableParserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleTableParserManager.swift; sourceTree = "<group>"; };
+		9AD5268721C9A788002AC8E2 /* GoogleTableParserManagerImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleTableParserManagerImplementation.swift; sourceTree = "<group>"; };
+		9AD5268921C9A788002AC8E2 /* StudentDbManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDbManager.swift; sourceTree = "<group>"; };
+		9AD5268A21C9A788002AC8E2 /* DbManagerImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbManagerImplementation.swift; sourceTree = "<group>"; };
+		9AD5268B21C9A788002AC8E2 /* DbManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbManager.swift; sourceTree = "<group>"; };
+		9AD5268F21C9A788002AC8E2 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		9AD5269121C9A788002AC8E2 /* SettingsViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewOutput.swift; sourceTree = "<group>"; };
+		9AD5269221C9A788002AC8E2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9AD5269321C9A788002AC8E2 /* SettingsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
+		9AD5269521C9A788002AC8E2 /* SettingsInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInitializer.swift; sourceTree = "<group>"; };
+		9AD5269621C9A788002AC8E2 /* SettingsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
+		9AD5269821C9A788002AC8E2 /* SettingsInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractorOutput.swift; sourceTree = "<group>"; };
+		9AD5269921C9A788002AC8E2 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		9AD5269A21C9A788002AC8E2 /* SettingsInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInput.swift; sourceTree = "<group>"; };
+		9AD5269C21C9A788002AC8E2 /* SettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		9AD5269D21C9A788002AC8E2 /* SettingsRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouterInput.swift; sourceTree = "<group>"; };
+		9AD526A121C9A788002AC8E2 /* StudentsDataSourceInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsDataSourceInput.swift; sourceTree = "<group>"; };
+		9AD526A221C9A788002AC8E2 /* StudentsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsDataSource.swift; sourceTree = "<group>"; };
+		9AD526A421C9A788002AC8E2 /* StudentReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentReviewTableViewCell.swift; sourceTree = "<group>"; };
+		9AD526A521C9A788002AC8E2 /* StudentReviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentReviewTableViewCell.xib; sourceTree = "<group>"; };
+		9AD526A721C9A788002AC8E2 /* StudentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
+		9AD526A921C9A788002AC8E2 /* CoursePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursePresenter.swift; sourceTree = "<group>"; };
+		9AD526AB21C9A788002AC8E2 /* FirstCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCourseViewController.swift; sourceTree = "<group>"; };
+		9AD526AC21C9A788002AC8E2 /* CourseViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewInput.swift; sourceTree = "<group>"; };
+		9AD526AD21C9A788002AC8E2 /* CourseViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewOutput.swift; sourceTree = "<group>"; };
+		9AD526AF21C9A788002AC8E2 /* FirstCourseConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCourseConfigurator.swift; sourceTree = "<group>"; };
+		9AD526B021C9A788002AC8E2 /* FirstCourseInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCourseInitializer.swift; sourceTree = "<group>"; };
+		9AD526B221C9A788002AC8E2 /* CourseInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseInteractorInput.swift; sourceTree = "<group>"; };
+		9AD526B321C9A788002AC8E2 /* CourseInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseInteractorOutput.swift; sourceTree = "<group>"; };
+		9AD526B421C9A788002AC8E2 /* CourseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseInteractor.swift; sourceTree = "<group>"; };
+		9AD526B621C9A788002AC8E2 /* CourseRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseRouterInput.swift; sourceTree = "<group>"; };
+		9AD526B721C9A788002AC8E2 /* CourseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseRouter.swift; sourceTree = "<group>"; };
+		9AD526B921C9A788002AC8E2 /* DetailReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailReviewViewController.swift; sourceTree = "<group>"; };
+		9AD526BB21C9A788002AC8E2 /* CompleteReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteReviewViewController.swift; sourceTree = "<group>"; };
+		9AD526BD21C9A788002AC8E2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9AD5270021C9A792002AC8E2 /* Review.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Review.storyboard; sourceTree = "<group>"; };
+		9AD5270221C9A79F002AC8E2 /* courseProject23.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = courseProject23.pdf; sourceTree = "<group>"; };
 		9AEED50321A1F28E00A9FC03 /* FinalThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalThemeViewController.swift; sourceTree = "<group>"; };
 		9AEED50521A1FDC400A9FC03 /* EditThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditThemeViewController.swift; sourceTree = "<group>"; };
 		9AEED50C21A49EA000A9FC03 /* CourseWorkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseWorkTableViewCell.swift; sourceTree = "<group>"; };
@@ -434,6 +572,7 @@
 		9A7DC87121728DF900F8B884 /* Curator App */ = {
 			isa = PBXGroup;
 			children = (
+				9AD5265F21C9A76F002AC8E2 /* SendReviewModule */,
 				9A9C22FE21C14BC800F914E6 /* View */,
 				9A815EC62173CC330042E293 /* Models */,
 				9A815EC02173CC000042E293 /* Configuration */,
@@ -482,6 +621,7 @@
 		9A815A692173C6970042E293 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9ABCAA1021D9636000156673 /* ThemeStatuses */,
 				9A91755A21C1AE090033D056 /* Date */,
 				9A9C230921C14DEC00F914E6 /* Views */,
 				9A9C230421C14D8300F914E6 /* Extensions */,
@@ -679,6 +819,313 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9ABCAA1021D9636000156673 /* ThemeStatuses */ = {
+			isa = PBXGroup;
+			children = (
+				9ABCAA1121D9637000156673 /* ThemeStatusesHelper.swift */,
+			);
+			path = ThemeStatuses;
+			sourceTree = "<group>";
+		};
+		9AD5265F21C9A76F002AC8E2 /* SendReviewModule */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5270021C9A792002AC8E2 /* Review.storyboard */,
+				9AD5270221C9A79F002AC8E2 /* courseProject23.pdf */,
+				9AD5266021C9A788002AC8E2 /* Helpers */,
+				9AD5268421C9A788002AC8E2 /* Managers */,
+				9AD5268C21C9A788002AC8E2 /* Moduls */,
+			);
+			path = SendReviewModule;
+			sourceTree = "<group>";
+		};
+		9AD5266021C9A788002AC8E2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5266121C9A788002AC8E2 /* ModuleInput */,
+				9AD5267A21C9A788002AC8E2 /* AlertFactory */,
+				9AD5267D21C9A788002AC8E2 /* Models */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9AD5266121C9A788002AC8E2 /* ModuleInput */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5266221C9A788002AC8E2 /* courseProject2.pdf */,
+				9AD5266321C9A788002AC8E2 /* courseProject3.pdf */,
+				9AD5266421C9A788002AC8E2 /* courseProject7.pdf */,
+				9AD5266521C9A788002AC8E2 /* courseProject6.pdf */,
+				9AD5266621C9A788002AC8E2 /* courseProject5.pdf */,
+				9AD5266721C9A788002AC8E2 /* courseProject14.pdf */,
+				9AD5266821C9A788002AC8E2 /* courseProject15.pdf */,
+				9AD5266921C9A788002AC8E2 /* courseProject17.pdf */,
+				9AD5266A21C9A788002AC8E2 /* courseProject1 13-07-12-555.pdf */,
+				9AD5266B21C9A788002AC8E2 /* courseProject16.pdf */,
+				9AD5266C21C9A788002AC8E2 /* courseProject12.pdf */,
+				9AD5266D21C9A788002AC8E2 /* courseProject13.pdf */,
+				9AD5266E21C9A788002AC8E2 /* courseProject11.pdf */,
+				9AD5266F21C9A788002AC8E2 /* ModuleInput.swift */,
+				9AD5267021C9A788002AC8E2 /* courseProject10.pdf */,
+				9AD5267121C9A788002AC8E2 /* courseProject21.pdf */,
+				9AD5267221C9A788002AC8E2 /* courseProject20.pdf */,
+				9AD5267321C9A788002AC8E2 /* courseProject22.pdf */,
+				9AD5267421C9A788002AC8E2 /* courseProject18.pdf */,
+				9AD5267521C9A788002AC8E2 /* courseProject19.pdf */,
+				9AD5267621C9A788002AC8E2 /* courseProject8.pdf */,
+				9AD5267721C9A788002AC8E2 /* courseProject9.pdf */,
+				9AD5267821C9A788002AC8E2 /* courseProject5 copy.pdf */,
+				9AD5267921C9A788002AC8E2 /* ModuleInputHolder.swift */,
+			);
+			path = ModuleInput;
+			sourceTree = "<group>";
+		};
+		9AD5267A21C9A788002AC8E2 /* AlertFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5267B21C9A788002AC8E2 /* AlertFactoryImplementation.swift */,
+				9AD5267C21C9A788002AC8E2 /* AlertFactory.swift */,
+			);
+			path = AlertFactory;
+			sourceTree = "<group>";
+		};
+		9AD5267D21C9A788002AC8E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5267E21C9A788002AC8E2 /* ReviewModel.swift */,
+				9AD5267F21C9A788002AC8E2 /* CellModel */,
+				9AD5268221C9A788002AC8E2 /* SettingsModel.swift */,
+				9AD5268321C9A788002AC8E2 /* Student.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9AD5267F21C9A788002AC8E2 /* CellModel */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5268021C9A788002AC8E2 /* CellModel.swift */,
+				9AD5268121C9A788002AC8E2 /* CellModelImplementation.swift */,
+			);
+			path = CellModel;
+			sourceTree = "<group>";
+		};
+		9AD5268421C9A788002AC8E2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5268521C9A788002AC8E2 /* GoogleTableParser */,
+				9AD5268821C9A788002AC8E2 /* DbManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9AD5268521C9A788002AC8E2 /* GoogleTableParser */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5268621C9A788002AC8E2 /* GoogleTableParserManager.swift */,
+				9AD5268721C9A788002AC8E2 /* GoogleTableParserManagerImplementation.swift */,
+			);
+			path = GoogleTableParser;
+			sourceTree = "<group>";
+		};
+		9AD5268821C9A788002AC8E2 /* DbManager */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5268921C9A788002AC8E2 /* StudentDbManager.swift */,
+				9AD5268A21C9A788002AC8E2 /* DbManagerImplementation.swift */,
+				9AD5268B21C9A788002AC8E2 /* DbManager.swift */,
+			);
+			path = DbManager;
+			sourceTree = "<group>";
+		};
+		9AD5268C21C9A788002AC8E2 /* Moduls */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5268D21C9A788002AC8E2 /* Settings */,
+				9AD5269E21C9A788002AC8E2 /* SecondCourse */,
+				9AD526B821C9A788002AC8E2 /* DetailReview */,
+				9AD526BA21C9A788002AC8E2 /* CompleteReview */,
+				9AD526BC21C9A788002AC8E2 /* SignIn */,
+			);
+			path = Moduls;
+			sourceTree = "<group>";
+		};
+		9AD5268D21C9A788002AC8E2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5268E21C9A788002AC8E2 /* Presenter */,
+				9AD5269021C9A788002AC8E2 /* View */,
+				9AD5269421C9A788002AC8E2 /* Configurator */,
+				9AD5269721C9A788002AC8E2 /* Interactor */,
+				9AD5269B21C9A788002AC8E2 /* Router */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9AD5268E21C9A788002AC8E2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5268F21C9A788002AC8E2 /* SettingsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9AD5269021C9A788002AC8E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5269121C9A788002AC8E2 /* SettingsViewOutput.swift */,
+				9AD5269221C9A788002AC8E2 /* SettingsViewController.swift */,
+				9AD5269321C9A788002AC8E2 /* SettingsViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AD5269421C9A788002AC8E2 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5269521C9A788002AC8E2 /* SettingsInitializer.swift */,
+				9AD5269621C9A788002AC8E2 /* SettingsConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		9AD5269721C9A788002AC8E2 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5269821C9A788002AC8E2 /* SettingsInteractorOutput.swift */,
+				9AD5269921C9A788002AC8E2 /* SettingsInteractor.swift */,
+				9AD5269A21C9A788002AC8E2 /* SettingsInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9AD5269B21C9A788002AC8E2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5269C21C9A788002AC8E2 /* SettingsRouter.swift */,
+				9AD5269D21C9A788002AC8E2 /* SettingsRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9AD5269E21C9A788002AC8E2 /* SecondCourse */ = {
+			isa = PBXGroup;
+			children = (
+				9AD5269F21C9A788002AC8E2 /* TableView */,
+				9AD526A621C9A788002AC8E2 /* Entity */,
+				9AD526A821C9A788002AC8E2 /* Presenter */,
+				9AD526AA21C9A788002AC8E2 /* View */,
+				9AD526AE21C9A788002AC8E2 /* Configurator */,
+				9AD526B121C9A788002AC8E2 /* Interactor */,
+				9AD526B521C9A788002AC8E2 /* Router */,
+			);
+			path = SecondCourse;
+			sourceTree = "<group>";
+		};
+		9AD5269F21C9A788002AC8E2 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526A021C9A788002AC8E2 /* DataSource */,
+				9AD526A321C9A788002AC8E2 /* Cell */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		9AD526A021C9A788002AC8E2 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526A121C9A788002AC8E2 /* StudentsDataSourceInput.swift */,
+				9AD526A221C9A788002AC8E2 /* StudentsDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		9AD526A321C9A788002AC8E2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526A421C9A788002AC8E2 /* StudentReviewTableViewCell.swift */,
+				9AD526A521C9A788002AC8E2 /* StudentReviewTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9AD526A621C9A788002AC8E2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526A721C9A788002AC8E2 /* StudentModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9AD526A821C9A788002AC8E2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526A921C9A788002AC8E2 /* CoursePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9AD526AA21C9A788002AC8E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526AB21C9A788002AC8E2 /* FirstCourseViewController.swift */,
+				9AD526AC21C9A788002AC8E2 /* CourseViewInput.swift */,
+				9AD526AD21C9A788002AC8E2 /* CourseViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AD526AE21C9A788002AC8E2 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526AF21C9A788002AC8E2 /* FirstCourseConfigurator.swift */,
+				9AD526B021C9A788002AC8E2 /* FirstCourseInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		9AD526B121C9A788002AC8E2 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526B221C9A788002AC8E2 /* CourseInteractorInput.swift */,
+				9AD526B321C9A788002AC8E2 /* CourseInteractorOutput.swift */,
+				9AD526B421C9A788002AC8E2 /* CourseInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		9AD526B521C9A788002AC8E2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526B621C9A788002AC8E2 /* CourseRouterInput.swift */,
+				9AD526B721C9A788002AC8E2 /* CourseRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		9AD526B821C9A788002AC8E2 /* DetailReview */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526B921C9A788002AC8E2 /* DetailReviewViewController.swift */,
+			);
+			path = DetailReview;
+			sourceTree = "<group>";
+		};
+		9AD526BA21C9A788002AC8E2 /* CompleteReview */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526BB21C9A788002AC8E2 /* CompleteReviewViewController.swift */,
+			);
+			path = CompleteReview;
+			sourceTree = "<group>";
+		};
+		9AD526BC21C9A788002AC8E2 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				9AD526BD21C9A788002AC8E2 /* ViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		9AEED50B21A49E8700A9FC03 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -788,6 +1235,7 @@
 				9A7DC86D21728DF900F8B884 /* Resources */,
 				82EC4DB7A6FC0FC2362F738A /* [CP] Embed Pods Frameworks */,
 				9AFC3A0D2189A4E00021E57D /* ShellScript */,
+				F2EFD3AD7666113E70C8C498 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -848,14 +1296,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AD526CC21C9A788002AC8E2 /* courseProject10.pdf in Resources */,
+				9AD526CD21C9A788002AC8E2 /* courseProject21.pdf in Resources */,
+				9AD526D321C9A788002AC8E2 /* courseProject9.pdf in Resources */,
+				9AD526D221C9A788002AC8E2 /* courseProject8.pdf in Resources */,
+				9AD526C221C9A788002AC8E2 /* courseProject5.pdf in Resources */,
 				9AFC39EF218509E20021E57D /* Students.storyboard in Resources */,
+				9AD526CA21C9A788002AC8E2 /* courseProject11.pdf in Resources */,
+				9AD526CE21C9A788002AC8E2 /* courseProject20.pdf in Resources */,
 				9A7DC87D21728DFB00F8B884 /* LaunchScreen.storyboard in Resources */,
+				9AD526CF21C9A788002AC8E2 /* courseProject22.pdf in Resources */,
+				9AD526C921C9A788002AC8E2 /* courseProject13.pdf in Resources */,
+				9AD5270121C9A792002AC8E2 /* Review.storyboard in Resources */,
 				9A7DC87A21728DFB00F8B884 /* Assets.xcassets in Resources */,
 				9A6E9A06217FBADA003D2565 /* CourseWork.storyboard in Resources */,
+				9AD526C121C9A788002AC8E2 /* courseProject6.pdf in Resources */,
+				9AD526C321C9A788002AC8E2 /* courseProject14.pdf in Resources */,
+				9AD526C021C9A788002AC8E2 /* courseProject7.pdf in Resources */,
+				9AD526D021C9A788002AC8E2 /* courseProject18.pdf in Resources */,
+				9AD526C721C9A788002AC8E2 /* courseProject16.pdf in Resources */,
 				9A63FEAA21767D5500D74116 /* Profile.storyboard in Resources */,
+				9AD526D121C9A788002AC8E2 /* courseProject19.pdf in Resources */,
+				9AD526BF21C9A788002AC8E2 /* courseProject3.pdf in Resources */,
 				9A7DC87821728DF900F8B884 /* Login.storyboard in Resources */,
+				9AD526C521C9A788002AC8E2 /* courseProject17.pdf in Resources */,
+				9AD526C421C9A788002AC8E2 /* courseProject15.pdf in Resources */,
 				9AFC39F1218509E80021E57D /* Themes.storyboard in Resources */,
+				9AD5270321C9A79F002AC8E2 /* courseProject23.pdf in Resources */,
+				9AD526D421C9A788002AC8E2 /* courseProject5 copy.pdf in Resources */,
+				9AD526C621C9A788002AC8E2 /* courseProject1 13-07-12-555.pdf in Resources */,
+				9AD526C821C9A788002AC8E2 /* courseProject12.pdf in Resources */,
 				9A815ECC2173DE160042E293 /* Main.storyboard in Resources */,
+				9AD526F021C9A788002AC8E2 /* StudentReviewTableViewCell.xib in Resources */,
+				9AD526BE21C9A788002AC8E2 /* courseProject2.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,11 +1346,20 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Curator App/Pods-Curator App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework",
+				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ILPDFKit/ILPDFKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -886,11 +1368,20 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMCheckBox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ILPDFKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -938,6 +1429,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F2EFD3AD7666113E70C8C498 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Curator App/Pods-Curator App-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Curator App/Pods-Curator App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -959,39 +1472,65 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A9C22EB21BEB12200F914E6 /* MoyaLoginService.swift in Sources */,
+				9AD526F121C9A788002AC8E2 /* StudentModel.swift in Sources */,
 				9A815EBF2173CBDE0042E293 /* AuthorizationExtractor.swift in Sources */,
 				9A815A832173C6A00042E293 /* WebRequest.swift in Sources */,
 				9A91755921C1A0A80033D056 /* CourseWork.swift in Sources */,
+				9AD526FE21C9A788002AC8E2 /* CompleteReviewViewController.swift in Sources */,
 				9A815A872173C6A00042E293 /* WebRequestAdapter.swift in Sources */,
 				9A6E9A0F217FC57D003D2565 /* Profile.swift in Sources */,
 				9A815A812173C6A00042E293 /* AlamofireWebService.swift in Sources */,
+				9AD526DC21C9A788002AC8E2 /* Student.swift in Sources */,
+				9AD526EF21C9A788002AC8E2 /* StudentReviewTableViewCell.swift in Sources */,
 				9A6E9A11217FC79C003D2565 /* ProfileExtractor.swift in Sources */,
+				9AD526D921C9A788002AC8E2 /* CellModel.swift in Sources */,
+				9AD526D721C9A788002AC8E2 /* AlertFactory.swift in Sources */,
 				9A6E9A00217FB6D9003D2565 /* CompetentionsTableViewController.swift in Sources */,
+				9AD526F521C9A788002AC8E2 /* CourseViewOutput.swift in Sources */,
 				9A815A892173C6A00042E293 /* WebService.swift in Sources */,
+				9AD526FA21C9A788002AC8E2 /* CourseInteractor.swift in Sources */,
 				9AFC3A0521890F600021E57D /* ThemesTableViewController.swift in Sources */,
 				9AFC39FE2188FD030021E57D /* SuggestionThemeForStudentViewController.swift in Sources */,
 				9AEED51121A4A6D300A9FC03 /* ProgressViewController.swift in Sources */,
 				9A815A7D2173C6A00042E293 /* WebStatusCode.swift in Sources */,
+				9AD526D621C9A788002AC8E2 /* AlertFactoryImplementation.swift in Sources */,
 				9AFC3A0C21899BC20021E57D /* EditCompetitionTableViewController.swift in Sources */,
 				9A815C792173C82C0042E293 /* APIWebService.swift in Sources */,
+				9AD526F821C9A788002AC8E2 /* CourseInteractorInput.swift in Sources */,
 				9AEED51321A4A81800A9FC03 /* ProgressTableViewCell.swift in Sources */,
+				9AD526E521C9A788002AC8E2 /* SettingsViewInput.swift in Sources */,
+				9AD526D521C9A788002AC8E2 /* ModuleInputHolder.swift in Sources */,
 				9A815A842173C6A00042E293 /* WebMultiPart.swift in Sources */,
+				9AD526FF21C9A788002AC8E2 /* ViewController.swift in Sources */,
+				9AD526E421C9A788002AC8E2 /* SettingsViewController.swift in Sources */,
 				9A23E64F21ADF1700015B779 /* DetailWorkStepViewController.swift in Sources */,
+				9AD526F421C9A788002AC8E2 /* CourseViewInput.swift in Sources */,
+				9AD526E921C9A788002AC8E2 /* SettingsInteractor.swift in Sources */,
 				9AFC39F92188E62D0021E57D /* StudentProfileViewController.swift in Sources */,
 				9A6E9A13217FC7E2003D2565 /* DefaultProfileExtractor.swift in Sources */,
 				9A63FEB121772DC000D74116 /* CourseWorksTableViewController.swift in Sources */,
+				9AD526F721C9A788002AC8E2 /* FirstCourseInitializer.swift in Sources */,
 				9A815A882173C6A00042E293 /* WebActivityIndicator.swift in Sources */,
 				9A815C7E2173C86B0042E293 /* AuthorizationService.swift in Sources */,
+				9AD526E221C9A788002AC8E2 /* SettingsPresenter.swift in Sources */,
 				9A6E9A0D217FC41A003D2565 /* DefaultProfileService.swift in Sources */,
+				9AD526E621C9A788002AC8E2 /* SettingsInitializer.swift in Sources */,
 				9A815A822173C6A00042E293 /* AlamofireWebError.swift in Sources */,
+				9AD526ED21C9A788002AC8E2 /* StudentsDataSourceInput.swift in Sources */,
 				9A815EBA2173CBB80042E293 /* AccountUserBufferCoder.swift in Sources */,
 				9A455D87219237B6009F160A /* ThemeSuggestionViewController.swift in Sources */,
+				9AD526EC21C9A788002AC8E2 /* SettingsRouterInput.swift in Sources */,
+				9AD526EB21C9A788002AC8E2 /* SettingsRouter.swift in Sources */,
+				9AD526DD21C9A788002AC8E2 /* GoogleTableParserManager.swift in Sources */,
 				9A9C22EF21BEBD2500F914E6 /* Skill.swift in Sources */,
 				9A9C22FD21C05C8B00F914E6 /* MoyaSkillService.swift in Sources */,
 				9A815A8D2173C6A00042E293 /* WebMultiPartItem.swift in Sources */,
 				9A815A67217369550042E293 /* LoginViewController.swift in Sources */,
+				9AD526F621C9A788002AC8E2 /* FirstCourseConfigurator.swift in Sources */,
+				9AD526FB21C9A788002AC8E2 /* CourseRouterInput.swift in Sources */,
 				9A815EC32173CC160042E293 /* Production.swift in Sources */,
 				9A553D9C21C5C9180054609D /* CommentModel.swift in Sources */,
+				9AD526CB21C9A788002AC8E2 /* ModuleInput.swift in Sources */,
 				9AFC39FC2188E6770021E57D /* StudentTableViewCell.swift in Sources */,
 				9A9C22F721BEFBF000F914E6 /* MoyaWorksService.swift in Sources */,
 				9A815EC82173CC440042E293 /* Token.swift in Sources */,
@@ -1000,31 +1539,42 @@
 				9A23E64D21ADE8390015B779 /* CreateCourseWorkStepViewController.swift in Sources */,
 				9A815EBB2173CBB80042E293 /* DefaultAccountUserBufferCoder.swift in Sources */,
 				9AEED50F21A4A5B900A9FC03 /* DetailCourseWorkViewController.swift in Sources */,
+				9AD526DB21C9A788002AC8E2 /* SettingsModel.swift in Sources */,
 				9A553D9A21C5C60A0054609D /* StepCommentTableViewCell.swift in Sources */,
 				9AFC3A0321890A400021E57D /* CompetitonTableViewCell.swift in Sources */,
 				9A0FBA0921BD588500748346 /* MoyaProfileService.swift in Sources */,
+				9AD526FD21C9A788002AC8E2 /* DetailReviewViewController.swift in Sources */,
 				9A9C230821C14DB700F914E6 /* Fonts.swift in Sources */,
+				9AD526DE21C9A788002AC8E2 /* GoogleTableParserManagerImplementation.swift in Sources */,
 				9AFC3A0A21899B880021E57D /* EditCompetitionTableViewCell.swift in Sources */,
 				9A815C7D2173C86B0042E293 /* DefaultAuthorizationService.swift in Sources */,
 				9A815EB72173CBB10042E293 /* TokensCoder.swift in Sources */,
 				9A9C230321C14CEB00F914E6 /* Colors.swift in Sources */,
 				9A133C2F21C82F85006DA32D /* MaterialsTableViewController.swift in Sources */,
+				9AD526D821C9A788002AC8E2 /* ReviewModel.swift in Sources */,
 				9A455D8921923B67009F160A /* SuggestionThemeCommentTableViewCell.swift in Sources */,
+				9AD526E721C9A788002AC8E2 /* SettingsConfigurator.swift in Sources */,
 				9A815EBE2173CBDE0042E293 /* DefaultAuthorizationExtractor.swift in Sources */,
 				9A9C22F121BEF12300F914E6 /* MoyaServices.swift in Sources */,
+				9AD526E121C9A788002AC8E2 /* DbManager.swift in Sources */,
 				9A815ECE2173DE810042E293 /* MainTabBarController.swift in Sources */,
 				9A9C22FB21BFB33500F914E6 /* ThemeModel.swift in Sources */,
+				9AD526EE21C9A788002AC8E2 /* StudentsDataSource.swift in Sources */,
 				9A815A802173C6A00042E293 /* AlamofireWebRequestAdapter.swift in Sources */,
 				9AEED50D21A49EA000A9FC03 /* CourseWorkTableViewCell.swift in Sources */,
 				9A63FE9E2175D86100D74116 /* ProfileViewController.swift in Sources */,
 				9AEED50421A1F28E00A9FC03 /* FinalThemeViewController.swift in Sources */,
 				9A553D9621C55B100054609D /* SuggestionModel.swift in Sources */,
+				9AD526E021C9A788002AC8E2 /* DbManagerImplementation.swift in Sources */,
+				9AD526E821C9A788002AC8E2 /* SettingsInteractorOutput.swift in Sources */,
 				9A815A7E2173C6A00042E293 /* WebMultiPartDataItem.swift in Sources */,
+				9AD526DF21C9A788002AC8E2 /* StudentDbManager.swift in Sources */,
 				9A133C3121C8308B006DA32D /* MaterialModel.swift in Sources */,
 				9A133C3321C8352D006DA32D /* AddMaterialViewController.swift in Sources */,
 				9A91755C21C1AE210033D056 /* DateService.swift in Sources */,
 				9AFC39F7218629AD0021E57D /* StudentsTableViewController.swift in Sources */,
 				9A9C230021C14BD700F914E6 /* EmptyStateView.swift in Sources */,
+				9AD526E321C9A788002AC8E2 /* SettingsViewOutput.swift in Sources */,
 				9A815EB62173CBB10042E293 /* DefaultTokensCoder.swift in Sources */,
 				9A815A7F2173C6A00042E293 /* AlamofireWebHandler.swift in Sources */,
 				9A815A8B2173C6A00042E293 /* WebMethod.swift in Sources */,
@@ -1033,20 +1583,27 @@
 				9A7DC87321728DF900F8B884 /* AppDelegate.swift in Sources */,
 				9A553D9221C3FB550054609D /* MoyaSubjectService.swift in Sources */,
 				9AFC3A082189117D0021E57D /* ThemeTableViewCell.swift in Sources */,
+				9AD526F221C9A788002AC8E2 /* CoursePresenter.swift in Sources */,
 				9AEED50621A1FDC400A9FC03 /* EditThemeViewController.swift in Sources */,
+				9AD526FC21C9A788002AC8E2 /* CourseRouter.swift in Sources */,
 				9A63FEAF21772D1700D74116 /* CompetitionsViewController.swift in Sources */,
 				9A815A8C2173C6A00042E293 /* WebErrorBase.swift in Sources */,
 				9A815CAC2173C99B0042E293 /* LoggedTabBarController.swift in Sources */,
+				9AD526EA21C9A788002AC8E2 /* SettingsInteractorInput.swift in Sources */,
 				9A815A8A2173C6A00042E293 /* UIWebActivityIndicator.swift in Sources */,
 				9A6E9A0B217FC401003D2565 /* ProfileService.swift in Sources */,
 				9A9C230621C14D8C00F914E6 /* UIColorExtension.swift in Sources */,
+				9AD526F921C9A788002AC8E2 /* CourseInteractorOutput.swift in Sources */,
 				9A63FEAD2177285F00D74116 /* AboutMyselfViewController.swift in Sources */,
 				9A9C22F921BFB1AA00F914E6 /* StepModel.swift in Sources */,
 				9A815CAB2173C99B0042E293 /* LoggedNavigationController.swift in Sources */,
+				9AD526F321C9A788002AC8E2 /* FirstCourseViewController.swift in Sources */,
 				9A815A852173C6A00042E293 /* WebError.swift in Sources */,
 				9A553D9421C43A750054609D /* MoyaStudentService.swift in Sources */,
+				9ABCAA1221D9637000156673 /* ThemeStatusesHelper.swift in Sources */,
 				9A815A862173C6A00042E293 /* WebHandler.swift in Sources */,
 				9AFC3A002188FEF40021E57D /* SubjectsTableViewController.swift in Sources */,
+				9AD526DA21C9A788002AC8E2 /* CellModelImplementation.swift in Sources */,
 				9A6E9A08217FBF2A003D2565 /* CourseWorkTableViewController.swift in Sources */,
 				9A9C22ED21BEB8B900F914E6 /* LoginModel.swift in Sources */,
 				9A815C782173C82C0042E293 /* DefaultAPIWebService.swift in Sources */,

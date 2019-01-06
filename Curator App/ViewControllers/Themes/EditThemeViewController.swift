@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 class EditThemeViewController: UIViewController {
 
@@ -14,6 +15,12 @@ class EditThemeViewController: UIViewController {
     
     @IBOutlet weak var themeNameTextField: UITextField!
     @IBOutlet weak var themeDescriptionTextField: UITextField!
+    
+    // MARK: -
+    
+    var themeName: String!
+    var themeDescription: String!
+    var suggestionId: Int!
     
     // MARK: - Instance Methods
     
@@ -24,7 +31,39 @@ class EditThemeViewController: UIViewController {
     
     @objc
     private func onEditButtonTouchUpInside() {
-        navigationController?.popViewController(animated: true)
+        if self.themeDescriptionTextField.text != "" && self.themeNameTextField.text != "" {
+            MoyaServices.themesProvider.request(.updateSuggestionProgress(MoyaServices.currentUserId, self.suggestionId, self.themeNameTextField.text!, self.themeDescriptionTextField.text!)) { (result) in
+                switch result {
+                case .success(let response):
+                    print("SUCCESS UPDATE SUGGESTION PROGRESS")
+                    print(String(data: response.data, encoding: .utf8))
+                
+                    
+                    MoyaServices.themesProvider.request(.updateSuggestion(MoyaServices.currentUserId, self.suggestionId, 5), completion: { (result) in
+                        switch result {
+                        case .success(let response):
+                            print("SUCCESS UPDATE SUGGESTION STATUS")
+                            
+                        case .failure(let error):
+                            print("ERROR UPDATE SUGGESTION STATUS")
+                        }
+                    })
+                    
+                    self.navigationController?.popViewController(animated: true)
+
+                case .failure(let error):
+                    print("ERROR UPDATE SUGGESTION PROGRESS")
+                }
+            }
+        } else {
+            let alert = UIAlertController(title: "Ошибка", message: "Пожалуйста, заполните все поля", preferredStyle: UIAlertController.Style.alert)
+            
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     // MARK: - UIViewController
@@ -34,5 +73,12 @@ class EditThemeViewController: UIViewController {
 
         self.configureNavigationBar()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.themeNameTextField.text = self.themeName
+        self.themeDescriptionTextField.text = self.themeDescription
     }
 }

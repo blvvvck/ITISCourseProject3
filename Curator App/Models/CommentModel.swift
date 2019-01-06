@@ -13,5 +13,6 @@ struct CommentModel: Codable {
     var author_name: String
     var content: String
     var date_creation: String
-    var step: Int
+    var step_id: Int?
+    var suggestion_id: Int?
 }

@@ -97,6 +97,19 @@ class ProfileViewController: UIViewController {
     }
     // MARK: -
     
+    fileprivate func loadCuratorSkills() {
+        MoyaServices.profileProvider.request(.getCuratorSkills(MoyaServices.currentUserId)) { (result) in
+            switch result {
+            case .success(let response):
+                self.profileModel.skills = try! response.map([Skill].self)  
+                
+                self.hideEmptyState()
+            case .failure(let error):
+                print("GET SKILLS CURATOR ERROR")
+            }
+        }
+    }
+    
     fileprivate func loadProfileInfo() {
         let provider = MoyaProvider<MoyaProfileService>()
         
@@ -109,11 +122,12 @@ class ProfileViewController: UIViewController {
                 
                 self.profileModel = profileModel
                 
+                self.loadCuratorSkills()
+                
                 self.surnameLabel.text = self.profileModel.last_name
                 self.nameAndPatronymicLabel.text = "\(self.profileModel.name) \(self.profileModel.patronymic)"
                 self.descriptionLabel.text = self.profileModel.description
             
-                self.hideEmptyState()
             case let .failure(error):
                 print(error.errorDescription)
                 
@@ -153,6 +167,7 @@ class ProfileViewController: UIViewController {
             
         case Segues.competentionSegue:
            let competitionVC = segue.destination as! CompetentionsTableViewController
+            competitionVC.profileModel = self.profileModel
            
             //competitionVC.apply(profileModel: self.profileModel)
             

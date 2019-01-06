@@ -196,20 +196,21 @@ class EditCompetitionTableViewController: UIViewController {
     }
     
     fileprivate func loadCuratorModel() {
-        self.showLoadingState()
-        
-        MoyaServices.profileProvider.request(.getProfileInfo(MoyaServices.currentUserId)) { (result) in
-            switch result {
-            case .success(let moyaResponse):
-                let profileModel = try! moyaResponse.map(Profile.self)
-                self.profileModel = profileModel
-                
-                self.loadSkills()
-                
-            case .failure(let error):
-                print("GET PROFILE INFO FAIL")
-            }
-        }
+        self.loadSkills()
+//        self.showLoadingState()
+//
+//        MoyaServices.profileProvider.request(.getProfileInfo(MoyaServices.currentUserId)) { (result) in
+//            switch result {
+//            case .success(let moyaResponse):
+//                let profileModel = try! moyaResponse.map(Profile.self)
+//                self.profileModel = profileModel
+//
+//                self.loadSkills()
+//
+//            case .failure(let error):
+//                print("GET PROFILE INFO FAIL")
+//            }
+//        }
     }
     
     // MARK: - UIViewController

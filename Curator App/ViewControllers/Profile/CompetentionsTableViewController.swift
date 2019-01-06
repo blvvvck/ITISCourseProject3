@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 class CompetentionsTableViewController: UIViewController {
     
@@ -17,6 +18,11 @@ class CompetentionsTableViewController: UIViewController {
         // MARK: - Instance Properties
         
         static let competitionCellIdentifier = "competitionCellIdentifier"
+    }
+    
+    enum CompetitionsTableViewControllerType {
+        case addStudentToTheme
+        case watchProfile
     }
 
     // MARK: - Instance Properties
@@ -32,6 +38,10 @@ class CompetentionsTableViewController: UIViewController {
     var profileModel: Profile!
     
     var skills: [Skill] = []
+    
+    var type: CompetitionsTableViewControllerType = .watchProfile
+    
+    var studentId: Int!
     
     // MARK: - Empty State
     
@@ -96,24 +106,50 @@ class CompetentionsTableViewController: UIViewController {
         cell.competitionLevelLabel.text = "Уровень: высокий"
     }
     
+    
+    
     func apply() {
-        //self.profileModel = profileModel
-        self.showLoadingState()
-
-        MoyaServices.skillsProvider.request(.getCuratorSkills(MoyaServices.currentUserId)) { (result) in
-            switch result {
-            case .success(let response):
-                self.skills = try! response.map([Skill].self)
-                self.tableView.reloadData()
-                
-                self.hideEmptyState()
-            case .failure(let error):
-                print("ERROR CURATOR SKILL LOAD")
+        switch self.type {
+        case .addStudentToTheme:
+            self.showLoadingState()
+            
+            MoyaServices.studentsProvider.request(.getStudentSkills(self.studentId)) { (result) in
+                switch result {
+                case .success(let response):
+                    print("GET STUDENT SKILLS SUCCESS")
+                    let skills = try! response.map([Skill].self)
+                    self.skills = skills
+                    
+                    self.hideEmptyState()
+                    
+                    self.tableView.reloadData()
+                    
+                case .failure(let error):
+                    print("GET STUDENT SKILLS ERROR")
+                }
             }
-        }
-        
-        if isViewLoaded {
-            self.tableView.reloadData()
+            
+            
+        default:
+            self.showLoadingState()
+            
+            MoyaServices.skillsProvider.request(.getCuratorSkills(MoyaServices.currentUserId)) { (result) in
+                switch result {
+                case .success(let response):
+                    self.skills = try! response.map([Skill].self)
+                    self.tableView.reloadData()
+                    
+                    self.profileModel.skills = self.skills
+                    
+                    self.hideEmptyState()
+                case .failure(let error):
+                    print("ERROR CURATOR SKILL LOAD")
+                }
+            }
+            
+            if isViewLoaded {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -129,6 +165,11 @@ class CompetentionsTableViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.apply()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let editCompetitionsVC = segue.destination as! EditCompetitionTableViewController
+        editCompetitionsVC.profileModel = self.profileModel
     }
 }
 
@@ -162,6 +203,6 @@ extension CompetentionsTableViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
 }

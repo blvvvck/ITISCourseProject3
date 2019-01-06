@@ -28,7 +28,7 @@ class AddMaterialViewController: UIViewController {
     @objc
     private func onDoneButtonTouchUpInside() {
         if self.textView.text != "" {
-            let mateial = MaterialModel(id: 1, content: self.textView.text, step: 1)
+            let mateial = MaterialModel(id: 1, content: self.textView.text, step_id: 1)
             
             MoyaServices.worksProvider.request(.addStepMaterial(MoyaServices.currentUserId, self.work.id, self.step.id, mateial)) { (result) in
                 switch result {

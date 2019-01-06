@@ -11,5 +11,5 @@ import Foundation
 struct MaterialModel: Codable {
     var id: Int
     var content: String
-    var step: Int
+    var step_id: Int
 }

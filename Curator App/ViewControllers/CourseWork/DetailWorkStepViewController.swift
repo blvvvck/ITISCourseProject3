@@ -40,6 +40,14 @@ class DetailWorkStepViewController: UIViewController {
     @IBOutlet weak var emptyStateView: EmptyStateView!
     
     @IBOutlet weak var commentsTableView: UITableView!
+    
+    @IBOutlet weak var commentsTextField: UITextField!
+    
+    @IBOutlet weak var stepMaterialsButton: UIButton!
+    
+    @IBOutlet weak var stepDescriptionLabel: UILabel!
+    
+    @IBOutlet weak var sendCommentButton: UIButton!
     // MARK: -
     
     var type: DetailWorkStepControllerType!
@@ -109,6 +117,31 @@ class DetailWorkStepViewController: UIViewController {
     
     // MARK: - Instance Methods
     
+    @IBAction func onSendButtonTouchUpInside(_ sender: Any) {
+        if self.commentsTextField.text == "" {
+            let alert = UIAlertController(title: "Ошибка", message: "Введите комментарий", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let commentModel = CommentModel(id: 1, author_name: self.courseWork.theme.curator.name, content: self.commentsTextField.text!, date_creation: DateService.shared.getNowDateInCorrectFormat(), step_id: self.workStep.id, suggestion_id: 1)
+            
+            MoyaServices.worksProvider.request(.addStepComment(MoyaServices.currentUserId, self.courseWork.id, commentModel)) { (result) in
+                switch result {
+                case .success(let response):
+                    print("ADD COMMENT TO STEP SUCCESS")
+                    print(String(data: response.data, encoding: .utf8))
+                    self.loadComments()
+                    self.commentsTextField.text = ""
+                    
+                case .failure(let error):
+                    print("ADD COMMENT TO STEP FAILURE")
+                }
+            }
+        }
+    }
+    
     fileprivate func configureUI() {
         switch self.type {
         case .watch?:
@@ -131,6 +164,12 @@ class DetailWorkStepViewController: UIViewController {
             self.stepEndDateTextField.isUserInteractionEnabled = true
             self.stepDescriptionTextView.isUserInteractionEnabled = true
             //self.stepMaterialsTextView.isUserInteractionEnabled = true
+            self.commentsTableView.isHidden = true
+            self.sendCommentButton.isHidden = true
+            self.stepDescriptionLabel.isHidden = true
+            self.stepDescriptionTextView.isHidden = true
+            self.commentsTextField.isHidden = true
+            self.stepMaterialsButton.isHidden = true
             
         default:
             return
@@ -153,6 +192,8 @@ class DetailWorkStepViewController: UIViewController {
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(onDoneButtonTouchUpInside))
             
             self.navigationItem.rightBarButtonItem = doneButton
+            
+            
             
             
         default:
@@ -249,6 +290,23 @@ class DetailWorkStepViewController: UIViewController {
         self.navigationController?.pushViewController(materialsVC, animated: true)
     }
     
+    fileprivate func loadComments() {
+        MoyaServices.worksProvider.request(.getStepComments(MoyaServices.currentUserId, self.courseWork.id, self.workStep.id)) { (result) in
+            switch result {
+            case .success(let response):
+                print("GET STEP COMMENTS SUCCESS")
+                print(String(data: response.data, encoding: .utf8))
+                let comments = try! response.map([CommentModel].self)
+                self.comments = comments
+                
+                self.commentsTableView.reloadData()
+                
+            case .failure(let error):
+                print("ERROR GET STEP COMMENTS")
+            }
+        }
+    }
+    
     func apply(workStep: StepModel, courseWork: CourseWork) {
         self.workStep = workStep
         self.courseWork = courseWork
@@ -273,22 +331,7 @@ class DetailWorkStepViewController: UIViewController {
                 }
             }
             
-            MoyaServices.worksProvider.request(.getStepComments(MoyaServices.currentUserId, self.courseWork.id, self.workStep.id)) { (result) in
-                switch result {
-                case .success(let response):
-                    print("GET STEP COMMENTS SUCCESS")
-                    print(String(data: response.data, encoding: .utf8))
-                    let comments = try! response.map([CommentModel].self)
-                    self.comments = comments
-                    
-                    self.commentsTableView.reloadData()
-                    
-                case .failure(let error):
-                    print("ERROR GET STEP COMMENTS")
-                }
-            }
-            
-            
+            self.loadComments()
         }
     }
     
