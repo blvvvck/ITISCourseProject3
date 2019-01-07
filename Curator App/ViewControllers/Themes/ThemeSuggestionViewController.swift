@@ -35,6 +35,12 @@ class ThemeSuggestionViewController: UIViewController {
     @IBOutlet weak var emptyStateView: EmptyStateView!
     
     @IBOutlet weak var commentLabel: UITextField!
+    @IBOutlet weak var acceptThemeButton: UIButton!
+    @IBOutlet weak var rejectThemeButton: UIButton!
+    @IBOutlet weak var someChangesThemeButton: UIButton!
+    
+    @IBOutlet weak var rejectThemeButtomToSpacerConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rejectThemeToSomeChangesConstraint: NSLayoutConstraint!
     // MARK: -
     
     var suggestionId: Int!
@@ -260,6 +266,15 @@ class ThemeSuggestionViewController: UIViewController {
     
     fileprivate func showSuggestionInfo() {
         
+        if !(self.suggestion.status.id == 6 || self.suggestion.status.id == 1) {
+            self.acceptThemeButton.isHidden = true
+            self.someChangesThemeButton.isHidden = true
+            self.rejectThemeButtomToSpacerConstraint.isActive = true
+            self.rejectThemeButtomToSpacerConstraint.priority = .defaultHigh
+            self.rejectThemeToSomeChangesConstraint.isActive = false
+            //self.rejectThemeToSomeChangesConstraint.priority = .defaultLow
+        }
+        
         if let progressTitle = self.suggestion.progress?.title, let progressDescription = self.suggestion.progress?.description  {
             self.themeTitleLabel.text = progressTitle
             self.themeDescription.text = progressDescription
@@ -302,6 +317,8 @@ class ThemeSuggestionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+       
         
         if isViewLoaded {
             self.loadSuggestion()

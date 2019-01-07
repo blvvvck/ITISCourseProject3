@@ -63,10 +63,15 @@ class ProfileViewController: UIViewController {
     }
     
     fileprivate func handle(stateError error: Error, retryHandler: (() -> Void)? = nil) {
-//        let action = EmptyStateAction(title: "Try again".localized(), onClicked: {
-//            retryHandler?()
-//        })
-//
+        let action = EmptyStateAction(title: "Try again", onClicked: {
+            retryHandler?()
+        })
+        
+        self.showEmptyState(image: nil,
+                            title: "Ooops! Something went wrong",
+                            message: "We are already working on correcting this error.",
+                            action: action)
+
 //        switch error as? WebError {
 //        case .some(.connection), .some(.timeOut):
 //            if self.presets.isEmpty {
@@ -130,6 +135,9 @@ class ProfileViewController: UIViewController {
             
             case let .failure(error):
                 print(error.errorDescription)
+                self.handle(stateError: error, retryHandler: { [weak self] in
+                    self?.loadProfileInfo()
+                })
                 
             default:
                 return

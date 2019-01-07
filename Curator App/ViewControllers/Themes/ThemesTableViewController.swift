@@ -68,23 +68,28 @@ class ThemesTableViewController: UIViewController {
                     retryHandler?()
                 })
         
-                switch error as? WebError {
-                case .some(.connection), .some(.timeOut):
-                    if self.themes.isEmpty {
-                        self.showEmptyState(image: #imageLiteral(resourceName: "NoConnectionStateIcon.pdf"),
-                                            title: "No internet connection",
-                                            message: "We couldn’t connect to the server. Please check your internet connection and try again.",
-                                            action: action)
-                    }
+        self.showEmptyState(image: nil,
+                            title: "Ooops! Something went wrong",
+                            message: "We are already working on correcting this error.",
+                            action: action)
         
-                default:
-                    if self.themes.isEmpty {
-                        self.showEmptyState(image: #imageLiteral(resourceName: "ErrorStateIcon.pdf"),
-                                            title: "Ooops! Something went wrong",
-                                            message: "We are already working on correcting this error.",
-                                            action: action)
-                    }
-                }
+//                switch error as? WebError {
+//                case .some(.connection), .some(.timeOut):
+//                    if self.themes.isEmpty {
+//                        self.showEmptyState(image: #imageLiteral(resourceName: "NoConnectionStateIcon.pdf"),
+//                                            title: "No internet connection",
+//                                            message: "We couldn’t connect to the server. Please check your internet connection and try again.",
+//                                            action: action)
+//                    }
+//        
+//                default:
+//                    if self.themes.isEmpty {
+//                        self.showEmptyState(image: #imageLiteral(resourceName: "ErrorStateIcon.pdf"),
+//                                            title: "Ooops! Something went wrong",
+//                                            message: "We are already working on correcting this error.",
+//                                            action: action)
+//                    }
+//                }
     }
     
     // MARK: - Instance Methods
@@ -197,6 +202,9 @@ class ThemesTableViewController: UIViewController {
                 self.hideEmptyState()
             case .failure(let error):
                 print("ERROR GET SUGGESTIONS")
+                self.handle(stateError: error, retryHandler: { [weak self] in
+                    self?.loadSuggestions()
+                })
             }
         }
     }
