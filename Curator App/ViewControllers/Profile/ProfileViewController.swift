@@ -97,7 +97,19 @@ class ProfileViewController: UIViewController {
         self.tabBarController?.selectedIndex = 2
     }
     
-    @IBAction func onExitButtonTouchUpInside(_ sender: Any) { let mainStoryboard = UIStoryboard.init(name: "Login", bundle: nil)
+    @IBAction func onExitButtonTouchUpInside(_ sender: Any) {
+        MoyaServices.loginProvider.request(.logout(UserDefaults.standard.value(forKey: "login") as! String, UserDefaults.standard.value(forKey: "password") as! String)) { (result) in
+            switch result {
+            case .success(let response):
+                print("SUCCESS LOGOUT")
+            
+            case .failure(let error):
+                print("ERROR Logout")
+            }
+        }
+        
+        UserDefaults.standard.removeObject(forKey: "token")
+        let mainStoryboard = UIStoryboard.init(name: "Login", bundle: nil)
         self.present(mainStoryboard.instantiateInitialViewController()!, animated: true, completion: nil)
     }
     // MARK: -

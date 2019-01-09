@@ -11,6 +11,7 @@ import Moya
 
 enum MoyaLoginService {
     case login(String, String)
+    case logout(String, String)
 }
 
 extension MoyaLoginService: TargetType {
@@ -19,7 +20,13 @@ extension MoyaLoginService: TargetType {
     }
     
     var path: String {
-        return "/login"
+        switch self {
+        case .login:
+            return "/login"
+        
+        case .logout:
+            return "/logout"
+        }
     }
     
     var method: Moya.Method {
@@ -39,6 +46,15 @@ extension MoyaLoginService: TargetType {
             parameters["password"] = password
             
             return .requestParameters(parameters: parameters, encoding: URLEncoding.httpBody)
+            
+        case .logout(let login, let password):
+            var parameters = [String : Any]()
+            
+            parameters["username"] = login
+            parameters["password"] = password
+            
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.httpBody)
+            
         default:
             return .requestPlain
         }

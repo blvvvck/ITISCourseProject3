@@ -25,13 +25,14 @@ class CourseWorkTableViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var emptyStateContainerView: UIView!
     
     @IBOutlet weak var emptyStateView: EmptyStateView!
     
     // MARK: -
-    
+    var fullCourseWorkds: [CourseWork] = []
     var courseWorks: [CourseWork] = []
     
     // MARK: - Empty State
@@ -113,6 +114,7 @@ class CourseWorkTableViewController: UIViewController {
             case .success(let moyaResponse):
                 let courseWorks = try! moyaResponse.map([CourseWork].self)
                 self.courseWorks = courseWorks
+                self.fullCourseWorkds = self.courseWorks
                 self.tableView.reloadData()
                 self.hideEmptyState()
             case .failure(let error):
@@ -175,5 +177,26 @@ extension CourseWorkTableViewController: UITableViewDelegate {
         detailCourseWorkVC.apply(courseWork: self.courseWorks[indexPath.row])
         
         self.navigationController?.pushViewController(detailCourseWorkVC, animated: true)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension CourseWorkTableViewController: UISearchBarDelegate {
+    
+    // MARK: - Instance Methods
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            self.courseWorks = self.fullCourseWorkds
+            self.tableView.reloadData()
+        } else {
+            self.courseWorks = self.courseWorks.filter({ (work) -> Bool in
+                return work.theme.title.lowercased().contains(searchText.lowercased()) || work.theme.student!.last_name.lowercased().contains(searchText.lowercased()) ||
+                work.theme.student!.name.lowercased().contains(searchText.lowercased()) || work.theme.student!.patronymic.lowercased().contains(searchText.lowercased())
+            })
+            
+            self.tableView.reloadData()
+        }
     }
 }

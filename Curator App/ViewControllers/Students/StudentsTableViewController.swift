@@ -19,6 +19,11 @@ class StudentsTableViewController: UIViewController {
         static let studentCellIdentifier = "studentCellIdentifier"
     }
     
+    fileprivate enum Segues {
+        
+        static let showFilters = "ShowFilters"
+    }
+    
     enum StudentsControllerType {
         case usual
         case addTheme
@@ -34,6 +39,9 @@ class StudentsTableViewController: UIViewController {
     
     
     var students: [Profile] = []
+    var fullStudens: [Profile] = []
+    
+    var isFilteredByFilter: Bool = false
     
     var theme: ThemeModel!
     
@@ -44,6 +52,29 @@ class StudentsTableViewController: UIViewController {
     var onStudentSelected: ((_ student: Profile) -> Void)?
     
     // MARK: - Empty State
+    
+    @IBAction func onFiltersTouchUpInside(_ sender: Any) {
+        let filtresVC = self.storyboard?.instantiateViewController(withIdentifier: "FiltersVC") as! StudentFilterViewController
+        
+        filtresVC.students = self.fullStudens
+        filtresVC.fullStudents = self.fullStudens
+        
+        filtresVC.onDoneClicked = { [unowned self] students in
+            self.isFilteredByFilter = true
+            print("HETE DONE CLICKED")
+            print(students)
+            self.students = students
+            self.tableView.reloadData()
+        }
+        
+        filtresVC.onResetClicked = { [unowned self] in
+            self.students = self.fullStudens
+            self.tableView.reloadData()
+        }
+        
+        self.navigationController?.pushViewController(filtresVC, animated: true)
+    }
+    
     
     fileprivate func showEmptyState(image: UIImage? = nil, title: String, message: String, action: EmptyStateAction? = nil) {
         self.emptyStateView.hideActivityIndicator()
@@ -105,8 +136,16 @@ class StudentsTableViewController: UIViewController {
         cell.studentSurnameLabel.text = self.students[indexPath.row].last_name
         cell.studentNameLabel.text = self.students[indexPath.row].name
         cell.studentLastNameLabel.text = self.students[indexPath.row].patronymic
-        cell.studentGroupLabel.text = "11-604"
-        cell.studentCourseLabel.text = "3 курс"
+        
+        if let groupName = self.students[indexPath.row].group?.name, let courseNumber = self.students[indexPath.row].course_number {
+            cell.studentGroupLabel.text = groupName
+            cell.studentCourseLabel.text = "\(String(courseNumber)) курс"
+        }
+//
+//        cell.studentGroupLabel.text = self.students[indexPath.row].group?.name
+//
+//
+//        cell.studentCourseLabel.text = (String) self.students[indexPath.row].course_number!
     }
     
     fileprivate func loadStudents() {
@@ -116,8 +155,11 @@ class StudentsTableViewController: UIViewController {
             switch result {
             case .success(let response):
                 let studentsModel = try! response.map([Profile].self)
-                self.students = studentsModel
                 
+                if !self.isFilteredByFilter {
+                    self.students = studentsModel
+                }
+                self.fullStudens = studentsModel
                 self.tableView.reloadData()
                 
                 self.hideEmptyState()

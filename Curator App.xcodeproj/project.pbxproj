@@ -32,6 +32,9 @@
 		9A63FEAD2177285F00D74116 /* AboutMyselfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63FEAC2177285F00D74116 /* AboutMyselfViewController.swift */; };
 		9A63FEAF21772D1700D74116 /* CompetitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63FEAE21772D1700D74116 /* CompetitionsViewController.swift */; };
 		9A63FEB121772DC000D74116 /* CourseWorksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63FEB021772DC000D74116 /* CourseWorksTableViewController.swift */; };
+		9A6E5A3121E543C40093124B /* StudentFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E5A3021E543C40093124B /* StudentFilterViewController.swift */; };
+		9A6E5A3321E544130093124B /* StudentCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E5A3221E544130093124B /* StudentCoursesViewController.swift */; };
+		9A6E5A3521E553470093124B /* CompetitionsToFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E5A3421E553470093124B /* CompetitionsToFilterViewController.swift */; };
 		9A6E9A00217FB6D9003D2565 /* CompetentionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E99FF217FB6D9003D2565 /* CompetentionsTableViewController.swift */; };
 		9A6E9A06217FBADA003D2565 /* CourseWork.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6E9A05217FBADA003D2565 /* CourseWork.storyboard */; };
 		9A6E9A08217FBF2A003D2565 /* CourseWorkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E9A07217FBF2A003D2565 /* CourseWorkTableViewController.swift */; };
@@ -227,6 +230,9 @@
 		9A63FEAC2177285F00D74116 /* AboutMyselfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMyselfViewController.swift; sourceTree = "<group>"; };
 		9A63FEAE21772D1700D74116 /* CompetitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsViewController.swift; sourceTree = "<group>"; };
 		9A63FEB021772DC000D74116 /* CourseWorksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseWorksTableViewController.swift; sourceTree = "<group>"; };
+		9A6E5A3021E543C40093124B /* StudentFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFilterViewController.swift; sourceTree = "<group>"; };
+		9A6E5A3221E544130093124B /* StudentCoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCoursesViewController.swift; sourceTree = "<group>"; };
+		9A6E5A3421E553470093124B /* CompetitionsToFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsToFilterViewController.swift; sourceTree = "<group>"; };
 		9A6E99FF217FB6D9003D2565 /* CompetentionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetentionsTableViewController.swift; sourceTree = "<group>"; };
 		9A6E9A05217FBADA003D2565 /* CourseWork.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseWork.storyboard; sourceTree = "<group>"; };
 		9A6E9A07217FBF2A003D2565 /* CourseWorkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseWorkTableViewController.swift; sourceTree = "<group>"; };
@@ -1143,6 +1149,9 @@
 				9AFC39EC218509D00021E57D /* Storyboards */,
 				9AFC39F6218629AD0021E57D /* StudentsTableViewController.swift */,
 				9AFC39F82188E62D0021E57D /* StudentProfileViewController.swift */,
+				9A6E5A3021E543C40093124B /* StudentFilterViewController.swift */,
+				9A6E5A3221E544130093124B /* StudentCoursesViewController.swift */,
+				9A6E5A3421E553470093124B /* CompetitionsToFilterViewController.swift */,
 			);
 			path = Students;
 			sourceTree = "<group>";
@@ -1505,6 +1514,7 @@
 				9AD526E421C9A788002AC8E2 /* SettingsViewController.swift in Sources */,
 				9A23E64F21ADF1700015B779 /* DetailWorkStepViewController.swift in Sources */,
 				9AD526F421C9A788002AC8E2 /* CourseViewInput.swift in Sources */,
+				9A6E5A3321E544130093124B /* StudentCoursesViewController.swift in Sources */,
 				9AD526E921C9A788002AC8E2 /* SettingsInteractor.swift in Sources */,
 				9AFC39F92188E62D0021E57D /* StudentProfileViewController.swift in Sources */,
 				9A6E9A13217FC7E2003D2565 /* DefaultProfileExtractor.swift in Sources */,
@@ -1547,6 +1557,7 @@
 				9A9C230821C14DB700F914E6 /* Fonts.swift in Sources */,
 				9AD526DE21C9A788002AC8E2 /* GoogleTableParserManagerImplementation.swift in Sources */,
 				9AFC3A0A21899B880021E57D /* EditCompetitionTableViewCell.swift in Sources */,
+				9A6E5A3121E543C40093124B /* StudentFilterViewController.swift in Sources */,
 				9A815C7D2173C86B0042E293 /* DefaultAuthorizationService.swift in Sources */,
 				9A815EB72173CBB10042E293 /* TokensCoder.swift in Sources */,
 				9A9C230321C14CEB00F914E6 /* Colors.swift in Sources */,
@@ -1598,6 +1609,7 @@
 				9A9C22F921BFB1AA00F914E6 /* StepModel.swift in Sources */,
 				9A815CAB2173C99B0042E293 /* LoggedNavigationController.swift in Sources */,
 				9AD526F321C9A788002AC8E2 /* FirstCourseViewController.swift in Sources */,
+				9A6E5A3521E553470093124B /* CompetitionsToFilterViewController.swift in Sources */,
 				9A815A852173C6A00042E293 /* WebError.swift in Sources */,
 				9A553D9421C43A750054609D /* MoyaStudentService.swift in Sources */,
 				9ABCAA1221D9637000156673 /* ThemeStatusesHelper.swift in Sources */,

@@ -177,6 +177,7 @@ class FinalThemeViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
             let editThemeVC = self.storyboard?.instantiateViewController(withIdentifier: "SuggestionThemeForStudentVC") as! SuggestionThemeForStudentViewController
             editThemeVC.controllerType = .edit
+            editThemeVC.theme = self.theme
             self.navigationController?.pushViewController(editThemeVC, animated: true)
         }))
         

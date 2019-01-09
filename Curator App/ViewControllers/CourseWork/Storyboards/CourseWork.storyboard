@@ -20,9 +20,17 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i0z-Ro-flB">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="poh-i1-8JS">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="Exj-JY-VrD" id="vkx-7G-AGT"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="courseWorkCellIdentifier" rowHeight="80" id="nAA-5d-q4z" customClass="CourseWorkTableViewCell" customModule="Curator_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="80"/>
+                                        <rect key="frame" x="0.0" y="84" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nAA-5d-q4z" id="iA2-Mn-JFj">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
@@ -93,6 +101,7 @@
                     <connections>
                         <outlet property="emptyStateContainerView" destination="hxE-BZ-jFs" id="p0f-ht-wTX"/>
                         <outlet property="emptyStateView" destination="YIw-1q-LfZ" id="sD3-rp-UyO"/>
+                        <outlet property="searchBar" destination="poh-i1-8JS" id="X4t-9O-Ddq"/>
                         <outlet property="tableView" destination="i0z-Ro-flB" id="FVZ-wg-S15"/>
                     </connections>
                 </viewController>

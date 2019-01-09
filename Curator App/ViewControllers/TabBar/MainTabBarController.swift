@@ -35,21 +35,21 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let courseStoryboard = UIStoryboard(name: "CourseWork", bundle: nil)
         let courseWorkVC = courseStoryboard.instantiateViewController(withIdentifier: "CourseWorksVC")
         courseWorkVC.title = "Курсовые"
-        let courseWorkTabBarItem = UITabBarItem(title: "Курсовые", image: nil, selectedImage: nil)
+        let courseWorkTabBarItem = UITabBarItem(title: "Курсовые", image: UIImage(named: "language-2"), selectedImage: nil)
         courseWorkTabBarItem.tag = 2
         courseWorkVC.tabBarItem = courseWorkTabBarItem;
         
         let themesStoryboard = UIStoryboard(name: "Themes", bundle: nil)
         let themesVC = themesStoryboard.instantiateViewController(withIdentifier: "ThemesVC")
         themesVC.title = "Темы"
-        let themesTabBarItem = UITabBarItem(title: "Темы", image: nil, selectedImage: nil)
+        let themesTabBarItem = UITabBarItem(title: "Темы", image: UIImage(named: "layout"), selectedImage: nil)
         themesTabBarItem.tag = 3
         themesVC.tabBarItem = themesTabBarItem;
         
         let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
         let profileVC = profileStoryboard.instantiateViewController(withIdentifier: "ProfileVC")
         profileVC.title = "Профиль"
-        let profileTabBarItem = UITabBarItem(title: "Профиль", image: nil, selectedImage: nil)
+        let profileTabBarItem = UITabBarItem(title: "Профиль", image: UIImage(named: "avatar-2"), selectedImage: nil)
         profileTabBarItem.tag = 0
         profileVC.tabBarItem = profileTabBarItem;
         

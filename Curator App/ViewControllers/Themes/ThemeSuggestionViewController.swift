@@ -39,6 +39,8 @@ class ThemeSuggestionViewController: UIViewController {
     @IBOutlet weak var rejectThemeButton: UIButton!
     @IBOutlet weak var someChangesThemeButton: UIButton!
     
+    @IBOutlet weak var stackView: UIStackView!
+    
     @IBOutlet weak var rejectThemeButtomToSpacerConstraint: NSLayoutConstraint!
     @IBOutlet weak var rejectThemeToSomeChangesConstraint: NSLayoutConstraint!
     // MARK: -
@@ -193,8 +195,10 @@ class ThemeSuggestionViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(onEditButtonTouchUpInside))
-        self.navigationItem.rightBarButtonItem = editButton
+        if self.suggestion.status.id == 3 {
+            let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(onEditButtonTouchUpInside))
+            self.navigationItem.rightBarButtonItem = editButton
+        }
     }
     
     @objc
@@ -250,6 +254,8 @@ class ThemeSuggestionViewController: UIViewController {
                         
                         self.showSuggestionInfo()
                         
+                        self.configureNavigationBar()
+                        
                         self.hideEmptyState()
                         self.loadComments()
                         
@@ -264,16 +270,87 @@ class ThemeSuggestionViewController: UIViewController {
         }
     }
     
-    fileprivate func showSuggestionInfo() {
+    fileprivate func setupButtons() {
+        if self.suggestion.status.id == 1 {
+            
+        }
         
-        if !(self.suggestion.status.id == 6 || self.suggestion.status.id == 1) {
+        if self.suggestion.status.id == 2 {
             self.acceptThemeButton.isHidden = true
             self.someChangesThemeButton.isHidden = true
-            self.rejectThemeButtomToSpacerConstraint.isActive = true
-            self.rejectThemeButtomToSpacerConstraint.priority = .defaultHigh
-            self.rejectThemeToSomeChangesConstraint.isActive = false
-            //self.rejectThemeToSomeChangesConstraint.priority = .defaultLow
         }
+        
+        if self.suggestion.status.id == 3 {
+            self.acceptThemeButton.isHidden = true
+            //self.rejectThemeButton.isHidden = true
+            self.someChangesThemeButton.isHidden = true
+        }
+        
+        if self.suggestion.status.id == 4 {
+            self.acceptThemeButton.isHidden = true
+            self.someChangesThemeButton.isHidden = true
+        }
+        
+        if self.suggestion.status.id == 5 {
+            self.acceptThemeButton.isHidden = true
+            self.someChangesThemeButton.isHidden = true
+        }
+        
+        if self.suggestion.status.id == 6 {
+            self.acceptThemeButton.isHidden = true
+            self.someChangesThemeButton.isHidden = true
+        }
+        
+        if self.suggestion.status.id == 7 {
+            self.acceptThemeButton.isHidden = true
+            self.someChangesThemeButton.isHidden = true
+            self.rejectThemeButton.isHidden = true
+        }
+        
+        if self.suggestion.status.id == 8 {
+            self.acceptThemeButton.isHidden = true
+            self.someChangesThemeButton.isHidden = true
+            self.rejectThemeButton.isHidden = true
+        }
+        
+        if self.suggestion.status.id == 9 {
+            self.acceptThemeButton.isHidden = true
+            self.someChangesThemeButton.isHidden = true
+            self.rejectThemeButton.isHidden = true
+        }
+        
+        if self.suggestion.status.id == 5 {
+            self.acceptThemeButton.isHidden = true
+            self.someChangesThemeButton.isHidden = true
+        }
+    }
+    
+    fileprivate func showSuggestionInfo() {
+        
+//        if !(self.suggestion.status.id == 6 || self.suggestion.status.id == 1) {
+//            self.acceptThemeButton.isHidden = true
+//            self.someChangesThemeButton.isHidden = true
+//            self.rejectThemeButtomToSpacerConstraint.isActive = true
+//            self.rejectThemeButtomToSpacerConstraint.priority = .defaultHigh
+//            self.rejectThemeToSomeChangesConstraint.isActive = false
+//            //self.rejectThemeToSomeChangesConstraint.priority = .defaultLow
+//        }
+        
+//        self.acceptThemeButton.isHidden = true
+//        self.someChangesThemeButton.isHidden = true
+//        //self.rejectThemeButton.isHidden = true
+//
+//        if (self.suggestion.status.id == 6 || self.suggestion.status.id == 1) {
+//            self.acceptThemeButton.isHidden = false
+//        }
+//
+//        if (self.suggestion.status.id == 6 || self.suggestion.status.id == 1 || self.suggestion.status.id == 2) {
+//            self.someChangesThemeButton.isHidden = false
+//        }
+        
+        self.setupButtons()
+        
+        
         
         if let progressTitle = self.suggestion.progress?.title, let progressDescription = self.suggestion.progress?.description  {
             self.themeTitleLabel.text = progressTitle
@@ -312,7 +389,7 @@ class ThemeSuggestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureNavigationBar()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

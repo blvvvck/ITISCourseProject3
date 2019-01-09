@@ -22,6 +22,7 @@ class EditCompetitionTableViewController: UIViewController {
     enum EditCompetitionType {
         case profile
         case addTheme
+        case editTheme
     }
     
     // MARK: - Instance Properties
@@ -39,6 +40,8 @@ class EditCompetitionTableViewController: UIViewController {
     var selectedSkills: [Skill] = []
     
     var profileModel: Profile!
+    
+    var theme: ThemeModel!
     
     // MARK: -
     
@@ -123,7 +126,17 @@ class EditCompetitionTableViewController: UIViewController {
 //                    self.selectedSkills.append(skill)
 //                }
 //            })
-        
+        case .editTheme?:
+            cell.competitionNameLabel.text = self.skills?[indexPath.row].name!
+            cell.highLevelButton.isSelected = true
+            
+            self.theme.skills?.forEach({ (skill) in
+                if skill.id == self.skills?[indexPath.row].id {
+                    cell.accessoryType = .checkmark
+                    self.selectedSkills.append(skill)
+                }
+            })
+            
         case .none:
             cell.competitionNameLabel.text = self.skills?[indexPath.row].name!
             cell.highLevelButton.isSelected = true
@@ -161,6 +174,10 @@ class EditCompetitionTableViewController: UIViewController {
     private func onDoneButtonTouchUpInside() {
         switch self.type {
         case .addTheme?:
+            self.onThemeSelected?(self.selectedSkills)
+            self.navigationController?.popViewController(animated: true)
+            
+        case .editTheme?:
             self.onThemeSelected?(self.selectedSkills)
             self.navigationController?.popViewController(animated: true)
             

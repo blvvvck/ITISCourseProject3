@@ -36,6 +36,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="e89-45-e30" id="XNU-6Y-36M"/>
+                                    </connections>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="themeTableCellIdentifier" rowHeight="169" id="mDc-1v-nab" customClass="ThemeTableViewCell" customModule="Curator_App" customModuleProvider="target">
@@ -269,7 +272,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHD-Bp-HOh">
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHD-Bp-HOh">
                                 <rect key="frame" x="284" y="826" width="36" height="30"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
@@ -280,7 +283,7 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="806"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I86-eL-XdZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="810"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="782.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут название темы" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv9-x3-uia">
                                                 <rect key="frame" x="8" y="8" width="304" height="23"/>
@@ -296,115 +299,89 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Куратор" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uu-SP-PqG">
-                                                <rect key="frame" x="8" y="49" width="67" height="21"/>
+                                                <rect key="frame" x="8" y="49" width="66.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут куратор" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rc-6L-3Le">
-                                                <rect key="frame" x="8" y="74" width="86" height="18"/>
+                                                <rect key="frame" x="8" y="73.5" width="85.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYV-gb-TR9">
-                                                <rect key="frame" x="8" y="100" width="304" height="2"/>
+                                                <rect key="frame" x="8" y="99.5" width="304" height="2"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="mqg-xK-WBp"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Студент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdb-4W-gnt">
-                                                <rect key="frame" x="8" y="110" width="66" height="21"/>
+                                                <rect key="frame" x="8" y="109.5" width="66" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут студент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aN8-Fv-ky8">
-                                                <rect key="frame" x="8" y="135" width="85" height="18"/>
+                                                <rect key="frame" x="8" y="134" width="84.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cG3-F5-8z4">
-                                                <rect key="frame" x="8" y="161" width="304" height="2"/>
+                                                <rect key="frame" x="8" y="160" width="304" height="2"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="i2s-MM-dCW"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Область" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKY-dN-3wJ">
-                                                <rect key="frame" x="8" y="171" width="67" height="21"/>
+                                                <rect key="frame" x="8" y="170" width="67" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут область" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElB-Jf-qZj">
-                                                <rect key="frame" x="8" y="196" width="85" height="18"/>
+                                                <rect key="frame" x="8" y="194.5" width="85" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0d-U9-dRn">
-                                                <rect key="frame" x="8" y="222" width="304" height="2"/>
+                                                <rect key="frame" x="8" y="220.5" width="304" height="2"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="P6q-se-KAB"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Статус" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbq-cV-tyv">
-                                                <rect key="frame" x="8" y="232" width="55" height="21"/>
+                                                <rect key="frame" x="8" y="230.5" width="55" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Новая" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fog-FN-uOd">
-                                                <rect key="frame" x="8" y="257" width="44" height="18"/>
+                                                <rect key="frame" x="8" y="255" width="44" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H41-Dh-uId">
-                                                <rect key="frame" x="8" y="283" width="304" height="2"/>
+                                                <rect key="frame" x="8" y="281" width="304" height="2"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="wPk-yk-Vwd"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17m-ON-Xil">
-                                                <rect key="frame" x="8" y="423" width="304" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="jFg-ly-jDz"/>
-                                                </constraints>
-                                                <state key="normal" title="ПРИНЯТЬ ТЕМУ">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onAcceptThemeButtonTouchUpInside:" destination="mAc-YL-HkD" eventType="touchUpInside" id="vX6-Qj-oZt"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc7-YV-GxE">
-                                                <rect key="frame" x="8" y="539" width="304" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="7eY-tb-TFp"/>
-                                                </constraints>
-                                                <state key="normal" title="ОТКЛОНИТЬ ТЕМУ">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onRejectThemeButtonTouchUpInside:" destination="mAc-YL-HkD" eventType="touchUpInside" id="qzd-8l-BFi"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnF-Na-lOg">
-                                                <rect key="frame" x="8" y="597" width="84" height="21"/>
+                                                <rect key="frame" x="8" y="570" width="83.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dcq-KQ-tr4">
-                                                <rect key="frame" x="8" y="626" width="304" height="176"/>
+                                                <rect key="frame" x="8" y="598.5" width="304" height="176"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="176" id="vJu-ie-Api"/>
@@ -462,59 +439,91 @@
                                                 </connections>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqq-Qz-33k">
-                                                <rect key="frame" x="8" y="344" width="304" height="2"/>
+                                                <rect key="frame" x="8" y="341.5" width="304" height="2"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="s8k-Zr-NHT"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Компетенции" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJl-B3-FNS">
-                                                <rect key="frame" x="8" y="293" width="108" height="21"/>
+                                                <rect key="frame" x="8" y="291" width="108" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут компетенции" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EI7-4V-Vsa">
-                                                <rect key="frame" x="8" y="318" width="123" height="18"/>
+                                                <rect key="frame" x="8" y="315.5" width="122.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXY-YH-ecC">
-                                                <rect key="frame" x="8" y="405" width="304" height="2"/>
+                                                <rect key="frame" x="8" y="402" width="304" height="2"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="4fb-ww-bI1"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfl-LT-t6V">
-                                                <rect key="frame" x="8" y="354" width="81" height="21"/>
+                                                <rect key="frame" x="8" y="351.5" width="80.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тут описание" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odw-ud-bg2">
-                                                <rect key="frame" x="8" y="379" width="96.5" height="18"/>
+                                                <rect key="frame" x="8" y="376" width="96.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOU-co-vCQ">
-                                                <rect key="frame" x="8" y="481" width="304" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="R8h-yI-1qU"/>
-                                                </constraints>
-                                                <state key="normal" title="НА ДОРАБОТКУ">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onSomeChangesThemeButtonTouchUpInside:" destination="mAc-YL-HkD" eventType="touchUpInside" id="si2-qX-dhF"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="y7d-dI-kxy">
+                                                <rect key="frame" x="8" y="412" width="304" height="150"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOU-co-vCQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="i7x-W4-ZeQ"/>
+                                                        </constraints>
+                                                        <state key="normal" title="НА ДОРАБОТКУ">
+                                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onSomeChangesThemeButtonTouchUpInside:" destination="mAc-YL-HkD" eventType="touchUpInside" id="si2-qX-dhF"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc7-YV-GxE">
+                                                        <rect key="frame" x="0.0" y="50" width="304" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="wbz-qX-gXa"/>
+                                                        </constraints>
+                                                        <state key="normal" title="ОТКЛОНИТЬ ТЕМУ">
+                                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onRejectThemeButtonTouchUpInside:" destination="mAc-YL-HkD" eventType="touchUpInside" id="qzd-8l-BFi"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17m-ON-Xil">
+                                                        <rect key="frame" x="0.0" y="100" width="304" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="hYI-aM-uGv"/>
+                                                        </constraints>
+                                                        <state key="normal" title="ПРИНЯТЬ ТЕМУ">
+                                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onAcceptThemeButtonTouchUpInside:" destination="mAc-YL-HkD" eventType="touchUpInside" id="vX6-Qj-oZt"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="y7d-dI-kxy" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="1cG-Lm-zTx"/>
                                             <constraint firstItem="EI7-4V-Vsa" firstAttribute="top" secondItem="cJl-B3-FNS" secondAttribute="bottom" constant="4" id="1dG-wF-vPq"/>
                                             <constraint firstItem="jfl-LT-t6V" firstAttribute="top" secondItem="iqq-Qz-33k" secondAttribute="bottom" constant="8" id="2Ls-Fa-E6g"/>
                                             <constraint firstItem="cG3-F5-8z4" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="3WH-ns-9TL"/>
@@ -522,35 +531,31 @@
                                             <constraint firstItem="X40-yz-nKq" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="4nz-n6-dTa"/>
                                             <constraint firstItem="Dcq-KQ-tr4" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="5OX-MT-kmP"/>
                                             <constraint firstItem="ElB-Jf-qZj" firstAttribute="top" secondItem="YKY-dN-3wJ" secondAttribute="bottom" constant="4" id="5pX-7B-lyF"/>
+                                            <constraint firstAttribute="trailing" secondItem="y7d-dI-kxy" secondAttribute="trailing" constant="8" id="7Cm-Uc-Qxd"/>
                                             <constraint firstItem="H41-Dh-uId" firstAttribute="top" secondItem="Fog-FN-uOd" secondAttribute="bottom" constant="8" id="8eh-5F-3nx"/>
-                                            <constraint firstItem="zc7-YV-GxE" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="977-0m-RjK"/>
                                             <constraint firstItem="Zv9-x3-uia" firstAttribute="top" secondItem="I86-eL-XdZ" secondAttribute="top" constant="8" id="9kh-Y8-bke"/>
                                             <constraint firstItem="z0d-U9-dRn" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="Ave-sN-2Z8"/>
-                                            <constraint firstItem="UnF-Na-lOg" firstAttribute="top" secondItem="zc7-YV-GxE" secondAttribute="bottom" constant="8" id="Ch4-pE-hK7"/>
                                             <constraint firstItem="iqq-Qz-33k" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="CrT-oO-CBr"/>
                                             <constraint firstItem="Zv9-x3-uia" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="Dm8-A9-raY"/>
                                             <constraint firstAttribute="trailing" secondItem="Dcq-KQ-tr4" secondAttribute="trailing" constant="8" id="Dty-mx-ktw"/>
-                                            <constraint firstItem="zc7-YV-GxE" firstAttribute="top" secondItem="FOU-co-vCQ" secondAttribute="bottom" constant="8" id="FAX-lh-dNs"/>
                                             <constraint firstItem="jfl-LT-t6V" firstAttribute="leading" secondItem="cJl-B3-FNS" secondAttribute="leading" id="Fbw-Kt-VNS"/>
                                             <constraint firstItem="Odw-ud-bg2" firstAttribute="leading" secondItem="jfl-LT-t6V" secondAttribute="leading" id="Fq3-bS-k4v"/>
                                             <constraint firstItem="Odw-ud-bg2" firstAttribute="top" secondItem="jfl-LT-t6V" secondAttribute="bottom" constant="4" id="G2A-y0-FIe"/>
+                                            <constraint firstItem="y7d-dI-kxy" firstAttribute="top" secondItem="YXY-YH-ecC" secondAttribute="bottom" constant="8" id="HM2-Fu-T0n"/>
                                             <constraint firstItem="YKY-dN-3wJ" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="Hga-KU-rod"/>
                                             <constraint firstItem="UnF-Na-lOg" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="I3w-ic-Kof"/>
                                             <constraint firstItem="cJl-B3-FNS" firstAttribute="top" secondItem="H41-Dh-uId" secondAttribute="bottom" constant="8" id="N1n-at-lwi"/>
                                             <constraint firstItem="4uu-SP-PqG" firstAttribute="top" secondItem="X40-yz-nKq" secondAttribute="bottom" constant="8" id="NLC-YI-hRO"/>
-                                            <constraint firstItem="FOU-co-vCQ" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="NLc-Lz-eLJ"/>
                                             <constraint firstItem="Fog-FN-uOd" firstAttribute="top" secondItem="Wbq-cV-tyv" secondAttribute="bottom" constant="4" id="NkG-RN-rF2"/>
                                             <constraint firstItem="YXY-YH-ecC" firstAttribute="top" secondItem="Odw-ud-bg2" secondAttribute="bottom" constant="8" id="O1K-6H-EZb"/>
+                                            <constraint firstItem="UnF-Na-lOg" firstAttribute="top" secondItem="y7d-dI-kxy" secondAttribute="bottom" constant="8" id="O6W-kc-hqD"/>
                                             <constraint firstAttribute="trailing" secondItem="YXY-YH-ecC" secondAttribute="trailing" constant="8" id="PUn-nA-VF2"/>
-                                            <constraint firstItem="17m-ON-Xil" firstAttribute="top" secondItem="YXY-YH-ecC" secondAttribute="bottom" constant="16" id="PX6-0X-ig7"/>
                                             <constraint firstAttribute="trailing" secondItem="PYV-gb-TR9" secondAttribute="trailing" constant="8" id="Rc5-yn-Sw4"/>
                                             <constraint firstItem="Wbq-cV-tyv" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="Rxz-s4-Bd1"/>
                                             <constraint firstItem="8rc-6L-3Le" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="Skb-kQ-avA"/>
                                             <constraint firstItem="4uu-SP-PqG" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="TbM-KL-1n7"/>
-                                            <constraint firstAttribute="trailing" secondItem="zc7-YV-GxE" secondAttribute="trailing" constant="8" id="W93-pz-Mof"/>
                                             <constraint firstItem="Dcq-KQ-tr4" firstAttribute="top" secondItem="UnF-Na-lOg" secondAttribute="bottom" constant="8" id="aHM-oD-NhW"/>
                                             <constraint firstAttribute="trailing" secondItem="H41-Dh-uId" secondAttribute="trailing" constant="8" id="bGR-71-NSJ"/>
-                                            <constraint firstItem="FOU-co-vCQ" firstAttribute="top" secondItem="17m-ON-Xil" secondAttribute="bottom" constant="8" id="cBe-1n-SBR"/>
                                             <constraint firstItem="zdb-4W-gnt" firstAttribute="top" secondItem="PYV-gb-TR9" secondAttribute="bottom" constant="8" id="cMj-3x-TGc"/>
                                             <constraint firstAttribute="trailing" secondItem="Zv9-x3-uia" secondAttribute="trailing" constant="8" id="cc8-6D-YL8"/>
                                             <constraint firstAttribute="trailing" secondItem="z0d-U9-dRn" secondAttribute="trailing" constant="8" id="ccA-qo-qay"/>
@@ -559,19 +564,15 @@
                                             <constraint firstItem="iqq-Qz-33k" firstAttribute="top" secondItem="EI7-4V-Vsa" secondAttribute="bottom" constant="8" id="gPj-Lx-K9O"/>
                                             <constraint firstItem="PYV-gb-TR9" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="gpz-pR-K2d"/>
                                             <constraint firstItem="PYV-gb-TR9" firstAttribute="top" secondItem="8rc-6L-3Le" secondAttribute="bottom" constant="8" id="h3Q-wc-GUc"/>
-                                            <constraint firstAttribute="trailing" secondItem="FOU-co-vCQ" secondAttribute="trailing" constant="8" id="hFP-Pm-RY4"/>
                                             <constraint firstItem="X40-yz-nKq" firstAttribute="top" secondItem="Zv9-x3-uia" secondAttribute="bottom" constant="8" id="iZe-me-i8B"/>
                                             <constraint firstItem="aN8-Fv-ky8" firstAttribute="top" secondItem="zdb-4W-gnt" secondAttribute="bottom" constant="4" id="jWC-Lp-ZZ8"/>
                                             <constraint firstItem="EI7-4V-Vsa" firstAttribute="leading" secondItem="cJl-B3-FNS" secondAttribute="leading" id="lAq-k0-ih0"/>
-                                            <constraint firstItem="zc7-YV-GxE" firstAttribute="top" secondItem="YXY-YH-ecC" secondAttribute="bottom" priority="250" constant="8" id="npw-Sq-VKU"/>
                                             <constraint firstItem="8rc-6L-3Le" firstAttribute="top" secondItem="4uu-SP-PqG" secondAttribute="bottom" constant="4" id="nwZ-a7-8Ao"/>
                                             <constraint firstItem="zdb-4W-gnt" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="o0U-hP-CxD"/>
-                                            <constraint firstAttribute="trailing" secondItem="17m-ON-Xil" secondAttribute="trailing" constant="8" id="o4X-gk-eyQ"/>
                                             <constraint firstItem="H41-Dh-uId" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="ox4-N7-U66"/>
                                             <constraint firstItem="z0d-U9-dRn" firstAttribute="top" secondItem="ElB-Jf-qZj" secondAttribute="bottom" constant="8" id="q5N-nW-dAY"/>
                                             <constraint firstItem="Wbq-cV-tyv" firstAttribute="top" secondItem="z0d-U9-dRn" secondAttribute="bottom" constant="8" id="r8L-LC-Hwc"/>
                                             <constraint firstAttribute="trailing" secondItem="iqq-Qz-33k" secondAttribute="trailing" constant="8" id="rmL-8G-Av8"/>
-                                            <constraint firstItem="17m-ON-Xil" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="rvn-iG-oHU"/>
                                             <constraint firstItem="Fog-FN-uOd" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="s1V-J3-IIB"/>
                                             <constraint firstAttribute="trailing" secondItem="cG3-F5-8z4" secondAttribute="trailing" constant="8" id="tgj-tQ-Ehz"/>
                                             <constraint firstItem="aN8-Fv-ky8" firstAttribute="leading" secondItem="I86-eL-XdZ" secondAttribute="leading" constant="8" id="uPW-qW-kLc"/>
@@ -637,9 +638,7 @@
                         <outlet property="commentLabel" destination="Gej-Bu-Yyf" id="wSH-Lt-Ypa"/>
                         <outlet property="emptyStateContainerView" destination="poI-0f-kvh" id="sns-nm-X6S"/>
                         <outlet property="emptyStateView" destination="zTn-2P-wPC" id="BY7-OC-eN6"/>
-                        <outlet property="rejectThemeButtomToSpacerConstraint" destination="npw-Sq-VKU" id="7Pb-UP-ibg"/>
                         <outlet property="rejectThemeButton" destination="zc7-YV-GxE" id="xdm-wX-H7j"/>
-                        <outlet property="rejectThemeToSomeChangesConstraint" destination="FAX-lh-dNs" id="8r8-1p-ZxI"/>
                         <outlet property="someChangesThemeButton" destination="FOU-co-vCQ" id="B1y-8y-j0N"/>
                         <outlet property="studentLabel" destination="aN8-Fv-ky8" id="hI9-8V-S0g"/>
                         <outlet property="tableView" destination="Dcq-KQ-tr4" id="KRa-6e-jb9"/>

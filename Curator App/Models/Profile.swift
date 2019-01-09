@@ -15,4 +15,12 @@ struct Profile: Codable {
     var patronymic: String
     var description: String
     var skills: [Skill]?
+    var course_number: Int?
+    var group: Group?
+    var skills_id: [Int]?
+}
+
+struct Group: Codable {
+    var id: Int
+    var name: String
 }

@@ -24,6 +24,9 @@ class LoginViewController: UIViewController {
             return
         }
         
+        UserDefaults.standard.set(login, forKey: "login")
+        UserDefaults.standard.set(password, forKey: "password")
+        
         let provider = MoyaProvider<MoyaLoginService>()
         provider.request(.login(login, password)) { (result) in
             switch result {

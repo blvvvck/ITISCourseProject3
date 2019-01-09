@@ -28,8 +28,11 @@ class ThemesTableViewController: UIViewController {
     @IBOutlet weak var emptyStateContainerView: UIView!
     @IBOutlet weak var emptyStateView: EmptyStateView!
     
+    var fullThemes: [ThemeModel] = []
     var themes: [ThemeModel] = []
+    
     var suggestions: [SuggestionModel] = []
+    var fullSuggestions: [SuggestionModel] = []
     
     // MARK: - Empty State
     
@@ -100,12 +103,13 @@ class ThemesTableViewController: UIViewController {
             self.navigationItem.rightBarButtonItem = nil
             self.loadSuggestions()
             self.tableView.reloadData()
+            self.searchBar.text = ""
 
         case 1:
             self.configureNavigationBar()
             self.loadThemes()
             self.tableView.reloadData()
-
+            self.searchBar.text = ""
        
         default:
             return
@@ -158,10 +162,17 @@ class ThemesTableViewController: UIViewController {
             
         case 1:
             cell.themeNameLabel.text = self.themes[indexPath.row].title
-            cell.themeStudentLabel.text = "Студент"
+            
+            if let lastName = self.themes[indexPath.row].student?.last_name {
+                cell.themeStudentLabel.text = "\(lastName) \(self.themes[indexPath.row].student!.name) \(self.themes[indexPath.row].student!.patronymic)"
+            } else {
+                cell.themeStudentLabel.text = "Студент не выбран"
+            }
+            
             cell.themeStatusLabel.text = "Статус"
             cell.themeStatusLabel.isHidden = true
-            cell.themeStudentLabel.isHidden = true
+            cell.themeStudentLabel.isHidden = false
+
         default:
             return
         }
@@ -175,6 +186,7 @@ class ThemesTableViewController: UIViewController {
             case let .success(moyaResponse):
                 let themeModel = try! moyaResponse.map([ThemeModel].self)
                 self.themes = themeModel
+                self.fullThemes = self.themes
                 
                 self.tableView.reloadData()
                 
@@ -196,6 +208,7 @@ class ThemesTableViewController: UIViewController {
             case .success(let response):
                 let suggestions = try! response.map([SuggestionModel].self)
                 self.suggestions = suggestions
+                self.fullSuggestions = self.suggestions
                 
                 self.tableView.reloadData()
                 
@@ -269,7 +282,7 @@ extension ThemesTableViewController: UITableViewDelegate {
             return 170
             
         case 1:
-            return 60
+            return 115
         default:
             return 0
         }
@@ -294,6 +307,45 @@ extension ThemesTableViewController: UITableViewDelegate {
 
         default:
             return
+        }
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension ThemesTableViewController: UISearchBarDelegate {
+    
+    // MARK: - Instance Methods
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        switch self.segmentedControl.selectedSegmentIndex {
+        case 0:
+            if searchText == "" {
+                self.suggestions = self.fullSuggestions
+                self.tableView.reloadData()
+            } else {
+                self.suggestions = self.suggestions.filter({ (suggestion) -> Bool in
+                    return suggestion.theme.title.lowercased().contains(searchText.lowercased()) ||
+                    suggestion.student!.last_name.lowercased().contains(searchText.lowercased()) || suggestion.student!.name.lowercased().contains(searchText.lowercased()) || suggestion.student!.patronymic.lowercased().contains(searchText.lowercased())
+                })
+            
+                self.tableView.reloadData()
+            }
+            
+        case 1:
+            if searchText == "" {
+                self.themes = self.fullThemes
+                self.tableView.reloadData()
+            } else {
+                self.themes = self.themes.filter({ (theme) -> Bool in
+                    return theme.title.lowercased().contains(searchText.lowercased())
+                })
+                
+                self.tableView.reloadData()
+            }
+            
+        default:
+            break
         }
     }
 }
